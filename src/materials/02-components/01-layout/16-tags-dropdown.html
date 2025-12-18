@@ -1,0 +1,62 @@
+---
+NVDA keydown issues
+https://github.com/FreedomScientific/standards-support/issues/211
+https://github.com/microsoft/fluentui/issues/16490
+
+
+todos
+code aria-activedescendant -- done
+aria-selected, checked -- in progress
+
+Usage Notes (Options)
+- All the following options are added to div.c-dropdown
+- Position the dropdown using data-placement="" attribute, default value - 'bottom-start'
+- Available placements - 'top' || 'top-start' || 'top-end' || 'bottom' || 'bottom-start' || 'bottom-end' || 'right' ||
+'right-start' || 'right-end' || 'left' || 'left-start' || 'left-end';
+- To prevent dynamic js alignment and use static placement, add class="-static"
+- use class -right alongside static to statically align menu to right
+- To use position:fixed on the menu, use class="-body"
+
+- By default c-dropdown-menu will close if you click on an anchor or button. If you desire otherwise, add
+class="-donot-dismiss" to the concerned anchor or button.
+---
+<div class="c-dropdown -static -genW-dropdown -tags" data-placement="bottom-start">
+    <p id="aboutus-dropdown-label" class="c-dropdown-label">Tags</p>
+    <button type="button" role="combobox" class="c-dropdown-toggle -caret -multiselect"
+        aria-controls="Tags-dropdown" aria-expanded="false" aria-haspopup="listbox"
+        aria-activedescendant="">
+        <div class="c-dropdown__tag">
+            <span>High Tech</span>
+            <i class="icon-close"></i>
+        </div>
+        <div class="c-dropdown__tag">
+            <span>Software & Platforms</span>
+            <i class="icon-close"></i>
+        </div>
+        <div class="c-dropdown__tag">
+            <span>Capital Markets</span>
+            <i class="icon-close"></i>
+        </div>
+        <div class="c-dropdown__tag">
+            <span>Automotive</span>
+            <i class="icon-close"></i>
+        </div>
+        <div class="c-dropdown__tag">
+            +1
+        </div>
+    </button>
+
+    <div class="c-dropdown-menu c-contribute c-contribute__dropdown" id="Tags-dropdown">
+        <div class="c-dropdown-search">
+            {{> inputs.input inpPlaceholder="Search"}}
+        </div>
+        <div class="c-dropdown-body" role="listbox" aria-labelledby="Tags-dropdown-label">
+            <a href="javascript:;" role="option" class="c-dropdown-item" id="Tags-dropdown-option-1"
+                aria-selected="false">Capital Markets</a>
+            <a href="javascript:;" role="option" class="c-dropdown-item" id="Tags-dropdown-option-2"
+                aria-selected="false">Automotive</a>
+            <a href="javascript:;" role="option" class="c-dropdown-item" id="Tags-dropdown-option-2"
+                aria-selected="false">Health</a>
+        </div>
+    </div>
+</div>

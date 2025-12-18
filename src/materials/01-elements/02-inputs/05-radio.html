@@ -1,0 +1,4 @@
+<label class="o-radio{{#if rdo-class}} {{rdo-class}}{{/if}}">
+    <input type="radio" name="{{{swapif 'rdo1' rdo-name}}}" id="{{{swapif 'rdo1' rdo-id}}}" value="{{{swapif 'Radio 1' rdo-text}}}" {{#if checked}}checked{{/if}} {{#if disabled}}disabled{{/if}}>
+    {{#if nospan}}{{else}}<span {{#if srspan}}class="sr-only"{{/if}}>{{{swapif 'Radio 1' rdo-text}}}</span>{{/if}}
+</label>

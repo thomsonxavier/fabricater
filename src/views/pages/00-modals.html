@@ -1,0 +1,26 @@
+---
+title: "GenWizard"
+lang: en
+layout: layout
+rtl: false
+---
+{{> layout.appheader nopic="true"}} 
+<!-- body -->
+<main class="app-wrap">
+    <div class="c-modals__wrapper">
+        <div class="app-container">
+            <div class="c-modals__wrap">
+                <section class="c-modals__inner">
+                    <div class="c-modals__innertitle" role="heading" aria-level="1">Sample modal</div>
+                    <div class="c-modals__container">
+                        {{> buttons.primary-button arialabel='Sample Modal' btn-text="01. Sample Modal" datamodalId='sampleModal' }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>    
+<!-- /body -->
+{{> layout.appfooter}}
+
+{{> modals.modal button='no' modalId="sampleModal"}}

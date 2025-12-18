@@ -1,0 +1,151 @@
+/* Theme */
+@mixin toggle-theme-light {
+    --color-toggle-background: #fff;
+    --color-toggle-border: #dbdbdb;
+    --color-toggle-ball-backgroud: #460073;
+    --color-icon-default: var(--color-toggle-ball-backgroud);
+    --color-icon-active: #fff;
+}
+@mixin toggle-theme-dark {
+    --color-toggle-background: #000;
+    --color-toggle-border: #ddd;
+    --color-toggle-ball-backgroud: #dcafff;
+}
+
+.o-toggle__wrap {
+    @include toggle-theme-light();
+}
+html[data-theme="dark"] {
+    .o-toggle__wrap {
+        @include toggle-theme-dark();
+    }
+}
+
+.o-toggle {
+    &__toggle {
+        /*stylelint-disable*/
+        --padding: 0px;
+        /*stylelint-enable*/
+        --toggle-size: 1.625rem;
+        position: relative;
+        margin-left: auto;
+        width: 3.375rem;
+        height: 1.625rem;
+        border-radius: 1rem;
+        background: var(--color-toggle-background, #fff);
+
+        span {
+            position: absolute;
+            height: var(--toggle-size);
+            width: var(--toggle-size);
+            background-color: var(--color-toggle-ball-backgroud, #460073);
+            border-radius: 50%;
+            top: 50%;
+            translate: 0 -50%;
+            left: var(--padding);
+            transition: all 0.2s linear;
+            pointer-events: none;
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border: 1px solid var(--color-toggle-border, #dbdbdb);
+            border-radius: inherit;
+            padding: var(--padding);
+            font-size: var(--pf-fs-14, 0.875rem);
+            line-height: 1.125rem;
+            display: flex;
+
+            &:checked {
+                + span {
+                    left: calc(100% - var(--padding) - var(--toggle-size));
+                }
+            }
+
+            &:disabled {
+                pointer-events: none;
+                filter: grayscale(1);
+                + span {
+                    filter: grayscale(1);
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            left: 0.375rem;
+            top: 50%;
+            translate: 0 -50%;
+            height: 0.875rem;
+            width: 0.875rem;
+            background: var(--color-icon-active) no-repeat center;
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M13.3898 7.57508C13.2775 8.78529 12.8229 9.9385 12.0792 10.8998C11.3355 11.8611 10.3335 12.5908 9.19027 13.0035C8.04707 13.4162 6.80999 13.4948 5.62375 13.2302C4.4375 12.9655 3.35113 12.3686 2.49171 11.5092C1.63228 10.6498 1.03535 9.56339 0.770724 8.37715C0.5061 7.1909 0.584727 5.95382 0.99741 4.81063C1.41009 3.66743 2.13977 2.66537 3.10108 1.92168C4.0624 1.17798 5.2156 0.723391 6.42581 0.611084C5.71623 1.57008 5.37456 2.75197 5.46298 3.94165C5.5514 5.13134 6.06404 6.24974 6.9076 7.09329C7.75116 7.93685 8.86955 8.44949 10.0592 8.53791C11.2489 8.62633 12.4308 8.28466 13.3898 7.57508Z' stroke='%23460973' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            mask-repeat: no-repeat;
+            mask-position: center;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            right: 0.375rem;
+            top: 50%;
+            translate: 0 -50%;
+            height: 0.875rem;
+            width: 0.875rem;
+            background: var(--color-icon-default) no-repeat center;
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M9.90156 6.99521C9.90156 7.56878 9.73148 8.12947 9.41283 8.60637C9.09417 9.08327 8.64125 9.45497 8.11135 9.67447C7.58144 9.89396 6.99835 9.95139 6.4358 9.83949C5.87326 9.7276 5.35653 9.4514 4.95095 9.04582C4.54538 8.64025 4.26918 8.12352 4.15729 7.56098C4.04539 6.99843 4.10282 6.41534 4.32231 5.88543C4.54181 5.35553 4.91351 4.90261 5.39041 4.58395C5.86731 4.2653 6.428 4.09521 7.00156 4.09521C7.77069 4.09521 8.50832 4.40075 9.05217 4.9446C9.59603 5.48846 9.90156 6.22609 9.90156 6.99521Z' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.99609 0.611328V1.77233' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.99609 12.2263V13.3873' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.48047 2.48145L3.30547 3.30645' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.6914 10.6934L11.5164 11.5184' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0.609375 6.99927H1.77038' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12.2227 6.99927H13.3837' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.48047 11.5184L3.30547 10.6934' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.6914 3.30645L11.5164 2.48145' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            mask-repeat: no-repeat;
+            mask-position: center;
+            pointer-events: none;
+        }
+
+        &:has(input:checked) {
+            &::before {
+                background-color: var(--color-icon-default);
+            }
+            &::after {
+                background-color: var(--color-icon-active);
+            }
+        }
+    }
+    &__wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: fit-content;
+        &:has(.o-toggle__toggle input:checked) {
+            .toggle-on {
+                font-weight: 500;
+            }
+        }
+        &:has(.o-toggle__toggle input:not(:checked)) {
+            .toggle-off {
+                font-weight: 500;
+            }
+        }
+        &.-genW-toggle {
+            .o-toggle__toggle {
+                --toggle-size: 1.5rem;
+                --padding: 0.25rem;
+                border-radius: 1.5rem;
+                border: 1px solid #bfbfbf;
+                height: 2rem;
+                & span {
+                    background: linear-gradient(90deg, #7215be 0%, #68cedb 100%);
+                }
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

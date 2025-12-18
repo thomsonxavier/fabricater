@@ -1,0 +1,101 @@
+@use "sass:math";
+
+/*Layout - START*/
+/* Layout classes */
+:root {
+    --content-padding: 3rem;
+    --content-maxwidth: 90rem;
+    --content-breakout-maxwidth: 71.25rem;
+    @media (max-width: 720px) {
+        --content-padding: 2rem;
+    }
+    @media (max-width: 450px) {
+        --content-padding: 1rem;
+    }
+}
+
+//1 - Layout 1 - Container based - Start*/
+/*
+Traditional, robust and reliable.
+Easy to set up max width and centered content.
+Easy to use with Angular.
+*/
+.app {
+    &-container {
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+        width: 100%;
+        max-width: var(--content-maxwidth);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-wrap {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex: 1;
+        background: transparent no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        /*stylelint-disable*/
+        min-height: 100dvh; //dynamic viewpot height - if there are issues, try vh (or) svh for laptops and lvh for mobiles
+        /*stylelint-enable*/
+        // height: 100%;
+        &:has(.c-sidebar) {
+            .app-container {
+                padding-left: calc(var(--content-padding) + 3.5rem);
+            }
+        }
+    }
+}
+
+//2 - Layout 2 - Grid based - Start*/
+/*
+Modern and Minimalistic -
+Inspired by the following articles:
+- https://ryanmulligan.dev/blog/layout-breakouts/
+- https://smolcss.dev/#smol-breakout-grid
+- https://codepen.io/kevinpowell/pen/ExrZrrw
+*/
+.app {
+    &-fullwidth {
+        grid-column: full-width;
+
+        display: grid;
+        grid-template-columns: inherit;
+    }
+    &-breakout {
+        grid-column: breakout;
+    }
+    &-grid {
+        --_grid-breakout-size: calc(
+            (var(--content-breakout-maxwidth) - var(--content-maxwidth)) / 2
+        );
+
+        display: grid;
+        grid-template-columns:
+            [full-width-start] minmax(var(--content-padding), 1fr)
+            [breakout-start] minmax(0, var(--_grid-breakout-size))
+            [content-start]
+            min(100% - (var(--content-padding) * 2), var(--content-maxwidth))
+            [content-end]
+            minmax(0, var(--_grid-breakout-size)) [breakout-end]
+            minmax(var(--content-padding), 1fr) [full-width-end];
+    }
+
+    &-fullwidth,
+    &-grid {
+        // while .app-fullwidth > .app-fullwidth is a little redundant as there is no use for it, I want this piece of code to remain common
+        > :not(.app-breakout, .app-fullwidth) {
+            grid-column: content;
+        }
+    }
+}
+
+/*Layout - END*/

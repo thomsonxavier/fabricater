@@ -1,0 +1,141 @@
+/* Theme */
+@mixin input-theme-light {
+    --color-input-bg: var(--color-base-background);
+    --color-input-border: var(--color-grey-400, #ccc);
+    --color-input-text: var(--color-grey-800, #505050);
+    --color-input-bg-disabled: var(--color-grey-200, #eee);
+}
+
+@mixin input-theme-dark {
+    --color-input-border: var(--color-grey-300, #ddd);
+    --color-input-text: #fff;
+    --color-input-bg-disabled: var(--color-grey-700, #737373);
+}
+
+html[data-theme="dark"] {
+    .o-input {
+        @include input-theme-dark();
+    }
+}
+
+.o-input {
+    @include input-theme-light();
+    width: 100%;
+    min-height: 4rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: var(--pf-fs-20, 1.25rem);
+    font-weight: 500;
+    border: 1px solid light-dark(rgba(0, 0, 0, 0.3), #ffffff4d);
+    color: light-dark(#333, #505050);
+    background-color: light-dark(#ffffff80, #00000080);
+
+    &::placeholder {
+        font-style: italic;
+        font-size: var(--pf-fs-16, 1rem);
+        color: light-dark(#00000080, #fff6);
+        font-weight: 400;
+    }
+
+    &:focus {
+        box-shadow: 0 0 10px 0 rgba(137, 129, 200, 0.25);
+        background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+        padding-left: 1.4375rem;
+        border-width: 2px;
+        border-color: transparent;
+        outline: none;
+    }
+
+    &:not(:placeholder-shown) {
+        box-shadow: 0 0 10px 0 rgba(137, 129, 200, 0.25);
+        // background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+        border-width: 1px;
+        padding-left: 1.4375rem;
+        border-color: rgba(0, 0, 0, 0.5);
+        outline: 0;
+    }
+    &:disabled {
+        background: var(--color-input-bg-disabled, #eee);
+        pointer-events: none;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &.-genW-input {
+            & .o-input-label {
+                display: none;
+                position: absolute;
+                top: -0.5rem;
+                left: 0.75rem;
+                padding: 0 0.625rem;
+                background-color: light-dark(#fff, #000);
+                color: var(--color-grey-1100, #616161);
+                font-size: var(--pf-fs-14, 0.75rem);
+                margin: 0;
+            }
+            & .o-input {
+                &:hover {
+                    background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+                    border-color: transparent;
+                }
+                &:focus {
+                    background: rgba(255, 255, 255, 0.5);
+                    border-width: 1px;
+                    border-color: rgba(0, 0, 0, 0.5);
+                    padding: 0.875rem 1.5rem;
+                    box-shadow: unset;
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+            &:has(.o-input:focus) {
+                & .o-input-label {
+                    display: block;
+                }
+            }
+        }
+        &.-error {
+            .o-input {
+                border-color: var(--color-tertiary-red-100, #c3101a);
+                &:not(:placeholder-shown) {
+                    box-shadow: none;
+                }
+                &:hover,
+                &:focus {
+                    border-color: var(--color-tertiary-red-100, #c3101a);
+                    padding-left: 1.4375rem;
+                }
+
+                &-label {
+                    color: var(--color-tertiary-red-100, #c3101a);
+                }
+            }
+        }
+    }
+
+    &-label {
+        display: inline-flex;
+        margin-bottom: 0.875rem;
+        gap: 0.125rem;
+        .-italic {
+            font-weight: 300;
+            font-style: italic;
+        }
+    }
+    &__error {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        bottom: -0.25rem;
+        position: absolute;
+        color: var(--color-tertiary-red-100, #c3101a);
+        font-size: var(--pf-fs-12, 0.75rem);
+
+        img {
+            width: 0.75rem;
+        }
+    }
+}

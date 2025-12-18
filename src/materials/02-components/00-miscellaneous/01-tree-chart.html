@@ -1,0 +1,418 @@
+<div class="c-mysppxc__outer">
+    <div class="app-container"> <!--style="max-width: 2000px;"-->
+        <div class="c-mysppxc__wrap">
+            <!-- header section start -->
+            <!-- NOTE: Refer below in the body section for the structure, the header section shares structure with the body section -->
+            <div class="c-mysppxc__tableheader">
+                <li class="c-mysppxc__row" data-level="1">
+                    <div class="c-mysppxc__controlwrap" data-level="1">
+                        North Stars(3)
+                    </div>
+                    <ul class="c-mysppxc__targetwrap -open" data-level="2">
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                Client Objectives (6)
+                            </div>
+                            <ul class="c-mysppxc__targetwrap -open" data-level="3">
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <div class="c-mysppxc__controlwrap" data-level="3">
+                                        Value Propositions (24)
+                                    </div>
+                                    <div class="c-mysppxc__kpisouter">
+                                        KPI (30)
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <!-- /header section end -->
+            <!-- body section start-->
+            <!-- 
+                DOCUMENTATION:
+                1. To expand a node, set aria-expanded = 'true' to button.c-mysppxc__controlbtn, and add class '-open' to it's corresponding ul.c-mysppxc__targetwrap
+                2. To collapse a node, set aria-expanded = 'false' to button.c-mysppxc__controlbtn, and remove class '-open' from it's corresponding ul.c-mysppxc__targetwrap
+
+                Structure
+                ---------
+                li.c-mysppxc__row                               -- column 1
+                    div.c-mysppxc__controlwrap                  -- column 1 data and control --- North stars
+                    ul.c-mysppxc__targetwrap                    -- column 2 wrapper
+                        div.c-mysppxc__edge                     -- column 2 connecting edge, to be displayed when column 2 is expanded
+                        li.c-mysppxc__row                       -- column 2 (individual child)
+                            div.c-mysppxc__controlwrap          -- column 2 data and control --- Client Objectives
+                            ul.c-mysppxc__targetwrap            -- column 3 wrapper
+                                div.c-mysppxc__edge             -- column 3 connecting edge, to be displayed when column 3 is expanded
+                                li.c-mysppxc__row               -- column 3 (individual child)
+                                    ul.c-mysppxc__controlwrap   -- column 3 data             --- Value proposition
+                                    div.c-mysppxc__kpisouter    -- column 4 data             --- KPI
+                                li.c-mysppxc__row.-backup       -- column 3, 4 fallback element, to be displaed when column 3 is collapsed by column 2
+                                    ul.c-mysppxc__controlwrap   -- column 3 fallback data             --- Value proposition (collapsed state)
+                                    div.c-mysppxc__kpisouter    -- column 4 fallback data             --- KPI (collapsed state)
+                        li.c-mysppxc__row.-backup               --column 2 fallback element, to be displaed when column 2 is collapsed by column 1
+                    --------
+            -->
+            <ul class="c-mysppxc__tablebody">
+                <li class="c-mysppxc__row" data-level="1">
+                    <div class="c-mysppxc__controlwrap" data-level="1">
+                        <div class="c-mysppxc__item" data-level="1"><span>Simplified, Lean, Agile, Business</span>  </div>
+                        <div class="c-mysppxc__btnwrap">
+                            <button type="button" class="c-mysppxc__controlbtn" aria-expanded="true" aria-controls="mysp-hierarchy-chart-row-1-col-2"></button>
+                        </div>
+                    </div>
+                    <ul class="c-mysppxc__targetwrap -open" data-level="2" id="mysp-hierarchy-chart-row-1-col-2">
+                        <div class="c-mysppxc__edge" data-level="2" aria-hidden="true"></div>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"> <span>Shorten TTM</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="true" aria-controls="mysp-hierarchy-chart-row-1-col-3-list-1"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap -open" data-level="3" id="mysp-hierarchy-chart-row-1-col-3-list-1">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5-2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 20% s/w cost deduction</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>%successful change / releases</li>
+                                            <li>%successful change / releases</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 1 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 3 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (23) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Reduce costs </span></div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="true" aria-controls="mysp-hierarchy-chart-row-1-col-3-list-2"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap -open" data-level="3" id="mysp-hierarchy-chart-row-1-col-3-list-1">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 40-50% TCO reduction </span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment </span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 2 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 2 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Infuse Talent</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="true" aria-controls="mysp-hierarchy-chart-row-1-col-3-list-3"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap -open" data-level="3" id="mysp-hierarchy-chart-row-1-col-3-list-3">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 3 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 4 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Backup - row 1 - col 2 -->
+                        <li class="c-mysppxc__row -backup" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> 3 client objectives </span> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="c-mysppxc__row" data-level="1">
+                    <div class="c-mysppxc__controlwrap" data-level="1">
+                        <div class="c-mysppxc__item" data-level="1"><span>Differentiated Customer Experience</span>  </div>
+                        <div class="c-mysppxc__btnwrap">
+                            <button type="button" class="c-mysppxc__controlbtn" aria-expanded="true" aria-controls="mysp-hierarchy-chart-row-2-col-2"></button>
+                        </div>
+                    </div>
+                    <ul class="c-mysppxc__targetwrap -open" data-level="2" id="mysp-hierarchy-chart-row-2-col-2">
+                        <div class="c-mysppxc__edge" data-level="2" aria-hidden="true"></div>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"> <span>Reduce Technology Cost</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-col-3-list-1"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-2-col-3-list-1">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5-2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 20% s/w cost deduction</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>%successful change / releases</li>
+                                            <li>%successful change / releases</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 1 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 3 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (23) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Reduce Services cost </span></div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-2-col-3-list-2"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-2-col-3-list-2">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 40-50% TCO reduction </span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment </span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 2 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 2 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Reduce Sales Cost</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-2-col-3-list-3"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-2-col-3-list-3">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 3 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 4 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Backup - row 1 - col 2 -->
+                        <li class="c-mysppxc__row -backup" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> 3 client objectives </span> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="c-mysppxc__row" data-level="1">
+                    <div class="c-mysppxc__controlwrap" data-level="1">
+                        <div class="c-mysppxc__item" data-level="1"><span>Best converged network</span>  </div>
+                        <div class="c-mysppxc__btnwrap">
+                            <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-3-col-2"></button>
+                        </div>
+                    </div>
+                    <ul class="c-mysppxc__targetwrap" data-level="2" id="mysp-hierarchy-chart-row-3-col-2">
+                        <div class="c-mysppxc__edge" data-level="2" aria-hidden="true"></div>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"> <span>Reduce Technology Cost</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-col-3-list-1"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-3-col-3-list-1">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5-2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 20% s/w cost deduction</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>%successful change / releases</li>
+                                            <li>%successful change / releases</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 1 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 3 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (23) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Reduce Services cost </span></div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-3-col-3-list-2"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-3-col-3-list-2">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 40-50% TCO reduction </span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment </span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 2 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 2 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="c-mysppxc__row" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> Reduce Sales Cost</span> </div>
+                                <div class="c-mysppxc__btnwrap">
+                                    <button type="button" class="c-mysppxc__controlbtn" aria-expanded="false" aria-controls="mysp-hierarchy-chart-row-3-col-3-list-3"></button>
+                                </div>
+                            </div>
+                            <ul class="c-mysppxc__targetwrap" data-level="3" id="mysp-hierarchy-chart-row-3-col-3-list-3">
+                                <div class="c-mysppxc__edge" data-level="3" aria-hidden="true"></div>
+                                <li class="c-mysppxc__row" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 1.5- 2x Speed to market (fast delivery)</span> </div> </li>
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 35% velocity on devlopment</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <ul class="c-mysppxc__kpis">
+                                            <li>% reduction of IT RUN cost</li>
+                                            <li>Productivity increases % year on year - 5yrs</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- Backup - row 1 -  col 3 - item 3 -->
+                                <li class="c-mysppxc__row -backup" data-level="3">
+                                    <ul class="c-mysppxc__controlwrap" data-level="3">
+                                        <li> <div class="c-mysppxc__item" data-level="3"><span> 4 value propositions</span> </div> </li>
+                                    </ul>
+                                    <div class="c-mysppxc__kpisouter">
+                                        <div class="c-mysppxc__kpiscollapsed">View KPI (02) </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Backup - row 1 - col 2 -->
+                        <li class="c-mysppxc__row -backup" data-level="2">
+                            <div class="c-mysppxc__controlwrap" data-level="2">
+                                <div class="c-mysppxc__item" data-level="2"><span> 3 client objectives </span> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- NOTE TO THE DEVELOPER: If the row doesn't have data, skip div.c-mysppxc__btnwrap and ul.c-mysppxc__targetwrap  -->
+                <li class="c-mysppxc__row" data-level="1">
+                    <div class="c-mysppxc__controlwrap" data-level="1">
+                        <div class="c-mysppxc__item" data-level="1"><span>Best converged network</span>  </div>
+                        <div class="c-mysppxc__btnwrap" aria-hidden="true">
+                            <button type="button" class="c-mysppxc__controlbtn"></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- / body section end -->
+        </div>
+    </div>
+</div>

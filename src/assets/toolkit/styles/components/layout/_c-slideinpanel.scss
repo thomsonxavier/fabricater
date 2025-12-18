@@ -1,0 +1,60 @@
+.c-slpanel {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+
+        a.c-slpanel__close {
+            display: inline-flex;
+            margin-left: auto;
+            height: 1rem;
+            width: 1rem;
+            & * {
+                pointer-events: none;
+            }
+            &:focus-visible {
+                outline: 0.0625rem dashed #000;
+                padding: 0.125rem;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+
+    &__container {
+        position: absolute;
+        bottom: 0;
+        min-height: 6.25rem;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 3px 0 6px 0 rgba(0, 0, 0, 0.16);
+        transition: height 0.3s ease-in;
+        overflow: hidden;
+        &:focus-visible {
+            outline: 0.0625rem dashed #000;
+        }
+    }
+
+    &__wrap {
+        &:not(.-open) {
+            .c-slpanel__container {
+                height: 0;
+                min-height: 0;
+                display: none;
+            }
+        }
+    }
+}

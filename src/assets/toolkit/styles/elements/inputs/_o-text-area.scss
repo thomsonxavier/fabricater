@@ -1,0 +1,131 @@
+/* ==============================================================================
+Index
+----------------------------------------
+01 - o-text-area
+02 -
+03 -
+04 -
+05 -
+06 -
+07 -
+08 -
+============================================================================== */
+
+/* 01 - o-text-area*/
+.o-text-area {
+    position: relative;
+    &__label {
+        display: inline-block;
+        margin-bottom: 0.875rem;
+        &.-required {
+            &::after {
+                content: "*";
+                color: #f00;
+            }
+        }
+    }
+    &__input {
+        width: 100%;
+        min-height: 7.5rem;
+        padding: 0.875rem 1.5rem;
+        border-radius: 0.5rem;
+        font-size: var(--pf-fs-20, 1.25rem);
+        font-weight: 500;
+        border: 1px solid light-dark(rgba(0, 0, 0, 0.3), #ffffff4d);
+        color: light-dark(#333, #505050);
+        background-color: light-dark(rgba(255, 255, 255, 0.5), #00000080);
+        resize: none;
+        &::placeholder {
+            font-style: italic;
+            font-size: var(--pf-fs-16, 1rem);
+            color: light-dark(#00000080, #fff6);
+        }
+
+        &:focus {
+            box-shadow: 0 0 10px 0 rgba(137, 129, 200, 0.25);
+            background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+            padding-left: 1.4375rem;
+            border-width: 2px;
+            border-color: transparent;
+            outline: none;
+        }
+
+        &:not(:placeholder-shown) {
+            box-shadow: 0 0 10px 0 rgba(137, 129, 200, 0.25);
+            // background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+            border-width: 1px;
+            padding-left: 1.4375rem;
+            border-color: rgba(0, 0, 0, 0.5);
+            outline: 0;
+        }
+        &::-webkit-scrollbar {
+            background: transparent;
+        }
+        /* To meet accessibility requirements, need to maitain same styles on both focus and focus-visible for inputs */
+        // &:focus {
+        //   outline: none;
+        //   border-color: #000;
+        // }
+    }
+    &__total-count {
+        position: absolute;
+        right: 0;
+        font-size: var(--pf-fs-12, 0.75rem);
+        bottom: -1.375rem;
+        color: #505050;
+    }
+    &.-disabled {
+        color: #b4b4b4;
+        pointer-events: none;
+    }
+    &.-genW-textarea {
+        & .o-text-area__label {
+            display: none;
+            position: absolute;
+            top: -0.5rem;
+            left: 0.75rem;
+            padding: 0 0.625rem;
+            background-color: light-dark(#fff, #000);
+            color: var(--color-grey-1100, #616161);
+            font-size: var(--pf-fs-14, 0.75rem);
+            margin: 0;
+        }
+        & .o-text-area__input {
+            &:hover {
+                background: linear-gradient(to right, light-dark(#fff, #000) 0%, light-dark(#fff, #000) 100%) padding-box, linear-gradient(90deg, #a72fd4 -54.89%, #6ad6bb 117.16%) border-box;
+                border-color: transparent;
+            }
+            &:focus {
+                background: rgba(255, 255, 255, 0.5);
+                border-width: 1px;
+                border-color: rgba(0, 0, 0, 0.5);
+                padding: 0.875rem 1.5rem;
+                box-shadow: unset;
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        &:has(.o-text-area__input:focus) {
+            & .o-text-area__label {
+                display: block;
+            }
+        }
+    }
+}
+
+/*===========================
+  00 - media queries
+  ===========================*/
+
+/* Small devices (tablets, 768px and up) */
+/*@media (min-width: $screen-sm-min) {} */
+
+/* Medium devices (desktops, 992px and up) */
+/*@media (min-width: $screen-md-min) {}*/
+
+/* Large devices (large desktops, 1232px and up) */
+/* @media (min-width: $screen-lg-min) {} */
+
+/* X-Large devices (large desktops, 1440px and up) */
+/* @media (min-width: $screen-xl-min) {} */

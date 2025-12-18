@@ -1,0 +1,24 @@
+<div class="c-stickyfooter__wrap {{ sfclass}}">
+    <div class="{{#if nocont}}{{else}}app-container {{/if}}c-stickyfooter__inner">
+        {{~#if @partial-block~}}
+        {{> @partial-block }}
+        {{~else~}}
+        {{#if includeleft}}
+        <div class="c-stickyfooter__left">
+            {{swapif 'Are you sure ?' leftcont}}
+        </div>
+        {{else}}
+        {{/if}}
+        <div class="c-stickyfooter__right">
+            {{#if nosecbtn}}
+            {{else}}
+            {{> buttons.secondary-button btn-text=(swap 'Cancel' sftextsec) arialabel=(swap 'Cancel' sftextsec)}}
+            {{/if}}
+            {{#if noprimbtn}}
+            {{else}}
+            {{> buttons.primary-button btn-text=(swap 'Submit' sftextprim) arialabel=(swap 'Submit' sftextsec)}}
+            {{/if}}
+        </div>
+        {{~/if~}}
+    </div>
+</div>

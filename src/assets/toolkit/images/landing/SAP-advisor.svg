@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SAP Advisor">
+<path id="Rectangle 1321325339" opacity="0.2" d="M14.3984 26C14.3984 24.8954 15.2939 24 16.3984 24H53.9984C55.103 24 55.9984 24.8954 55.9984 26V54C55.9984 55.1046 55.103 56 53.9984 56H16.3984C15.2939 56 14.3984 55.1046 14.3984 54V26Z" fill="url(#paint0_linear_2981_132356)"/>
+<path id="Vector" d="M31.9984 21.5992H16.4962C13.7471 21.5992 11.5184 23.7721 11.5184 26.4526V35.8992M31.9984 21.5992H47.5007C50.2498 21.5992 52.4784 23.7721 52.4784 26.4526V35.8992M31.9984 21.5992V11.1992H24.034M11.5184 35.8992V47.9459C11.5184 50.6263 13.7471 52.7992 16.4962 52.7992H47.5007C50.2498 52.7992 52.4784 50.6263 52.4784 47.9459V35.8992M11.5184 35.8992H6.39844M52.4784 35.8992H57.5984M41.5984 35.1992V38.3992M22.3984 35.1992V38.3992" stroke="url(#paint1_linear_2981_132356)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2981_132356" x1="35.1984" y1="21.3333" x2="35.1984" y2="53.3333" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9342CE"/>
+<stop offset="1" stop-color="#4BA4AA"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2981_132356" x1="31.9984" y1="35.1992" x2="31.9984" y2="38.3992" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9342CE"/>
+<stop offset="1" stop-color="#4BA4AA"/>
+</linearGradient>
+</defs>
+</svg>

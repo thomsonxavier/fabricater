@@ -1,0 +1,86 @@
+<header class="c-header__wrap">
+    <div class="app-container">
+        <div  class="c-header__inner ">
+            <div class="c-header__lft">
+                <a href='javascipt:;' class="c-header__home -stretched-link" aria-label="Home - Accenture Reinvention Console " title="Home">
+                    <div class="c-header__logo" aria-hidden="true">
+                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/logo/mlogo.svg" alt="Accenture logo"/>
+                    </div>
+                    <p class="c-header__title"> GenWizard Marketplace </p>
+                </a>
+            </div>
+
+            <div class="c-header__rht">
+                {{#if search}}
+                {{>search.headerSearch}}
+                <!-- <a href="javascript:;" role="button" class="icon-input-search c-header__search"></a> -->
+                {{/if}}
+                <div class="c-header__themeswitch-wrap">
+                    <button type="button" class="c-header__themeswitch" id="app-theme-switch" data-theme="light" aria-label="Toggle theme between light and dark"></button>
+                </div>
+                {{~#if register~}}
+                {{~else~}}
+                <!-- Add class '-nomargin' to remove the margin and border on the left -->
+                <div class="c-header__pxfile">
+                    {{~#if getstarted~}}
+                    <button type="button" class="c-header__getstarted" aria-label="Get started">
+                        Get started
+                    </button>
+                    {{~else~}}
+                    <div class="c-dropdown c-header__dropdown -static -right" data-placement="bottom-end">
+                        <!-- Note: Add class="-pnotif" if notification dot needs to be displayed -->
+                        <button type="button" role="combobox" disabled class="c-dropdown-toggle c-header__menu -pnotif"  aria-controls="header__menu" title="Profile menu" aria-haspopup="listbox" aria-expanded="false">
+                            {{~#if nopic~}}
+                            <div class="c-header__menu-pfname">
+                                <span>KV</span>
+                            </div>
+                            {{~else~}}
+                            <div class="c-header__menu-img" aria-hidden="true">
+                                <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/common/profile.svg" alt="User" />
+                            </div>
+                            {{~/if~}}
+                        </button>            
+                        <div class="c-dropdown-menu" id="header__menu">
+                            <div class="c-dropdown-body -customscroll" role="listbox" aria-label="Profile Dropdown menu">
+                                <div class="c-header__dropdown-profile">
+                                    <div class="c-header__dropdown-profilepic">
+                                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/common/user-icon.svg" alt="User" />
+                                    </div>
+                                    <div class="c-header__dropdown-profileinfo">
+                                        <div class="c-header__dropdown-profilename">Koushik Vijayaraghavan</div>
+                                        <div class="c-header__dropdown-profiledest">Accenture Leadership</div>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" role="option" class="c-dropdown-item">
+                                    <span>Notification</span>
+                                </a>
+                                <a href="javascript:;" role="option" class="c-dropdown-item">
+                                    <span>Profile Settings</span>
+                                </a>
+                                <label class="c-dropdown-item">
+                                    <div class="o-toggle__wrap" for="app-theme-toggle">
+                                        <p class="toggle-off">Dark</p>
+                                        <div class="o-toggle__toggle">
+                                            <input type="checkbox" name="app-theme-toggle" id="app-theme-toggle" checked>
+                                            <span></span>
+                                        </div>
+                                        <p class="toggle-on">Light</p>
+                                    </div>
+                                </label>
+                                <a href="javascript:;" role="option" class="c-dropdown-item">
+                                    <span>Support</span>
+                                </a>
+                                <div class="c-dropdown-divider" aria-hidden="true"></div>
+                                <a href="javascript:;" role="option" class="c-dropdown-item -logout">
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{~/if~}}
+                </div>
+                {{~/if~}}
+            </div>
+        </div>
+    </div>
+</header>

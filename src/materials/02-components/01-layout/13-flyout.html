@@ -1,0 +1,18 @@
+---
+notes: |
+  add class `-start` to show from left side
+  add class `-static` to remove backdrop
+---
+{{> buttons.primary-button btn-text="Open Flyout" custom='data-flyoutid="flyoutPanel1"'}}
+<div id="flyoutPanel1" class="c-flyout" tabindex="-1" aria-hidden="true" aria-labelledby="flyoutTitle">
+    <div class="c-flyout__header">
+        <h6 id="flyoutTitle">Flyout Title</h6>
+        <button type="button" class="-dismiss-flyout" aria-label="Close" title="Close"></button>
+    </div>
+    <div class="c-flyout__body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="c-flyout__footer">
+        {{> buttons.primary-button btn-text="Close" btn-Class="-dismiss-flyout"}}
+    </div>
+</div>

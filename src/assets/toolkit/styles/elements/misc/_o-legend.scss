@@ -1,0 +1,23 @@
+.o-legend {
+    display: inline-flex;
+    align-items: center;
+    & i {
+        flex: 0 0 0.625rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-right: 0.375rem;
+        border-radius: 50%;
+        position: relative;
+    }
+    & span {
+        display: inline-flex;
+    }
+    &.-others {
+        & i {
+            flex: 0 0 0.3125rem;
+            width: 0.3125rem;
+            height: 0.8125rem;
+            border-radius: 0.1875rem;
+        }
+    }
+}

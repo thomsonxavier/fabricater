@@ -1,0 +1,40 @@
+{{#if (eq button 'no')}}
+{{else}}
+{{> buttons.primary-button btn-text=(swap 'Open Modal' modalTxt) datamodalId=(swap 'defaultModal' modalId)}}
+{{/if}}
+<div id="{{swap 'defaultModal' modalId}}" class="c-modal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="modalDialogTitle">
+    <div class="c-modal__container {{modalClass}}">
+        <div class="c-modal__content">
+            <div class="c-modal__header">
+                <div class="c-modal__header-inner">
+                    <div class="c-modal__header-right">
+                        <!-- add class -dismiss-modal to buttons that'll close the modal -->
+                        <button type="button" class="c-modal__header-close -dismiss-modal" aria-label="Close" title="Close"></button>
+                    </div>
+                </div>
+                <div class="c-modal__header-inner">
+                    <div class="c-modal__header-left">
+                        <div class="c-modal__title" role="heading" id="modalDialogTitle"  aria-level="2">Modal Title</div>
+                    </div>
+                </div>            
+            </div>
+            <div class="c-modal__body">
+                {{~#if @partial-block}}
+                    {{> @partial-block }}
+                {{~else~}}
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                {{~/if~}}
+            </div>
+            <div class="c-modal__footer">
+                <div class="c-modal__footer-btnGroup">
+                    <!-- add class -dismiss-modal to buttons that'll close the modal -->
+                    {{> buttons.secondary-button  arialabel="Cancel" btn-text="Cancel" btn-Class="-dismiss-modal"}}
+                    {{> buttons.primary-button  arialabel="Confirm" btn-text="Confirm" btn-Class="-dismiss-modal"}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

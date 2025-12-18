@@ -1,0 +1,206 @@
+/* Theme */
+@mixin modal-theme-light {
+    --color-modal-background: rgba(255, 255, 255, 0.9); //#fbfbfb;
+    --color-modal-border: #ddd;
+    --color-modal-overlay-background: rgba(255, 255, 255, 0.6);
+    --color-modal-overlay-blur: blur(17px);
+    --color-modal-footer-shadow: 0 -3px 1rem rgba(0, 0, 0, 0.06);
+    --icon-modal-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16' height='16' viewBox='0 0 16 16'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3Cg clip-path='url(%23clip-path)'%3E%3Cpath d='M15.875,15.444a.313.313,0,0,1,0,.5c-.056.055-.111.055-.223.055a.335.335,0,0,1-.222-.055L7.979,8.487.528,15.945C.473,16,.417,16,.306,16a.336.336,0,0,1-.223-.055.418.418,0,0,1,0-.5L7.506,8.014.083.585a.419.419,0,0,1,0-.5.338.338,0,0,1,.445,0L7.979,7.541,15.43.083a.338.338,0,0,1,.445,0,.314.314,0,0,1,0,.5L8.452,8.014l7.423,7.429'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@mixin modal-theme-dark {
+    --color-modal-background: #000;
+    --color-modal-overlay-background: rgba(0, 0, 0, 0.3);
+    --color-modal-overlay-blur: blur(4px);
+    --color-modal-border: #fff;
+    --icon-modal-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16' height='16' viewBox='0 0 16 16'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3Cg clip-path='url(%23clip-path)'%3E%3Cpath d='M15.875,15.444a.313.313,0,0,1,0,.5c-.056.055-.111.055-.223.055a.335.335,0,0,1-.222-.055L7.979,8.487.528,15.945C.473,16,.417,16,.306,16a.336.336,0,0,1-.223-.055.418.418,0,0,1,0-.5L7.506,8.014.083.585a.419.419,0,0,1,0-.5.338.338,0,0,1,.445,0L7.979,7.541,15.43.083a.338.338,0,0,1,.445,0,.314.314,0,0,1,0,.5L8.452,8.014l7.423,7.429' fill='%23fff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.c-modal {
+    @include modal-theme-light();
+}
+html[data-theme="dark"] {
+    .c-modal {
+        @include modal-theme-dark();
+    }
+}
+
+/* Modal Dialog */
+@keyframes modalFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes modalPopUp {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.c-modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1050;
+
+    &[aria-hidden="true"] {
+        display: none;
+    }
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        // background-color: var(--color-modal-overlay-background, rgba(255, 255, 255, 0.6));
+        // backdrop-filter: var(--color-modal-overlay-blur, blur(17px));
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(3.930300235748291px);
+        animation: modalFadeIn 0.2s both;
+    }
+
+    &__header {
+        padding: 0 var(--left-padding) 0;
+        flex-shrink: 0;
+        color: inherit;
+        border-bottom: none;
+        border-color: transparent;
+        background-color: transparent;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+        &-close {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
+            background-image: var(--icon-modal-close, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16' height='16' viewBox='0 0 16 16'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3Cg clip-path='url(%23clip-path)'%3E%3Cpath d='M15.875,15.444a.313.313,0,0,1,0,.5c-.056.055-.111.055-.223.055a.335.335,0,0,1-.222-.055L7.979,8.487.528,15.945C.473,16,.417,16,.306,16a.336.336,0,0,1-.223-.055.418.418,0,0,1,0-.5L7.506,8.014.083.585a.419.419,0,0,1,0-.5.338.338,0,0,1,.445,0L7.979,7.541,15.43.083a.338.338,0,0,1,.445,0,.314.314,0,0,1,0,.5L8.452,8.014l7.423,7.429'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"));
+            background-size: 1.375rem;
+            border: 0;
+            width: 1.375rem;
+            height: 1.375rem;
+            text-shadow: none;
+            padding: 0;
+            opacity: 0.8;
+
+            &:focus-visible {
+                outline: 0.0625rem dashed currentColor;
+            }
+        }
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+
+            &.-flex-reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &-left {
+            padding-right: 1rem;
+        }
+
+        &-right {
+            margin-left: auto;
+        }
+    }
+
+    &__body {
+        position: relative;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        padding: 0 var(--left-padding);
+        // max-height: 25rem;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        margin: 1rem 0 1.25rem;
+    }
+
+    &__footer {
+        flex-shrink: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem var(--left-padding) 2.25rem;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        &-btnGroup {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: auto;
+            gap: 1rem;
+        }
+    }
+
+    &__title {
+        font-size: var(--pf-fs-24, 1.5rem);
+        font-weight: 500;
+    }
+
+    &__content {
+        --border-radius: 1.5rem;
+        --left-padding: 3rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 0.625rem;
+        pointer-events: auto;
+        background-clip: padding-box;
+        outline: 0;
+        max-height: 100%;
+        overflow: hidden;
+        background-color: light-dark(#fff, #000);
+        min-height: 17.375rem;
+        padding: 3rem 0 0;
+        box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.1);
+        // border: 1px solid var(--color-modal-boder, #ddd);
+        border-radius: var(--border-radius);
+        backdrop-filter: blur(22px);
+    }
+
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: auto;
+        max-width: calc(31.25rem + 1.25rem);
+        margin: 0.9375rem auto;
+        height: calc(100% - 1.875rem);
+        min-height: calc(100% - 1.875rem);
+        z-index: 1;
+        pointer-events: none;
+        transform-origin: center;
+        animation: modalFadeIn 0.2s 0.2s both, modalPopUp 0.2s 0.2s both;
+
+        &.-size-small {
+            max-width: min(calc(18.75rem + 1.25rem), 90vw);
+        }
+
+        &.-size-intermediate {
+            max-width: min(calc(45rem + 1.25rem), 90vw);
+        }
+
+        &.-size-medium {
+            max-width: min(calc(57.875rem + 1.25rem), 90vw);
+        }
+
+        &.-size-large {
+            max-width: min(calc(71.25rem + 1.25rem), 90vw);
+        }
+    }
+}

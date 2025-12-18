@@ -1,0 +1,108 @@
+.c-rmslider {
+    &__itemImg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        border: 1px solid #000;
+        background-color: #fff;
+
+        & img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__item {
+        width: 290px;
+        height: 510px;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: all 0.2s ease;
+
+        &:not(.-active) {
+            width: 168px;
+
+            .c-rmslider__itemImg {
+                height: 234px;
+            }
+        }
+
+        &.-prev {
+            left: 200px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row-reverse;
+        column-gap: 24px;
+        align-items: flex-end;
+        overflow: visible;
+        list-style-type: none;
+        transition: all 0.2s;
+        transform: translateZ(900px);
+        transform-style: preserve-3d;
+    }
+
+    &__container {
+        width: 288px;
+        height: 510px;
+        perspective: none;
+        position: relative;
+        margin-left: auto;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: calc(356px + 80px);
+        z-index: 1;
+        background: lemonchiffon;
+    }
+
+    &__prevbtn,
+    &__nextbtn {
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+
+        &::after {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.206' height='12' viewBox='0 0 20.206 12'%3E%3Cpath d='M20.031,5.6a.639.639,0,0,0-.471-.189H2.263L6.927,1.032a.582.582,0,0,0,.113-.4A.51.51,0,0,0,6.917.228a.638.638,0,0,0-.9-.081.427.427,0,0,0-.062.061L.309,5.5A.6.6,0,0,0,0,6.057a.658.658,0,0,0,.345.516l5.638,5.293A.752.752,0,0,0,6.412,12a.848.848,0,0,0,.494-.165.609.609,0,0,0,0-.842L2.287,6.661H19.57a.674.674,0,0,0,.635-.622.62.62,0,0,0-.175-.442' transform='translate(20.206 12) rotate(180)'/%3E%3C/svg%3E");
+        }
+    }
+
+    &__prevbtn {
+        transform: rotate(180deg) translate(0, 2.5px);
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        bottom: 16px;
+        right: 325px;
+        z-index: 1;
+    }
+
+    &__next {
+        left: auto;
+        right: 300px;
+    }
+
+    &__wrap {
+        position: relative;
+        width: 100%;
+        padding: 0 calc(358px + 80px) 0 0;
+        background: #fff;
+        display: flex;
+        overflow: hidden;
+    }
+}

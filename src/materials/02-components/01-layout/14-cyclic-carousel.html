@@ -1,0 +1,60 @@
+---
+Notes
+
+Reduce horiontal padding on .c-cycleslider__wrap if you want to partially display the previous and next in line cards 
+(Refer to miscellaneous -> arc-tlcarousel to understard the said design / requirement)
+---
+<div class="c-cycleslider__wrap" data-autoscroll="true" data-scrollinterval="3000">
+    <div class="c-cycleslider__prev">
+        <button type="button" class="c-cycleslider__prevbtn" aria-label="Previous">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9">
+                <path d="M5.23297 1.07545L2.04463 4.06384L13.3368 4.06384C13.4024 4.06667 13.4647 4.09313 13.5123 4.13833C13.5599 4.18353 13.5895 4.24441 13.5957 4.30974C13.5962 4.34332 13.5897 4.37663 13.5768 4.4076C13.5638 4.43856 13.5445 4.4665 13.5202 4.48966C13.4959 4.51282 13.467 4.53069 13.4355 4.54216C13.4039 4.55363 13.3703 4.55844 13.3368 4.55629L2.03104 4.55629L5.23491 7.56151C5.26869 7.60828 5.28391 7.66593 5.27762 7.72328C5.27762 7.80417 5.27762 7.84494 5.23491 7.88571C5.21117 7.91412 5.18147 7.93697 5.14793 7.95265C5.11438 7.96833 5.07781 7.97646 5.04078 7.97646C5.00375 7.97646 4.96717 7.96833 4.93363 7.95265C4.90008 7.93697 4.87039 7.91412 4.84664 7.88571L1.26032 4.52459C1.21916 4.50639 1.18433 4.47638 1.16025 4.43836C1.13617 4.40034 1.12393 4.35603 1.12507 4.31104C1.1289 4.26382 1.14533 4.2185 1.17265 4.1798C1.19997 4.1411 1.23717 4.11044 1.28038 4.09102L4.84341 0.74801C4.90048 0.708605 4.96819 0.6875 5.03754 0.6875C5.1069 0.6875 5.17461 0.708605 5.23168 0.74801C5.27432 0.791766 5.29829 0.850376 5.29853 0.911469C5.29877 0.972563 5.27526 1.03136 5.23297 1.07545Z" stroke-width="0.27247" stroke-miterlimit="10"/>
+            </svg>
+        </button>
+    </div>
+    <div class="c-cycleslider__container">
+        <ul class="c-cycleslider__list">
+            <li class="c-cycleslider__item -active">
+                1
+            </li>
+            <li class="c-cycleslider__item">
+                2
+            </li>
+            <li class="c-cycleslider__item">
+                3
+            </li>
+            <li class="c-cycleslider__item">
+                4
+            </li>
+            <li class="c-cycleslider__item">
+                5
+            </li>
+            <li class="c-cycleslider__item">
+                6
+            </li>
+            <li class="c-cycleslider__item">
+                7
+            </li>
+            <li class="c-cycleslider__item">
+                8
+            </li>
+            <li class="c-cycleslider__item">
+                9
+            </li>
+        </ul>
+    </div>
+    <div class="c-cycleslider__paginationwrap">
+        <p class="c-cycleslider__pagination">
+            <span class="-currentPage">1</span>
+            <span>/</span>
+            <span class="-totalPages">3</span>
+        </p>
+    </div>
+    <div class="c-cycleslider__next">
+        <button type="button" class="c-cycleslider__nextbtn" aria-label="Next">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+                <path d="M8.70453 1.07545L11.8929 4.06384L0.60068 4.06384C0.535118 4.06667 0.472793 4.09313 0.425217 4.13833C0.37764 4.18352 0.348022 4.24441 0.341834 4.30974C0.341319 4.34332 0.347758 4.37663 0.360746 4.4076C0.373735 4.43856 0.392993 4.4665 0.417306 4.48966C0.44162 4.51282 0.470464 4.53069 0.502022 4.54216C0.533581 4.55363 0.567171 4.55844 0.60068 4.55629L11.9065 4.55629L8.70259 7.56151C8.66881 7.60828 8.65359 7.66593 8.65988 7.72328C8.65988 7.80417 8.65988 7.84494 8.70259 7.88571C8.72633 7.91412 8.75603 7.93697 8.78957 7.95265C8.82312 7.96833 8.85969 7.97646 8.89672 7.97646C8.93375 7.97646 8.97033 7.96833 9.00387 7.95265C9.03741 7.93697 9.06711 7.91412 9.09086 7.88571L12.6772 4.52459C12.7183 4.50639 12.7532 4.47638 12.7773 4.43836C12.8013 4.40034 12.8136 4.35603 12.8124 4.31104C12.8086 4.26382 12.7922 4.2185 12.7648 4.1798C12.7375 4.1411 12.7003 4.11044 12.6571 4.09102L9.09409 0.74801C9.03702 0.708605 8.96931 0.6875 8.89996 0.6875C8.8306 0.6875 8.76289 0.708605 8.70582 0.74801C8.66318 0.791765 8.63921 0.850375 8.63897 0.911469C8.63873 0.972562 8.66224 1.03136 8.70453 1.07545Z" stroke-width="0.27247" stroke-miterlimit="10"/>
+            </svg>
+        </button>
+    </div>
+</div>

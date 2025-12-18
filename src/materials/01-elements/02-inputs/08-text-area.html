@@ -1,0 +1,26 @@
+<div class="o-text-area {{customClass}}">
+    {{#if label}}
+    <label for="{{id}}" class="o-text-area__label">{{label}}</label>
+    {{/if}}
+    <textarea class="o-text-area__input" id="{{id}}"
+        placeholder="{{swapif 'Enter the Text' placeholder }}" 
+        value="{{swapif '' value}}">{{swapif '' desp}}</textarea>
+    {{#if txtCount }}
+    <span class="o-text-area__total-count">{{swapif 'Max Limit 5000 Characters' count-text}}</span>
+    {{/if}}
+    {{#if txtCount300 }}
+    <span class="o-text-area__total-count">{{swapif 'Max Limit 300 Characters' count-text}}</span>
+    {{/if}}
+    {{#if txtCount200 }}
+    <span class="o-text-area__total-count">{{swapif 'Max Limit 200 Characters' count-text}}</span>
+    {{/if}}
+    {{#if txtCount500 }}
+    <span class="o-text-area__total-count">{{swapif 'Max Limit 500 Characters' count-text}}</span>
+    {{/if}}
+    {{#if char}}
+    <span class="o-text-area__total-count">{{swapif 'Characters: 0/200' characters}}</span>
+    {{/if}}
+    {{#if delete}}
+    <span class="o-text-area__total-count icon-delete"></span>
+    {{/if}}
+</div>

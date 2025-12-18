@@ -1,0 +1,190 @@
+/* Theme */
+@mixin combobox-theme-light {
+    --color-combobox-background: #fff;
+    --color-combobox-border: rgba(190, 190, 190, 0.19);
+    --color-combobox-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+    --color-combobox-option-active: linear-gradient(92deg, rgba(210, 153, 255, 0.1) 2.65%, rgba(109, 204, 244, 0.1) 155.93%);
+    --color-combobox-option-outline: #000;
+}
+@mixin combobox-theme-dark {
+    --color-combobox-background: #000;
+    --color-combobox-border: #fff;
+    --color-combobox-shadow: none;
+    --color-combobox-option-active: rgba(255, 255, 255, 0.4);
+    --color-combobox-option-outline: #fff;
+}
+
+.combobox-list {
+    position: relative;
+    width: 100%;
+    @include combobox-theme-light();
+}
+
+html[data-theme="dark"] {
+    .combobox-list {
+        @include combobox-theme-dark();
+    }
+}
+
+.combobox .group {
+    display: flex;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+
+    &::before {
+        display: inline-flex;
+        font-size: var(--pf-fs-12, 0.75rem);
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+        width: 0.75rem;
+        height: 0.75rem;
+        right: 1.125rem;
+        transform: rotate(-45deg);
+        top: 0.75rem;
+    }
+
+    &:has(input[aria-expanded="true"])::after {
+        transform: rotate(-225deg);
+        top: 1.325rem;
+    }
+
+    &:has(input:required) {
+        .combobox-label::after {
+            content: "*";
+            color: #f00;
+        }
+    }
+}
+
+.combobox-label {
+    display: inline-block;
+    margin-bottom: 0.875rem;
+    .-italic {
+        font-style: italic;
+    }
+}
+
+.combobox input,
+.combobox button {
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    // height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    border: 1px solid gray;
+    position: relative;
+    cursor: pointer;
+}
+
+.combobox {
+    input {
+        width: 100%;
+        outline: none;
+        font-size: var(--pf-fs-14, 0.875rem);
+        padding: 0.75rem 1.125rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ddd;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 0.0625rem solid #000;
+        }
+        &:disabled {
+            background-color: var(--color-grey-200, #eee);
+            color: var(--color-grey-700, #737373);
+        }
+    }
+
+    .icon-input-search input {
+        padding: 0.75rem 2.5rem 0.75rem 2.125rem;
+    }
+}
+
+.combobox button {
+    width: 1.25rem;
+    border-left: none;
+    outline: none;
+    color: rgb(0 90 156);
+}
+
+.combobox button[aria-expanded="true"] svg {
+    transform: rotate(180deg) translate(0, -0.1875rem);
+}
+
+.combobox {
+    ul[role="listbox"] {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        list-style: none;
+        background-color: white;
+        display: none;
+        box-sizing: border-box;
+        max-height: 9.125rem;
+        width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+        z-index: 99;
+        cursor: pointer;
+        padding: 0.25rem 0.875rem;
+        border-radius: 0.5rem;
+    }
+
+    ul[role="listbox"] li[role="option"] {
+        padding: 0.75rem 0.625rem;
+        color: #505050;
+        &:not(:last-child) {
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        &:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+        &:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: inherit;
+            background: var(--color-combobox-option-active, #f4f4f4);
+            text-decoration: none;
+        }
+        &:focus-visible,
+        &:focus-within {
+            outline: 0.0625rem dashed var(--color-combobox-option-outline, #000);
+        }
+    }
+
+    /* focus and hover styling */
+    [role="listbox"].focus [role="option"][aria-selected="true"],
+    [role="listbox"] [role="option"]:hover {
+        background-color: #f4f4f4;
+        font-weight: 500;
+    }
+}

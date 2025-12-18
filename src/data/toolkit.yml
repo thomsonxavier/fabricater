@@ -1,0 +1,19 @@
+colors:
+  Principal colors:
+    Brand Jet Black:
+      hex: "#000"
+      sass: $brand-jet-black
+    Brand font black:
+      hex: "#1c1c1c"
+      sass: $brand-font-black
+    Brand Gray:
+      hex: "#dfdddd"
+      sass: $brand-gray
+    Brand Slate Gray:
+      hex: "#ECEBEB"
+      sass: $brand-slate-gray
+  Other segment colors:
+    Brand Blue:
+      hex: "#004dff"
+      sass: $brand-blue
+

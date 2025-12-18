@@ -1,0 +1,32 @@
+---
+NVDA keydown issues
+    https://github.com/FreedomScientific/standards-support/issues/211
+    https://github.com/microsoft/fluentui/issues/16490
+
+
+todos
+    code aria-activedescendant -- done
+    aria-selected, checked -- in progress
+
+Usage Notes (Options)
+ - All the following options are added to div.c-global-dropdown
+     - Position the dropdown using data-placement="" attribute, default value - 'bottom-start'
+            - Available placements - 'top' || 'top-start' || 'top-end' || 'bottom' || 'bottom-start' || 'bottom-end' || 'right' || 'right-start' || 'right-end' || 'left' || 'left-start' || 'left-end';
+     - To prevent dynamic js alignment and use static placement, add class="-static"
+            - use class -right alongside static to statically align menu to right
+     - To use position:fixed on the menu, use class="-body"
+     - Dropdown Menu will be rendered in body by default, if nedded otherwise you can add data-portal-target="" and define a unique ID for the target element and pass that ID with "#" prefix
+     - Dropdown Menu will be closed automatically on outside click by default, if nedded otherwise, add data-handle-outsideclick="false"
+     - if required overlay, add data-overlay="true"
+
+ - By default c-dropdown-menu will close if you click on an anchor or button. If you desire otherwise, add class="-donot-dismiss" to the concerned anchor or button.
+---
+
+<div class="c-global-dropdown" data-placement="bottom-start" data-handle-outsideclick="false">
+    <label id="global-dropdown-label" class="sr-only">Global Dropdown</label>
+    {{~#if @partial-block}}
+        {{> @partial-block }}
+    {{~else~}}
+        <button type="button" role="combobox" class="c-global-dropdown-toggle -caret o-primary-button" data-toggle="dropdown" aria-labelledby="global-dropdown-label" aria-controls="global-dropdown" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="">Dropdown</button>
+    {{~/if~}}
+</div>

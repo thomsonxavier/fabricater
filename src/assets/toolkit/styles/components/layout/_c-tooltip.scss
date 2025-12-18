@@ -1,0 +1,151 @@
+.c-tooltip {
+    --tooltip-bg: rgba(80, 80, 80, 1);
+    --contrast-bg: rgba(80, 80, 80, 1);
+    --arrow-w: 0.4375rem;
+    --border-radius: 0.125rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    z-index: 9999999;
+    min-width: 3.5rem;
+    max-width: 15.625rem;
+    background-color: var(--tooltip-bg);
+    border: 1px solid var(--contrast-bg);
+    min-height: 2rem;
+    font-size: var(--pf-fs-14, 0.875rem);
+    color: #fff;
+    opacity: 0;
+    border-radius: var(--border-radius);
+    transition: opacity ease-in 0.2s;
+
+    .-arrow {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        height: var(--arrow-w);
+        width: var(--arrow-w);
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background-color: var(--contrast-bg);
+        transform: translateX(-50%);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100%;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            background-color: var(--tooltip-bg);
+            transform-origin: center center;
+            transform: translate(-50%, calc(-50% - 0.0938rem)) scale(0.99);
+        }
+    }
+    .c-tooltip__inner {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        line-height: 1;
+        padding: 0.5rem 0.5rem 0.5rem;
+        z-index: 1;
+        border-radius: inherit;
+    }
+
+    &.-show {
+        opacity: 1;
+    }
+    // &:not(.-show){
+    //     display: none;
+    // }
+
+    // top -- default
+    &[data-popper-placement="bottom"] {
+        .-arrow {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%) rotate(180deg);
+        }
+    }
+    &[data-popper-placement="left"] {
+        .-arrow {
+            top: 50%;
+            left: 100%;
+            transform: translate(0, -50%) rotate(270deg);
+        }
+    }
+    &[data-popper-placement="right"] {
+        .-arrow {
+            top: 50%;
+            left: 0%;
+            transform: translate(-100%, -50%) rotate(90deg);
+        }
+    }
+    // &[data-popper-placement="top"] {
+    // }
+    // &[data-popper-placement="top-start"] {
+    // }
+    // &[data-popper-placement="top-end"] {
+    // }
+    // &[data-popper-placement="bottom-start"] {
+    // }
+    // &[data-popper-placement="bottom-end"] {
+    // }
+    &[data-custclass=-whtTltip] {
+        --tooltip-bg: #000;
+        --contrast-bg: #fff;
+        border: 1px solid var(--contrast-bg);
+        color: #fff;
+    }
+    &[data-custclass=-blTltip] {
+        --tooltip-bg: #020858;
+        --contrast-bg: #fff;
+        border: 1px solid var(--contrast-bg);
+        color: #fff;
+        max-width: 6.5rem;
+    }
+    &[data-custclass=-tableTltip] {
+        --tooltip-bg: #fff;
+        --contrast-bg: #fff;
+        border: 1px solid var(--contrast-bg);
+        color: #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+        font-size: var(--pf-fs-12, 0.75rem);
+    }
+    &[data-custclass=-uploadTltip] {
+        --tooltip-bg: #505050;
+        --contrast-bg: #505050;
+        border: 1px solid var(--contrast-bg);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+        font-size: var(--pf-fs-12, 0.75rem);
+    }
+    &[data-custclass=-cxndct-tltip] {
+        --arrow-w: 0.5rem;
+        --tooltip-bg: #000;
+        --contrast-bg: #000;
+        --border-radius: 0.125rem;
+        border: 1px solid var(--contrast-bg);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+        max-width: 23rem;
+        font-size: var(--pf-fs-12, 0.75rem);
+    }
+    &[data-custclass=-agent-tooltip] {
+        --tooltip-bg: #fff;
+        border: unset;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+        min-width: 7.5rem;
+        color: #000;
+        font-size: var(--pf-fs-12, 0.75rem);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        & .-arrow {
+            display: none;
+        }
+    }
+}

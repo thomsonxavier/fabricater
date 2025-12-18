@@ -1,0 +1,33 @@
+/* ==============================================================================
+Index
+----------------------------------------
+01 - bootstrap mixins
+02 - bootstrap resets
+02 - bootstrap customised scaffolding
+03 - bootstrap customised grid base
+04 - bootstrap utility classes
+05 -
+06 -
+07 -
+08 -
+============================================================================== */
+/* ===========
+Note
+===========
+Any component to be used from bootstrap can be piced from the _bootstrap-reference.scss file
+& be included as import in below includes in the same order as appears in bootstrap to maintain
+the cascading order. */
+
+/* 01 - bootstrap mixins  */
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+/* 02 - bootstrap resets */
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
+
+/* 03 - bootstrap customised grid base */
+@import "./grid";
+
+/* 04 - bootstrap utility classes */
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";

@@ -1,0 +1,134 @@
+@mixin pagination-theme {
+    --color-pagination-border: linear-gradient(90deg,rgba(167, 45, 212, 0.4) 0%, rgba(104, 219, 186, 0.4) 100%);
+}
+
+.c-pagination-container {
+    @include pagination-theme();
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-content: center;
+    margin: 2rem 0 0;
+    & nav {
+        display: block;
+        & .c-pagination_list {
+            display: flex;
+            align-items: center;
+            padding-left: 0;
+            list-style: none;
+            margin-top: 0;
+            gap: 0.375rem;
+            margin-bottom: 0;
+            & .c-pagination_arrow {
+                display: flex;
+                gap: 0.5rem;
+                & .c-pagination_previous {
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+                a:focus-visible {
+                    padding: 0.25rem;
+                    outline: 0.0625rem dashed #000;
+                }
+            }
+            & .c-pagination_link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: var(--pf-fs-20, 1.25rem);
+                color: #ccc;
+                gap: 0.5rem;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
+                &:focus-visible {
+                    outline: 0.0625rem dashed #000;
+                }
+                & .c-pagination_count {
+                    display: flex;
+                    position: relative;
+                    border: 1px solid transparent;
+                    background: #fff;
+                    border-radius: 0.125rem;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 400;
+                    color: #707070;
+                    font-size: var(--pf-fs-14,  0.875rem);
+                    height: 1.875rem;
+                    min-width: 1.875rem;
+                    text-decoration: none;
+                    &:hover {
+                        border-radius: 0;
+                        background-color: unset;
+                        border: 1px solid rgba(167, 45, 212, 1);
+                    }
+                    &.-active {
+                        font-weight: 500;
+                        background: var(--color-pagination-border);
+                        z-index: 1;
+                        border-radius: 50%;
+                        color: var(--color-base-black, #000);
+                        border-color: transparent;
+                        &::after {
+                            content: "";
+                            background: var(--color-base-white, #fff);
+                            border-radius: 50px;
+                            position: absolute;
+                            inset: 1px;
+                            z-index: -1;
+                        }
+                    }
+                }
+                & .c-pagination_target {
+                    color: #5a5a5a;
+                    font-size: var(--pf-fs-16, 1rem);
+                    font-weight: 700;
+                }
+            }
+            & .c-dropdown {
+                height: unset;
+                &-toggle {
+                    border: 0;
+                    background: transparent;
+                    font-size: var(--pf-fs-14, 0.875rem);
+                    padding: 0.5rem;
+                    line-height: 1;
+                    color: var(--color-base-black, #000);
+                    padding-right: 1.75rem;
+                    position: relative;
+                    &.-caret::after {
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        border-left: 0.0625rem solid #707070;
+                        border-bottom: 0.0625rem solid #707070;
+                        top: 48%;
+                        right: 0.5rem;
+                        // transform: rotate(-45deg);
+                    }
+                }
+                &-menu {
+                    // min-width: 100%;
+                    min-width: 0;
+                    width: 100%;
+                    max-width: fit-content;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+                    background: light-dark(#fff, #000);
+                    border: 1px solid light-dark(rgba(190, 190, 190, 0.19), rgba(190, 190, 190, 0.19));
+                }
+                &-item {
+                    white-space: break-spaces !important;
+                    padding-left: 0.75rem !important;
+                    padding-right: 0.75rem !important;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}

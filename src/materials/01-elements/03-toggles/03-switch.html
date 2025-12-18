@@ -1,0 +1,15 @@
+<div class="o-ias__switchGroup {{switch-class}}" role="listbox">
+    <div class="o-ias__switchGroup-overlay"></div>
+    {{~#if @partial-block}}
+        {{> @partial-block }}
+    {{~else~}}
+        <button type="button" role="option" class="o-ias__switchGroup-btn -active" aria-label="Click here to view {{firstButton}}">{{swap 'Active' firstButton}}</button>
+        <button type="button" role="option" class="o-ias__switchGroup-btn" aria-label="Click here to view {{secondButton}}">{{swap 'Completed' secondButton}}</button>
+        {{#if thirdButton}}
+            <button type="button" role="option" class="o-ias__switchGroup-btn">{{swap 'Inprogress' thirdButton}}</button>
+        {{/if}}
+        {{#if fourthButton}}
+            <button type="button" role="option" class="o-ias__switchGroup-btn">{{swap 'Yet to start' fourthButton}}</button>
+        {{/if}}
+    {{~/if~}}
+</div>

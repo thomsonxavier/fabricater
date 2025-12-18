@@ -1,0 +1,183 @@
+// CSS Resets start
+// :root {
+//     /*stylelint-disable*/
+//     // interpolate-size: allow-keywords;
+//     /*stylelint-enable*/
+// }
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/*stylelint-disable*/
+:where(*:not(svg, svg *)) {
+    margin: 0;
+    padding: 0;
+    font: inherit; /* Get rid of all font sizes and heights */
+    line-height: inherit;
+}
+/*stylelint-enable*/
+
+svg {
+    font-family: inherit;
+    * {
+        font-family: inherit;
+    }
+}
+
+html,
+body {
+    width: auto;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit; /* Get rid of all font sizes and heights */
+    line-height: inherit;
+}
+
+html {
+    font-size: 16px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    hanging-punctuation: first last; /* Not supported in Chrome */
+    text-size-adjust: none; /* Prevent font size inflation */
+    // text-size-adjust: 100%;
+
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    position: relative;
+    text-rendering: optimizeSpeed; // look up kerning and ligature
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    scrollbar-gutter: stable;
+    font-family: Graphik, Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    border-color: var(--app-color-border-primary, #000);
+    color: var(--app-color-text-primary, #000);
+    background-color: var(--app-color-background-primary, #f0f0f6);
+    outline-color: var(--app-color-border-primary, #000);
+
+    &.-userSelectNone * {
+        user-select: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+    text-wrap: pretty;
+    // max-width: 65ch;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+    list-style-type: none;
+}
+
+ol {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+    &:disabled,
+    &[aria-disabled="true"] {
+        pointer-events: none;
+        filter: grayscale(1);
+    }
+}
+
+a {
+    color: var(--anchor-color-text-primary, #000);
+    text-decoration-skip-ink: auto;
+    &:hover,
+    &:focus-visible {
+        color: var(--anchor-color-text-primary-active, #a100ff);
+        text-decoration: none;
+    }
+    &[aria-disabled="true"] {
+        pointer-events: none;
+        filter: grayscale(1);
+    }
+}
+
+/* Media responsive */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+span {
+    display: inline-block;
+}
+
+//Reset Chrome and Firefox behaviour which sets a `min-width: min-content;
+fieldset {
+    min-width: 0;
+    border: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+// to avoid double tap zoom in mobile devices
+button,
+input,
+textarea {
+    &:not(:disabled) {
+        touch-action: manipulation;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height, 3rem);
+    }
+}
+// CSS resets end

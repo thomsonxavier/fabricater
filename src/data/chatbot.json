@@ -1,0 +1,8 @@
+{
+    "prompts":[
+        {"cont":"What are the core components required to build a Java-based microservice using Spring Boot?"},
+        {"cont":"How can I generate boilerplate code for a RESTful API in a Java microservice architecture?"},
+        {"cont":"What config files are needed to deploy a Java microservice on AWS or Azure?"},
+        {"cont":"What are the core components required to build a Java-based microservice using Spring Boot?"}
+    ]
+}

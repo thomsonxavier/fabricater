@@ -1,0 +1,115 @@
+.o-toaster__wrap {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 0.5rem;
+    background: #fff;
+    border-left: 0.25rem solid#008731;
+    width: 1005;
+    z-index: 99999;
+    pointer-events: all !important;
+    box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.1);
+    .o-toaster__icon {
+        flex: 0 0 3rem;
+        display: flex;
+        justify-content: center;
+
+        .-icon {
+            padding: 0.5rem;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.5' height='20.5' viewBox='0 0 20.5 20.5'%3E%3Cg transform='translate(0.75 0.75)'%3E%3Cg transform='translate(0)'%3E%3Ccircle cx='9.5' cy='9.5' r='9.5' transform='translate(0.001 0)' fill='none' stroke='%23008731' stroke-width='1.5'/%3E%3C/g%3E%3Cpath d='M-8606.454,12263.211l2.881,2.677,5.475-6.478' transform='translate(8611.955 -12252.91)' fill='none' stroke='%235AA700' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E")
+                no-repeat center;
+            background-size: 1rem;
+        }
+    }
+    .o-toaster__content {
+        flex: 1 1 calc(100% - 3rem);
+        display: flex;
+        flex-direction: column;
+        font-size: var(--pf-fs-12, 0.75rem);
+
+        .o-toaster__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding-right: 1rem;
+            .-title {
+                margin-right: 1rem;
+            }
+            .-close {
+                display: inline-block;
+                padding: 0.5rem;
+                background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.945 9.943'%3E%3Cg transform='translate(-0.026 -0.029)'%3E%3Cpath fill='%23080808' d='M6.151,4.971,9.7,1.419A.832.832,0,1,0,8.526.242L4.974,3.794,1.422.242A.832.832,0,1,0,.245,1.419L3.8,4.971.245,8.523A.832.832,0,0,0,1.422,9.7L4.974,6.148,8.526,9.7A.832.832,0,0,0,9.7,8.523Z' transform='translate(0.026 0.029)'/%3E%3C/g%3E%3C/svg%3E")
+                    no-repeat center;
+                background-size: 0.625rem;
+                position: absolute;
+                right: 0;
+                &:focus-visible {
+                    outline: 0.0625rem dashed #000;
+                }
+            }
+            .-view {
+                margin-right: 2rem;
+                font-size: var(--pf-fs-12, 0.75rem);
+                color: #a100ff;
+            }
+        }
+
+        .o-toaster__body {
+            color: #505050;
+            margin-top: 0.125rem;
+        }
+    }
+
+    &.-success {
+        border-color: #5aa700;
+        .o-toaster__icon {
+            .-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.5' height='16.5' viewBox='0 0 16.5 16.5'%3E%3Cpath d='M8,16a7.967,7.967,0,1,1,5.667-2.333A8.009,8.009,0,0,1,8,16ZM8,.667a7.321,7.321,0,0,0-5.167,12.52A7.329,7.329,0,0,0,13.187,2.813,7.286,7.286,0,0,0,8,.667Zm-1.651,10a.222.222,0,0,1-.221-.111L4.468,8.889a.342.342,0,0,1,0-.445A.317.317,0,0,1,4.7,8.361a.488.488,0,0,1,.269.084L6.349,9.889l4.76-4.445a.414.414,0,0,1,.5,0,.357.357,0,0,1-.055.5L6.571,10.611C6.516,10.667,6.46,10.667,6.349,10.667Z' transform='translate(0.25 0.25)' fill='%235aa700' stroke='%235aa700' stroke-miterlimit='10' stroke-width='0.5'/%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    &.-warning {
+        border-color: #ff7800;
+        .o-toaster__icon {
+            .-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Icon' width='16' height='16' viewBox='0 0 16 16'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath d='M0,0H16V16H0Z' fill='%23ff7800'/%3E%3C/clipPath%3E%3C/defs%3E%3Cpath d='M0,0H16V16H0Z' fill='none'/%3E%3Cg clip-path='url(%23clip-path)'%3E%3Cpath d='M15.488,16H.512a.492.492,0,0,1-.446-.267.567.567,0,0,1,0-.533L7.554.268a.5.5,0,0,1,.891,0L15.934,15.2a.567.567,0,0,1,0,.533A.493.493,0,0,1,15.488,16ZM8,1.689H8L1.4,14.933H14.6L8,1.689ZM8,13.442a.684.684,0,1,1,.7-.684A.692.692,0,0,1,8,13.442Zm0-2.261a.506.506,0,0,1-.524-.532V6.66a.523.523,0,1,1,1.047,0v3.99A.505.505,0,0,1,8,11.182Z' transform='translate(0 0)' fill='%23ff7800'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+    }
+    &.-danger {
+        border-color: #ff3246;
+        .o-toaster__icon {
+            .-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M8,16A8.07,8.07,0,0,1,0,8,7.992,7.992,0,0,1,8,0a7.915,7.915,0,0,1,8,8,7.992,7.992,0,0,1-8,8ZM13.1,3.884h0L3.906,13.079a6.462,6.462,0,0,0,8.73-.488A6.524,6.524,0,0,0,13.1,3.884ZM8,1.454A6.52,6.52,0,0,0,2.92,12.092l9.152-9.225A6.489,6.489,0,0,0,8,1.454Z' fill='%23ff3246'/%3E%3C/svg%3E");
+            }
+        }
+    }
+    &.-info {
+        border-color: #5aaafa;
+        .o-toaster__icon {
+            .-icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.5' height='16.5' viewBox='0 0 16.5 16.5'%3E%3Cpath d='M8,16a7.979,7.979,0,1,1,5.674-2.348A8.009,8.009,0,0,1,8,16ZM8,.7a7.274,7.274,0,1,0,5.174,2.13A7.313,7.313,0,0,0,8,.7Zm2.083,12.527H5.916a.352.352,0,0,1,0-.7H7.66V6.955H6.62a.371.371,0,0,1-.346-.348.375.375,0,0,1,.346-.347H8.006a.333.333,0,0,1,.346.347v5.911h1.731a.352.352,0,0,1,0,.7ZM7.667,4.538a.7.7,0,1,1,.686-.7A.7.7,0,0,1,7.667,4.538Z' transform='translate(0.25 0.25)' fill='%235aaafa' stroke='%235aaafa' stroke-miterlimit='10' stroke-width='0.5'/%3E%3C/svg%3E");
+            }
+        }
+    }
+    &.-autosave {
+        position: fixed;
+        top: 0;
+        left: 42%;
+        border-left: 0;
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 0.75rem;
+        gap: 0.5rem;
+
+        .o-toaster__icon {
+            flex: 0 0 1rem;
+        }
+        .o-toaster__header {
+            padding-right: 0;
+        }
+        .o-toaster__content .o-toaster__header .-title {
+            margin-right: 0;
+        }
+    }
+}

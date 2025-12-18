@@ -1,0 +1,63 @@
+// switch switch styles
+.o-ias__switchGroup {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    margin: 0;
+    border-radius: 0.25rem;
+    border: 1px solid #737373;
+    position: relative;
+}
+
+.o-ias__switchGroup-overlay {
+    position: absolute;
+    height: calc(100% - 0.75rem);
+    top: 0.375rem;
+    width: 6.25rem;
+    left: 0.375rem;
+    background: #f5e5ff;
+    border-radius: 0.25rem;
+    transition: all 0.5s ease;
+}
+
+.o-ias__switchGroup-btn {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    font-size: var(--pf-fs-14, 0.875rem);
+    line-height: 1;
+    color: #505050;
+    min-width: 6rem;
+    text-align: center;
+    z-index: 1;
+    flex: 1 1 auto;
+    background: none;
+    border: none;
+    appearance: none;
+}
+
+.o-ias__switchGroup-btn.-disabled,
+.o-ias__switchGroup-btn:disabled {
+    pointer-events: none;
+}
+
+.o-ias__switchGroup-btn:hover,
+.o-ias__switchGroup-btn:focus {
+    text-decoration: none;
+    color: #505050;
+}
+
+.o-ias__switchGroup-btn.-active {
+    color: #a100ff;
+    font-weight: 500;
+    border-radius: 0.25rem;
+}
+
+.o-ias__switchGroup-btn.-active:hover,
+.o-ias__switchGroup-btn.-active:focus {
+    text-decoration: none;
+    color: #a100ff;
+}
+
+.o-ias__switchGroup-btn:focus-visible {
+    outline: 0.0625rem dashed #000;
+}

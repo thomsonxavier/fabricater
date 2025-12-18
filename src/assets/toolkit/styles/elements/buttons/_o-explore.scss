@@ -1,0 +1,69 @@
+.o-explore {
+    &__link {
+        > div {
+            height: 1.125rem;
+            width: 1.125rem;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.54780078,23.8898713 C9.65345271,23.9946279 9.76447678,23.9982093 9.96593173,23.9982093 C9.9686178,23.9991046 9.97040851,24 9.97309457,24 C9.97488528,24 9.97667599,23.9991046 9.97667599,23.9991046 C9.98294348,23.9991046 9.98473419,24 9.99100168,24 C10.1020257,24 10.3231785,24 10.4333072,23.8898713 L19.7333632,14.5996642 C19.9545159,14.2683828 19.9545159,13.8260772 19.7333632,13.6049245 C19.5113151,13.3837717 19.0690095,13.3837717 18.8478567,13.6049245 C18.8478567,13.6049245 18.8424846,13.6094012 10.6087969,21.8350308 L10.6087969,0.664353665 C10.6087969,0.331281477 10.2909457,-3.18094118e-15 9.97309457,-3.18094118e-15 C9.65524342,-3.18094118e-15 9.33828763,0.331281477 9.33828763,0.664353665 L9.33828763,21.7992166 C8.43487409,20.8966984 6.28154449,18.7460548 1.13504197,13.6049245 C0.912993844,13.3837717 0.469792949,13.3837717 0.248640179,13.6049245 C-0.0835366536,13.8260772 -0.0835366536,14.2683828 0.248640179,14.5996642 L9.54780078,23.8898713 Z'/%3E%3C/svg%3E") no-repeat center;
+            background-color: currentColor;
+            mask-size: contain;
+            rotate: z 270deg;
+            border-radius: 50%;
+            transition: rotate 0.4s ease;
+        }
+        > p {
+            display: flex;
+            width: auto;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.4s ease;
+            &::after {
+                content: '';
+                width: 1rem;
+                height: 1px;
+                display: block;
+                transition: none;
+            }
+        }
+        & {
+            --_size: 2.625rem;
+            /*stylelint-disable*/
+            interpolate-size: allow-keywords;
+            /*stylelint-enable*/
+            height: var(--_size);
+            min-width: var(--_size);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0.125rem 0.75rem;
+            border-radius: 1.25rem;
+            text-decoration: none;
+            transition: width 0.4s ease;
+            font-size: var(--pf-fs-14, 0.875rem);
+            background: linear-gradient(133deg, light-dark(#fff, #000) 14.65%, light-dark(#fff, #000) 108.26%) padding-box,
+                linear-gradient(90deg, rgba(167, 45, 212, 0.5) 0%, rgba(104, 219, 186, 0.5) 100%) border-box;
+            border: 1px solid transparent;
+        }
+        &:hover,
+        &:focus-visible {
+            text-decoration: none;
+            color: currentColor;
+        }
+
+        &:not(:hover, :focus-visible) {
+            > div {
+                rotate: 225deg;
+            }
+            > p {
+                width: 0;
+                &::after {
+                    content: none;
+                }
+            }
+            & {
+                width: var(--_size);
+                position: relative;
+            }
+        }
+    }
+}

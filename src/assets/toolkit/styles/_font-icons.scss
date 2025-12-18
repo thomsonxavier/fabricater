@@ -1,0 +1,604 @@
+/*
+// Origional template selector
+@font-face {
+  font-family: "icon-font";
+  src: url('src/assets/toolkit/fontsicon-font.eot');
+  src: url('src/assets/toolkit/fontsicon-font.eot?#iefix') format('eot'),
+  url('src/assets/toolkit/fontsicon-font.woff') format('woff'),
+  url('src/assets/toolkit/fontsicon-font.ttf') format('truetype'),
+  url('src/assets/toolkit/fontsicon-font.svg#icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+// Updated template selector
+@font-face {
+  font-family: "icon-font";
+  src: url('../fonts/icon-font.eot');
+  src: url('../fonts/icon-font.eot?#iefix') format('eot'),
+  url('../fonts/icon-font.woff') format('woff'),
+  url('../fonts/icon-font.ttf') format('truetype'),
+  url('../fonts/icon-font.svg#icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin icon-styles {
+  font-family: "icon-font";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-weight: 400;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-rendering: auto;
+  display: inline-block;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+  
+    @if $filename == add-action {
+      $char: "\E001";
+  }
+    @if $filename == add-border {
+      $char: "\E002";
+  }
+    @if $filename == add-person {
+      $char: "\E003";
+  }
+    @if $filename == add {
+      $char: "\E004";
+  }
+    @if $filename == archive {
+      $char: "\E005";
+  }
+    @if $filename == arrow-down {
+      $char: "\E006";
+  }
+    @if $filename == arrow-o {
+      $char: "\E007";
+  }
+    @if $filename == ball {
+      $char: "\E008";
+  }
+    @if $filename == banner-arrow {
+      $char: "\E009";
+  }
+    @if $filename == brain {
+      $char: "\E00A";
+  }
+    @if $filename == build-network {
+      $char: "\E00B";
+  }
+    @if $filename == calender {
+      $char: "\E00C";
+  }
+    @if $filename == career-journey {
+      $char: "\E00D";
+  }
+    @if $filename == caret {
+      $char: "\E00E";
+  }
+    @if $filename == certifications {
+      $char: "\E00F";
+  }
+    @if $filename == circle-tick {
+      $char: "\E010";
+  }
+    @if $filename == client {
+      $char: "\E011";
+  }
+    @if $filename == close {
+      $char: "\E012";
+  }
+    @if $filename == comment-tick {
+      $char: "\E013";
+  }
+    @if $filename == copy-2 {
+      $char: "\E014";
+  }
+    @if $filename == copy-3 {
+      $char: "\E015";
+  }
+    @if $filename == craft-my-career-menu {
+      $char: "\E016";
+  }
+    @if $filename == creative {
+      $char: "\E017";
+  }
+    @if $filename == cross {
+      $char: "\E018";
+  }
+    @if $filename == dashboard {
+      $char: "\E019";
+  }
+    @if $filename == delegate {
+      $char: "\E01A";
+  }
+    @if $filename == delete {
+      $char: "\E01B";
+  }
+    @if $filename == diagnostic {
+      $char: "\E01C";
+  }
+    @if $filename == direct-link {
+      $char: "\E01D";
+  }
+    @if $filename == discover-next-role {
+      $char: "\E01E";
+  }
+    @if $filename == download-light {
+      $char: "\E01F";
+  }
+    @if $filename == download {
+      $char: "\E020";
+  }
+    @if $filename == drag {
+      $char: "\E021";
+  }
+    @if $filename == edit {
+      $char: "\E022";
+  }
+    @if $filename == expertise {
+      $char: "\E023";
+  }
+    @if $filename == featured {
+      $char: "\E024";
+  }
+    @if $filename == feedback {
+      $char: "\E025";
+  }
+    @if $filename == file-with-plus {
+      $char: "\E026";
+  }
+    @if $filename == forecast {
+      $char: "\E027";
+  }
+    @if $filename == genai {
+      $char: "\E028";
+  }
+    @if $filename == globe {
+      $char: "\E029";
+  }
+    @if $filename == help {
+      $char: "\E02A";
+  }
+    @if $filename == home {
+      $char: "\E02B";
+  }
+    @if $filename == ias-User {
+      $char: "\E02C";
+  }
+    @if $filename == industry {
+      $char: "\E02D";
+  }
+    @if $filename == info {
+      $char: "\E02E";
+  }
+    @if $filename == input-search {
+      $char: "\E02F";
+  }
+    @if $filename == kebab-menu {
+      $char: "\E030";
+  }
+    @if $filename == know-more {
+      $char: "\E031";
+  }
+    @if $filename == knowledge-steward {
+      $char: "\E032";
+  }
+    @if $filename == knowledge {
+      $char: "\E033";
+  }
+    @if $filename == lightning {
+      $char: "\E034";
+  }
+    @if $filename == link-copy {
+      $char: "\E035";
+  }
+    @if $filename == link {
+      $char: "\E036";
+  }
+    @if $filename == manage-action {
+      $char: "\E037";
+  }
+    @if $filename == mentorship {
+      $char: "\E038";
+  }
+    @if $filename == minus {
+      $char: "\E039";
+  }
+    @if $filename == more {
+      $char: "\E03A";
+  }
+    @if $filename == my-mentor {
+      $char: "\E03B";
+  }
+    @if $filename == notification {
+      $char: "\E03C";
+  }
+    @if $filename == other-interests {
+      $char: "\E03D";
+  }
+    @if $filename == pdf {
+      $char: "\E03E";
+  }
+    @if $filename == ppt {
+      $char: "\E03F";
+  }
+    @if $filename == previous {
+      $char: "\E040";
+  }
+    @if $filename == private {
+      $char: "\E041";
+  }
+    @if $filename == refresh {
+      $char: "\E042";
+  }
+    @if $filename == reload {
+      $char: "\E043";
+  }
+    @if $filename == reset {
+      $char: "\E044";
+  }
+    @if $filename == resource {
+      $char: "\E045";
+  }
+    @if $filename == role-model {
+      $char: "\E046";
+  }
+    @if $filename == saved-search {
+      $char: "\E047";
+  }
+    @if $filename == search {
+      $char: "\E048";
+  }
+    @if $filename == share {
+      $char: "\E049";
+  }
+    @if $filename == solve-website-problems {
+      $char: "\E04A";
+  }
+    @if $filename == sort-down {
+      $char: "\E04B";
+  }
+    @if $filename == sort-up {
+      $char: "\E04C";
+  }
+    @if $filename == spotlight {
+      $char: "\E04D";
+  }
+    @if $filename == sSpy-featured {
+      $char: "\E04E";
+  }
+    @if $filename == sSpy-profile {
+      $char: "\E04F";
+  }
+    @if $filename == sSpy-projects {
+      $char: "\E050";
+  }
+    @if $filename == sSpy-skills {
+      $char: "\E051";
+  }
+    @if $filename == star {
+      $char: "\E052";
+  }
+    @if $filename == tick {
+      $char: "\E053";
+  }
+    @if $filename == timer {
+      $char: "\E054";
+  }
+    @if $filename == upgrade-skills {
+      $char: "\E055";
+  }
+    @if $filename == upload-e {
+      $char: "\E056";
+  }
+    @if $filename == upload {
+      $char: "\E057";
+  }
+    @if $filename == user {
+      $char: "\E058";
+  }
+    @if $filename == wishlist {
+      $char: "\E059";
+  }
+    @if $filename == workbench {
+      $char: "\E05A";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    }
+    @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-add-action {
+  @include icon(add-action);
+}
+.icon-add-border {
+  @include icon(add-border);
+}
+.icon-add-person {
+  @include icon(add-person);
+}
+.icon-add {
+  @include icon(add);
+}
+.icon-archive {
+  @include icon(archive);
+}
+.icon-arrow-down {
+  @include icon(arrow-down);
+}
+.icon-arrow-o {
+  @include icon(arrow-o);
+}
+.icon-ball {
+  @include icon(ball);
+}
+.icon-banner-arrow {
+  @include icon(banner-arrow);
+}
+.icon-brain {
+  @include icon(brain);
+}
+.icon-build-network {
+  @include icon(build-network);
+}
+.icon-calender {
+  @include icon(calender);
+}
+.icon-career-journey {
+  @include icon(career-journey);
+}
+.icon-caret {
+  @include icon(caret);
+}
+.icon-certifications {
+  @include icon(certifications);
+}
+.icon-circle-tick {
+  @include icon(circle-tick);
+}
+.icon-client {
+  @include icon(client);
+}
+.icon-close {
+  @include icon(close);
+}
+.icon-comment-tick {
+  @include icon(comment-tick);
+}
+.icon-copy-2 {
+  @include icon(copy-2);
+}
+.icon-copy-3 {
+  @include icon(copy-3);
+}
+.icon-craft-my-career-menu {
+  @include icon(craft-my-career-menu);
+}
+.icon-creative {
+  @include icon(creative);
+}
+.icon-cross {
+  @include icon(cross);
+}
+.icon-dashboard {
+  @include icon(dashboard);
+}
+.icon-delegate {
+  @include icon(delegate);
+}
+.icon-delete {
+  @include icon(delete);
+}
+.icon-diagnostic {
+  @include icon(diagnostic);
+}
+.icon-direct-link {
+  @include icon(direct-link);
+}
+.icon-discover-next-role {
+  @include icon(discover-next-role);
+}
+.icon-download-light {
+  @include icon(download-light);
+}
+.icon-download {
+  @include icon(download);
+}
+.icon-drag {
+  @include icon(drag);
+}
+.icon-edit {
+  @include icon(edit);
+}
+.icon-expertise {
+  @include icon(expertise);
+}
+.icon-featured {
+  @include icon(featured);
+}
+.icon-feedback {
+  @include icon(feedback);
+}
+.icon-file-with-plus {
+  @include icon(file-with-plus);
+}
+.icon-forecast {
+  @include icon(forecast);
+}
+.icon-genai {
+  @include icon(genai);
+}
+.icon-globe {
+  @include icon(globe);
+}
+.icon-help {
+  @include icon(help);
+}
+.icon-home {
+  @include icon(home);
+}
+.icon-ias-User {
+  @include icon(ias-User);
+}
+.icon-industry {
+  @include icon(industry);
+}
+.icon-info {
+  @include icon(info);
+}
+.icon-input-search {
+  @include icon(input-search);
+}
+.icon-kebab-menu {
+  @include icon(kebab-menu);
+}
+.icon-know-more {
+  @include icon(know-more);
+}
+.icon-knowledge-steward {
+  @include icon(knowledge-steward);
+}
+.icon-knowledge {
+  @include icon(knowledge);
+}
+.icon-lightning {
+  @include icon(lightning);
+}
+.icon-link-copy {
+  @include icon(link-copy);
+}
+.icon-link {
+  @include icon(link);
+}
+.icon-manage-action {
+  @include icon(manage-action);
+}
+.icon-mentorship {
+  @include icon(mentorship);
+}
+.icon-minus {
+  @include icon(minus);
+}
+.icon-more {
+  @include icon(more);
+}
+.icon-my-mentor {
+  @include icon(my-mentor);
+}
+.icon-notification {
+  @include icon(notification);
+}
+.icon-other-interests {
+  @include icon(other-interests);
+}
+.icon-pdf {
+  @include icon(pdf);
+}
+.icon-ppt {
+  @include icon(ppt);
+}
+.icon-previous {
+  @include icon(previous);
+}
+.icon-private {
+  @include icon(private);
+}
+.icon-refresh {
+  @include icon(refresh);
+}
+.icon-reload {
+  @include icon(reload);
+}
+.icon-reset {
+  @include icon(reset);
+}
+.icon-resource {
+  @include icon(resource);
+}
+.icon-role-model {
+  @include icon(role-model);
+}
+.icon-saved-search {
+  @include icon(saved-search);
+}
+.icon-search {
+  @include icon(search);
+}
+.icon-share {
+  @include icon(share);
+}
+.icon-solve-website-problems {
+  @include icon(solve-website-problems);
+}
+.icon-sort-down {
+  @include icon(sort-down);
+}
+.icon-sort-up {
+  @include icon(sort-up);
+}
+.icon-spotlight {
+  @include icon(spotlight);
+}
+.icon-sSpy-featured {
+  @include icon(sSpy-featured);
+}
+.icon-sSpy-profile {
+  @include icon(sSpy-profile);
+}
+.icon-sSpy-projects {
+  @include icon(sSpy-projects);
+}
+.icon-sSpy-skills {
+  @include icon(sSpy-skills);
+}
+.icon-star {
+  @include icon(star);
+}
+.icon-tick {
+  @include icon(tick);
+}
+.icon-timer {
+  @include icon(timer);
+}
+.icon-upgrade-skills {
+  @include icon(upgrade-skills);
+}
+.icon-upload-e {
+  @include icon(upload-e);
+}
+.icon-upload {
+  @include icon(upload);
+}
+.icon-user {
+  @include icon(user);
+}
+.icon-wishlist {
+  @include icon(wishlist);
+}
+.icon-workbench {
+  @include icon(workbench);
+}
+

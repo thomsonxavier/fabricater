@@ -1,0 +1,10 @@
+<div class="c-global-dropdown-menu" id="global-dropdown">
+    <div class="c-global-dropdown-body" role="listbox"  aria-labelledby="global-dropdown-label">
+        {{~#if @partial-block}}
+            {{> @partial-block }}
+        {{~else~}}
+            <a href="javascript:;" role="option" class="c-global-dropdown-item" id="global-dropdown-option-1" aria-selected="false">Sports</a>
+            <a href="javascript:;" role="option" class="c-global-dropdown-item" id="global-dropdown-option-2" aria-selected="false">Reading fiction</a>
+        {{~/if~}}
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "prompt-specifications":[
+        {"title":"Model Name", "selection": "gpt-4-32k"},
+        {"title":"Industry", "selection": "Energy"},
+        {"title":"Technology", "selection": "JAVA/J2EE"},
+        {"title":"Business", "selection": null},
+        {"title":"Service", "selection": "Azure penAI"},
+        {"title":"Delivery Type", "selection": "App Dev - Agile"},
+        {"title":"Max Token", "selection": "2000"}        
+    ]
+}

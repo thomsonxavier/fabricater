@@ -1,0 +1,143 @@
+.f-item-group {
+    @include clearfix;
+    //margin-top: $margin-f-item-group;
+    //margin-bottom: $margin-f-item-group;
+    //padding-bottom: $margin-f-item-group;
+    display: none;
+    position: relative;
+    &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+    &#main-overview {
+        background: var(--color-contrast, #fff);
+        padding: 0 10px;
+    }
+
+    & ~ & {
+        margin-top: 0;
+    }
+
+    & > & {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    &.-active {
+        display: block;
+        padding: 0;
+    }
+    &__notes-trig {
+        position: absolute;
+        right: 30px;
+        top: 60px;
+        font-size: 26px;
+        cursor: pointer;
+        &:hover {
+            color: #a100ff;
+            .f-item-nodes-block {
+                display: block;
+            }
+        }
+    }
+
+    &#main-overview {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin: 0.67em 0;
+        }
+        p {
+          margin: 1rem 0;
+        }
+    }
+}
+
+.f-item-code {
+    margin-top: 0.5rem;
+}
+
+.f-item-preview {
+    @include clearfix;
+}
+
+.f-item-border-bottom {
+    border-bottom: 1px solid color(light);
+}
+
+.f-item-heading-group {
+    @include clearfix;
+    vertical-align: middle;
+}
+
+.f-item-preview {
+    padding: 30px 25px;
+    border: 1px solid var(--color-contrast, #fff);
+    background: var(--color-contrast, #fff);
+    position: relative;
+    z-index: 101;
+    .o-comp {
+        padding: 0 30px;
+    }
+    .c-sticky-nav {
+        display: block;
+        position: static;
+    }
+}
+.f-item-folter {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.f-item-heading {
+    font-weight: 500;
+    line-height: 1;
+    display: block;
+    padding: 30px 25px;
+    color: var(--color-default, #000);
+    font-size: 52px;
+    background-color: var(--color-contrast, #fff);
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 0.67em 0 !important;
+}
+
+.f-item-controls {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+
+    .f-control {
+        width: $icon-size;
+        height: $icon-size;
+
+        &:hover {
+            use {
+                fill: color(normal);
+            }
+        }
+
+        use {
+            fill: color(light);
+        }
+    }
+}
+
+.f-item-hidden {
+    display: none;
+}
+
+.f-item-notes {
+    font-size: $font-size;
+}

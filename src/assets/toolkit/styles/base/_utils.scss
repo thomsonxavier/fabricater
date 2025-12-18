@@ -1,0 +1,85 @@
+/*Utils - START*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.sr-only-focusable {
+    // &:active,
+    // &:focus {
+    //   padding: 0.25rem 0.75rem;
+    //   font-size: 0.875rem;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 50%;
+    //   text-align: center;
+    //   background-color: #f4f4f4;
+    //   transform: translateX(-50%);
+    //   z-index: 1100;
+    // }
+    &:active,
+    &:focus,
+    &:focus-visible {
+        position: fixed;
+        display: block;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        clip-path: none;
+        padding: 0.625rem;
+        border: 1px solid #a100ff;
+        background-color: #fff;
+        z-index: 9999999;
+    }
+}
+
+// Stretched Link
+.-stretched-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    z-index: 1;
+    &:focus-visible::after {
+        outline: 0.0625rem solid #000;
+    }
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+// container to add toasters
+.c-alxrt {
+    &__wrapper {
+        width: min(27.8125rem, 60vw);
+        pointer-events: all;
+    }
+    &__container {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__outer {
+        position: fixed;
+        top: 4.75rem;
+        right: 4.75rem;
+        pointer-events: none;
+        z-index: 99999999;
+    }
+}
+/*Utils - END*/

@@ -1,0 +1,9 @@
+<button type="button" class="o-primary-button{{#if disabled}} -disabled{{/if}} {{btn-Class}}" {{#if datamodalId}}data-modalId="{{datamodalId}}"{{/if}} {{#if arialabel}}aria-label="{{arialabel}}"{{/if}} {{#if (isdefined custom)}}{{{custom}}}{{/if}} {{#if disabled}}disabled{{/if}}>
+    {{#if icon-left }}
+    <i class="o-primary-button__icon-left {{ swapif 'icon-xstart-arrow' icon-left }}"></i>
+    {{/if}}
+    {{{swapif 'Primary Button' btn-text}}} 
+    {{#if icon-right }}
+    <i class="o-primary-button__icon-right {{ swapif 'icon-xstart-arrow' icon-right }}"></i>
+    {{/if}}
+</button>

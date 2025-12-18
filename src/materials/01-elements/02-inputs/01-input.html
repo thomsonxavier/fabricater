@@ -1,0 +1,6 @@
+<div class="o-input-wrap {{customClass}}">
+    {{#if label}}
+    <label for="{{swapif 'input1' inpId}}" class="o-input-label">{{label}}</label>
+    {{/if}}
+    <input type="text" class="o-input" id="{{swapif 'input1' inpId}}" name="{{swapif 'input1' inpName}}" placeholder="{{swapif 'Type' inpPlaceholder}}" {{#if disabled}}disabled{{/if}}>
+</div>

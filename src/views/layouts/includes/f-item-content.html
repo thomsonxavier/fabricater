@@ -1,0 +1,26 @@
+{{#if notes}}
+<div class="f-item-notes" data-f-toggle="notes">
+	{{{notes}}}
+</div>
+{{/if}}
+<div class="f-item-preview">
+	{{{material @key @root }}}
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<ul class="f-item-code-blocks__tabs">
+		<li class="f-item-code-blocks__tab -active" data-toggle="html">HTML</li>
+		<li class="f-item-code-blocks__tab" data-toggle="scss">SCSS</li>
+		<li class="f-item-code-blocks__tab" data-toggle="jsript">JS</li>
+	</ul>
+	<div class="f-item-code-blocks__contents">
+		<div class="f-item-code-blocks__content -active html">
+			<pre><code class="language-markup">{{material @key @root}}</code></pre>
+		</div>
+		<div class="f-item-code-blocks__content scss">
+			<pre><code>{{{ printScss @key dirctory }}}</code></pre>
+		</div>
+		<div class="f-item-code-blocks__content jsript">
+			<pre><code>{{{ printJs @key dirctory }}}</code></pre>
+		</div>
+	</div>
+</div>

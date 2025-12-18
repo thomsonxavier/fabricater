@@ -1,0 +1,26 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 2106260749">
+<g id="Group 2106260715">
+<path id="Star 4" d="M6.63329 4.17481C6.72448 3.7923 7.26872 3.79231 7.35991 4.17481L7.46054 4.59687C7.87545 6.33724 9.27055 7.67369 11.0271 8.01351C11.3786 8.08151 11.3786 8.58455 11.0271 8.65255C9.27055 8.99237 7.87545 10.3288 7.46054 12.0692L7.35991 12.4912C7.26872 12.8738 6.72448 12.8738 6.63329 12.4912L6.53267 12.0692C6.11776 10.3288 4.72266 8.99237 2.96608 8.65255C2.61458 8.58455 2.61458 8.08151 2.96608 8.01351C4.72266 7.67369 6.11776 6.33724 6.53267 4.59687L6.63329 4.17481Z" fill="url(#paint0_linear_188_4876)"/>
+<circle id="Ellipse 34854" cx="11.6756" cy="3.65361" r="1.00273" fill="url(#paint1_linear_188_4876)"/>
+<rect id="Rectangle 1321321711" x="11.3423" y="10.6709" width="2.67395" height="2.67395" rx="0.710227" fill="url(#paint2_linear_188_4876)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_188_4876" x1="17.2699" y1="2.65088" x2="1.31445" y2="14.0152" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF6C00"/>
+<stop offset="0.845" stop-color="#B500EF"/>
+<stop offset="1" stop-color="#6F00EF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_188_4876" x1="13.4885" y1="2.65088" x2="10.6729" y2="4.65634" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF6C00"/>
+<stop offset="0.845" stop-color="#B500EF"/>
+<stop offset="1" stop-color="#6F00EF"/>
+</linearGradient>
+<linearGradient id="paint2_linear_188_4876" x1="15.0965" y1="10.6709" x2="11.3423" y2="13.3449" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF6C00"/>
+<stop offset="0.845" stop-color="#B500EF"/>
+<stop offset="1" stop-color="#6F00EF"/>
+</linearGradient>
+</defs>
+</svg>

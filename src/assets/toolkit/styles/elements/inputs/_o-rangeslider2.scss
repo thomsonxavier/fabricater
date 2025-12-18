@@ -1,0 +1,149 @@
+/* === range theme and appearance === */
+.o-rngeslder {
+    --thumb-height: 1.125em;
+    --track-height: 0.125em;
+    --track-color: rgba(0, 0, 0, 0.2);
+    --brightness-hover: 180%;
+    --brightness-down: 80%;
+    --clip-edges: 0.125em;
+    color: #ef233c;
+    font-size: var(--pf-fs-24, 1.5rem);
+    width: 12.5em;
+    position: relative;
+    background: #fff0;
+    overflow: hidden;
+    appearance: none;
+    transition: all ease 100ms;
+    height: var(--thumb-height);
+
+    /* === WebKit specific styles === */
+    &::-webkit-slider-thumb {
+        --thumb-radius: calc((var(--thumb-height) * 0.5) - 0.0625rem);
+        --clip-top: calc(
+            (var(--thumb-height) - var(--track-height)) * 0.5 - 0.0313rem
+        );
+        --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+        --clip-further: calc(100% + 0.0625rem);
+        --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+            100vmax currentColor;
+
+        position: relative;
+        -webkit-appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+        width: var(--thumb-width, var(--thumb-height));
+        background: linear-gradient(currentColor 0 0) scroll no-repeat left
+            center / 50% calc(var(--track-height) + 0.0625rem);
+        background-color: currentColor;
+        box-shadow: var(--box-fill);
+        border-radius: var(--thumb-width, var(--thumb-height));
+
+        filter: brightness(100%);
+        clip-path: polygon(
+            100% -0.0625rem,
+            var(--clip-edges) -0.0625rem,
+            0 var(--clip-top),
+            -100vmax var(--clip-top),
+            -100vmax var(--clip-bottom),
+            0 var(--clip-bottom),
+            var(--clip-edges) 100%,
+            var(--clip-further) var(--clip-further)
+        );
+    }
+    &::-webkit-slider-runnable-track {
+        position: relative;
+        appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+        background: linear-gradient(var(--track-color) 0 0) scroll no-repeat
+            center / 100% calc(var(--track-height) + 0.0625rem);
+    }
+
+    /* === Firefox specific styles === */
+    &::-moz-range-thumb {
+        appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+        filter: brightness(100%);
+        background: currentColor;
+        border: 0;
+        width: var(--thumb-width, var(--thumb-height));
+        border-radius: var(--thumb-width, var(--thumb-height));
+        cursor: grab;
+    }
+    &::-moz-range-track {
+        appearance: none;
+        transition: all ease 100ms;
+        height: var(--thumb-height);
+        height: calc(var(--track-height) + 0.0625rem);
+        border-radius: var(--track-height);
+        width: 100%;
+        background: var(--track-color);
+    }
+    &::-moz-range-progress {
+        appearance: none;
+        transition: all ease 100ms;
+        filter: brightness(100%);
+        background: currentColor;
+        height: calc(var(--track-height) + 0.0625rem);
+        border-radius: var(--track-height);
+        transition-delay: 30ms;
+    }
+
+    /* stylelint-disable */
+    &:active {
+        cursor: grabbing;
+        &::-webkit-slider-thumb {
+            filter: brightness(var(--brightness-down));
+            cursor: grabbing;
+        }
+        &::-moz-range-thumb {
+            cursor: grabbing;
+            filter: brightness(var(--brightness-down));
+        }
+        &::-moz-range-progress {
+            filter: brightness(var(--brightness-down));
+        }
+    }
+    &:hover {
+        &::-webkit-slider-thumb {
+            filter: brightness(var(--brightness-hover));
+            cursor: grab;
+        }
+        &::-moz-range-thumb {
+            cursor: not-allowed;
+            filter: brightness(var(--brightness-hover));
+        }
+        &::-moz-range-progress {
+            filter: brightness(var(--brightness-hover));
+        }
+    }
+    &:disabled {
+        filter: grayscale(1);
+        opacity: 0.3;
+        cursor: not-allowed;
+        &::-webkit-slider-thumb {
+            cursor: not-allowed;
+        }
+    }
+    /* stylelint-enable */
+
+    &.-clrscheme {
+        --thumb-height: 1.375em;
+        --thumb-width: 0.5em;
+        --clip-edges: 0.0125em;
+        color: #2b2d42;
+    }
+}
+/* stylelint-disable */
+@media (prefers-color-scheme: dark) {
+    .o-rngeslder {
+        --track-color: rgba(255, 255, 255, 0.1);
+        color: #f07167;
+
+        &.-clrscheme {
+            color: #3a86ff;
+        }
+    }
+}
+/* stylelint-enable */

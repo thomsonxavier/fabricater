@@ -1,0 +1,86 @@
+/* Collapse/Accordion */
+.accordion-transition {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease-out;
+}
+
+.c-accordion {
+    border-bottom: 1px solid #dbdbdb;
+
+    &__control {
+        background: transparent;
+        border: none;
+        position: relative;
+        display: inline-flex;
+        gap: 0.75rem;
+        align-items: center;
+        text-align: inherit;
+        padding: 0 3rem 0 0;
+        font-size: var(--pf-fs-14, 0.875rem);
+        flex: 1;
+
+        &:hover,
+        &:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            width: 0.75rem;
+            height: 0.75rem;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transition: all;
+        }
+
+        &[aria-expanded="true"] {
+            font-weight: 500;
+            &::after {
+                border-color: #a100ff;
+                top: 57%;
+                transform: translateY(-50%) rotate(-135deg);
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 0 1rem 0;
+
+            &.-border {
+                border-top: 1px solid #dbdbdb;
+                border-bottom: 1px solid #dbdbdb;
+            }
+        }
+    }
+
+    &__container {
+        overflow: hidden;
+        font-size: var(--pf-fs-14, 0.875rem);
+    }
+
+    &__collapse {
+        display: grid;
+        /*stylelint-disable*/
+        grid-template-rows: 0fr;
+        /*stylelint-enable*/
+        transition: grid-template-rows 0.2s ease-out;
+        &[aria-hidden=false] {
+            grid-template-rows: 1fr;
+        }
+    }
+}

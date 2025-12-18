@@ -1,0 +1,12 @@
+<label class="o-checkbox{{#if cb-class}} {{cb-class}}{{/if}}">
+    <input type="checkbox" name="{{{swapif 'cb1' cb-name}}}" id="{{{swapif 'cb1' cb-id}}}" value="{{{swapif 'checkbox 1' cb-text}}}" {{#if checked}}checked{{/if}} {{#if disabled}}disabled{{/if}}>
+    {{#if nospan}}
+    {{else}}
+    <span>
+        {{{swapif 'checkbox 1' cb-text}}}
+        {{#if show-img}}
+        <img src="{{#if baseurl}} {{ baseurl }}/{{/if}}assets/toolkit/images/common/star.svg" aria-hidden="true" role="presentation" />
+        {{/if}}
+    </span>
+    {{/if}}
+</label>

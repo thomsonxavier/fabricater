@@ -1,0 +1,53 @@
+<div class="c-pagination-container">
+    <!-- Dev note: Add a descriptive aria-label that corresponds to the component -->
+    <nav role="navigation" aria-label="pagination">
+        <div class="c-pagination_list">
+            <div class="c-pagination_arrow">
+                <!-- for disabled state, use aria-disabled="true", tabindex="-1" -->
+                {{#if no-double-arrow}}
+                {{else}}
+                <a href="javascript:;" class="c-pagination_previous" role="button" aria-label="first page" tabindex="-1" aria-disabled="true">
+                    <img src="{{#if baseurl}} {{ baseurl }}/{{/if}}assets/toolkit/images/common/darrow.svg" aria-hidden="true" role="presentation"/>
+                </a>
+                {{/if}}
+                <a href="javascript:;" class="c-pagination_previous" role="button" aria-label="previous page" tabindex="-1" aria-disabled="true">
+                    <img src="{{#if baseurl}} {{ baseurl }}/{{/if}}assets/toolkit/images/common/arrow.svg" aria-hidden="true" role="presentation"/>
+                </a>
+            </div>                                        
+            <div class="c-pagination_page-item">
+                <div class="c-pagination_link" aria-live="polite">
+                    <a href="javascript:;" role="button" class="c-pagination_count -active">1</a>
+                    <a href="javascript:;" role="button" class="c-pagination_count">2</a>
+                    <a href="javascript:;" role="button" class="c-pagination_count">3</a>
+                    <a href="javascript:;" role="button" class="c-pagination_count">4</a>
+                    <a href="javascript:;" role="button" class="c-pagination_count">5</a>
+                    <span>...</span>
+                    <a href="javascript:;" role="button" class="c-pagination_count">30</a>
+                </div>
+            </div>
+            <div class="c-pagination_arrow">
+                <a href="javascript:;" class="c-pagination_next" role="button" aria-label="previous page" tabindex="-1" aria-disabled="true">
+                    <img src="{{#if baseurl}} {{ baseurl }}/{{/if}}assets/toolkit/images/common/arrow.svg" aria-hidden="true" role="presentation"/>
+                </a>
+                {{#if no-double-arrow}}
+                {{else}}
+                <a href="javascript:;" class="c-pagination_next" role="button" aria-label="last page">
+                    <img src="{{#if baseurl}} {{ baseurl }}/{{/if}}assets/toolkit/images/common/darrow.svg" aria-hidden="true" role="presentation"/>
+                </a>
+                {{/if}}
+            </div>
+            {{#if no-total}}
+            {{else}}
+            <div class="c-dropdown" data-placement="bottom">
+                <button type="button" role="combobox" class="c-dropdown-toggle -caret" data-toggle="dropdown" aria-controls="pagination-dropdown" aria-expanded="false" aria-haspopup="listbox">10 / page</button>
+                <div class="c-dropdown-menu" id="pagination-dropdown">
+                    <div class="c-dropdown-body" role="listbox">
+                        <a href="javascript:;" role="option" id="pagination-dropdown-option1" class="c-dropdown-item">10 / page</a>
+                        <a href="javascript:;" role="option" id="pagination-dropdown-option2" class="c-dropdown-item">20 / page</a>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </nav>
+</div>

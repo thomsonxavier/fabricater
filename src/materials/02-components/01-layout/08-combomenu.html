@@ -1,0 +1,40 @@
+---
+Options:
+    - All the following options are added to div.c-combomenu__wrap
+        - To align menu to right, add data-horizontal-align="right", default - left
+        - To prevent dynamic js alignment and use static placement, add data-static-placement="true", default - false
+        - To use position:fixed on the menu, use data-position="fixed", default - absolute
+        
+    - By default menu will close if you click on an anchor or button. If you desire otherwise, add class="-donot-dismiss" to the concerned anchor or button.
+---
+<div class="c-combomenu__wrap" data-placement="bottom-start">
+    <p class="sr-only" id="sample_combomenu_label">Sample label</p>
+    <input type="text" role="combobox" placeholder="samle placeholder" class="c-combomenu__control" aria-labelledby="sample_combomenu_label" aria-controls="sample_combomenu" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="" />
+    <div class="c-combomenu__menu" id="sample_combomenu" >
+        <ul class="c-combomenu__body" role="listbox" aria-labelledby="sample_combomenu_label" aria-multiselectable="true">
+            <li>
+                <label class="o-checkbox c-combomenu__item">
+                    <input type="checkbox" id="sample_combomenu_chb1" name="sample_combomenu_chb1" value="Option 1" />
+                    <span>Option 1</span>
+                </label>
+            </li>
+            <li>
+                <label class="o-checkbox c-combomenu__item">
+                    <input type="checkbox" id="sample_combomenu_chb2" name="sample_combomenu_chb2" value="Option 2" />
+                    <span>Option 2</span>
+                </label>
+            </li>
+            <li>
+                <label class="o-checkbox c-combomenu__item">
+                    <input type="checkbox" id="sample_combomenu_chb3" name="sample_combomenu_chb3" value="Option 3" />
+                    <span>Option 3</span>
+                </label>
+            </li>
+            <li>
+                <a href="javascript:;" class="c-combomenu__item" role="option" id="sample_combomenu_option1">Option 1</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+

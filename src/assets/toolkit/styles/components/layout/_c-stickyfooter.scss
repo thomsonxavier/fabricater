@@ -1,0 +1,29 @@
+.c-stickyfooter {
+    &__right {
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        color: #000;
+    }
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
+    }
+    &__wrap {
+        position: sticky;
+        // bottom: 2.5625rem; //footer height
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        margin-top: auto;
+        z-index: 99;
+    }
+}

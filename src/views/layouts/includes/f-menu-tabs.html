@@ -1,0 +1,114 @@
+<!-- fabricator menu -->
+<div class="f-menu">
+  {{> f-controls}}
+
+  <div class="brand-logo">
+    <img src="assets/toolkit/images/logo/acn-logo-w.svg" width="90%" alt="" />
+  </div>
+
+  <ul class="f-menu-tabs">
+    <li>
+      <span
+        class="f-menu-tabs__heading -heading-level-last -last-active"
+        data-menu-tab="main-overview"
+        >Overview</span
+      >
+    </li>
+    {{#each materials}}
+    <li>
+      <span
+        class="f-menu-tabs__heading -children -heading-level-one"
+        data-level="level-1"
+        >{{name}}</span
+      >
+      <ul class="f-menu-tabs__level-one">
+        {{#each items}}
+        <li>
+          <span
+            class="f-menu-tabs__heading{{#if items }} -children -heading-level-two {{else}} -heading-level-last {{/if}} "
+            data-menu-tab="component-{{@key}}"
+            data-level="level-2"
+            >{{name}}</span
+          >
+          {{#if items }}
+          <ul class="f-menu-tabs__level-two">
+            {{#each items}}
+            <li>
+              <span
+                class="f-menu-tabs__heading{{#if items }} -children{{/if}} -heading-level-last"
+                data-menu-tab="component-{{@key}}"
+                data-level="level-3"
+                >{{name}}</span
+              >
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+    <li>
+      <span
+        class="f-menu-tabs__heading -children -heading-level-one"
+        data-level="level-1"
+        >Pages</span
+      >
+      <ul class="f-menu-tabs__level-one">
+        {{#each views.pages.items}}
+        <li>
+          <a
+            href="pages/{{@key}}.html"
+            class="f-menu-tabs__pages-link"
+            target="_blank"
+            >{{ name }}</a
+          >
+        </li>
+        {{/each}}
+      </ul>
+      <!-- <ul class="f-menu-tabs__level-one">
+        {{#each views}}
+        <li>
+          <span
+            class="f-menu-tabs__heading{{#if items }} -children -heading-level-two {{else}} -heading-level-last {{/if}} "
+            data-menu-tab="{{@../key}}/{{@key}}" data-level="level-2">{{name}}</span>
+          {{#if items }}
+          <ul class="f-menu-tabs__level-two">
+            {{#each items}}
+            <li>
+              <a href="{{@../key}}/{{@key}}.html" class="f-menu-tabs__pages-link" data-menu-tab="{{@../key}}/{{@key}}"
+                data-level="level-3" target="_blank">{{ name }}</a>
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul> -->
+    </li>
+    {{#if (development) }}
+    <li>
+      <span
+        href="docs.html"
+        class="f-menu-tabs__heading -children -heading-level-one"
+        data-level="level-1"
+        >Docs</span
+      >
+      <ul class="f-menu-tabs__level-one">
+        {{#each docs }}
+        <li>
+          <span
+            class="f-menu-tabs__heading{{#if items }} -children{{/if}} -heading-level-last"
+            data-menu-tab="doc-{{@key}}"
+            data-level="level-2"
+            >{{name}}</span
+          >
+        </li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/if}}
+  </ul>
+</div>
+<!-- /fabricator menu -->

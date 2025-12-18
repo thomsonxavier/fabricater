@@ -1,0 +1,35 @@
+<div role="tablist" aria-label="Tabs Label" class="c-tabs__wrap {{#if know-agent}}-know-agent-tabs{{/if}}">
+    {{#if know-agent}}
+    <button type="button" class="c-tabs__btn" role="tab" aria-controls="know-agent-1" aria-selected="true">By Agents</button>
+    <button type="button" class="c-tabs__btn" role="tab" aria-controls="know-agent-2" aria-selected="false">By Solutions</button>
+    {{else}}
+    <button type="button" class="c-tabs__btn" role="tab" aria-controls="tab001" aria-selected="true">Tab 1</button>
+    <button type="button" class="c-tabs__btn" role="tab" aria-controls="tab002" aria-selected="false">Tab 2</button>
+    <button type="button" class="c-tabs__btn" role="tab" aria-controls="tab003" aria-selected="false">Tab 3</button>
+    {{/if}}
+</div>
+{{#if know-agent}}
+<div role="tabpanel" id="know-agent-1" class="-show">
+    <div class="app-container">
+        {{> marketplace-landing.agents-card-listing agents=true }}
+    </div>
+</div>
+<div role="tabpanel" id="know-agent-2">
+    <div class="app-container">
+        {{> marketplace-landing.agents-card-listing }}
+    </div>
+</div>
+{{else}}
+<div role="tabpanel" id="tab001" class="-show">
+    <h1>Tab 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div role="tabpanel" id="tab002">
+    <h1>Tab 2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div role="tabpanel" id="tab003">
+    <h1>Tab 3</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+{{/if}}

@@ -1,0 +1,5 @@
+<div class="o-prxgress__wrap{{#if progclass}} {{progclass}}{{/if}}" role="progressbar" aria-label="{{swapif 'progress' label}} : completion = {{swapif '40' val}}" aria-valuemin="{{swapif '1' minval}}" aria-valuemax="{{swapif '100' maxval}}" aria-valuenow="{{swapif '40' val}}" style="--progress: {{swapif '40' val}}">
+    <span class="o-prxgress__track">
+        <span class="o-prxgress__bar" aria-hidden="true"></span>
+    </span>
+</div>

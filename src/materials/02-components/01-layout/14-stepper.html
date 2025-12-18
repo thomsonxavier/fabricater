@@ -1,0 +1,48 @@
+<!-- DEV NOTE: 
+    1. Add class '-completed' to completed li.c-nstepper__litem
+    2. Add class '-active' and aria-current="true" to the active / inprogress li.c-nstepper__litem
+-->
+<div class="c-nstepper__wrap{{#if snclass}} snclass{{/if}}" role="navigation" aria-label="progress">
+    <span class="sr-only" aria-atomic="true" aria-live="polite"></span>
+    <ol class="c-nstepper__prog">
+        {{~#if @partial-block}}
+        {{> @partial-block }}
+        {{~else~}}
+        <li class="c-nstepper__litem -completed" aria-current="false">
+            <a href="javascript:;"class="c-nstepper__marker" aria-labelledby="nstepper1">
+                <span class="sr-only">Completed</span>
+                <span class="c-nstepper__markercontent"></span>
+                <span class="c-nstepper__markerTxt" id="nstepper1">Business Units</span>
+            </a>
+        </li>
+        <li class="c-nstepper__litem -active" aria-current="true">
+            <a href="javascript:;" class="c-nstepper__marker" aria-labelledby="nstepper2">
+                <span class="sr-only">In progress</span>
+                <span class="c-nstepper__markercontent"></span>
+                <span class="c-nstepper__markerTxt" id="nstepper2">Scope</span>
+            </a>
+        </li>
+        <li class="c-nstepper__litem" aria-current="false">
+            <a href="javascript:;" class="c-nstepper__marker" aria-labelledby="nstepper3" tabindex="-1">
+                <span class="sr-only">Yet to start</span>
+                <span class="c-nstepper__markercontent"></span>
+                <span class="c-nstepper__markerTxt" id="nstepper3">Define Teams</span>
+            </a>
+        </li>
+        <li class="c-nstepper__litem" aria-current="false">
+            <a href="javascript:;" class="c-nstepper__marker" aria-labelledby="nstepper4" tabindex="-1">
+                <span class="sr-only">Yet to start</span>
+                <span class="c-nstepper__markercontent"></span>
+                <span class="c-nstepper__markerTxt" id="nstepper4">User mapping</span>
+            </a>
+        </li>
+        <li class="c-nstepper__litem" aria-current="false">
+            <a href="javascript:;" class="c-nstepper__marker" aria-labelledby="nstepper5" tabindex="-1">
+                <span class="sr-only">Yet to start</span>
+                <span class="c-nstepper__markercontent"></span>
+                <span class="c-nstepper__markerTxt" id="nstepper5">Plan Assessment</span>
+            </a>
+        </li>
+        {{~/if~}}
+    </ol>
+</div>

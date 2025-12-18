@@ -1,0 +1,19 @@
+<!-- Alert -->
+<!-- NOTE: Add one of '-success', '-warning', '-danger', '-info' depending on the requirement, Default is '-success' -->
+<div class="o-toaster__wrap {{ alertClass}}" role="alert">
+    <div class="o-toaster__icon">
+        <div class="-icon"></div>
+    </div>
+    <div class="o-toaster__content">
+        <div class="o-toaster__header">
+            {{#unless autosave}}
+            <a href="javascript:;" role="button" class="-close" aria-label="close"></a>
+            {{/unless}}
+            <div class="-title">{{swap 'Your feedback has been saved successfully.' alertTitle}}</div>
+        </div>
+        {{#unless autosave}}
+        <div class="o-toaster__body"> {{swap 'Thank you for your valuable time.' alertContent}} </div>
+        {{/unless}}
+    </div>
+</div>
+<!-- Alert -->

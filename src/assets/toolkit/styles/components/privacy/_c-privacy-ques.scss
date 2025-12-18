@@ -1,0 +1,42 @@
+.c-privacy-ques {
+    position: sticky;
+    top: 7.25rem;
+    height: fit-content;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 2px;
+        background: light-dark(#ddd, #fff);
+    }
+    & > li {
+        position: relative;
+        padding-bottom: 0.75rem;
+        padding-left: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 1.25rem;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            border-radius: 0.5rem;
+            background: transparent;
+        }
+        & > a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        &.-active {
+            &::before {
+                background: linear-gradient(180deg, #9b4dce 0%, #77b3c0 100%);
+            }
+            & > a {
+                color: light-dark(#6f46c6, #fff);
+            }
+        }
+    }
+}

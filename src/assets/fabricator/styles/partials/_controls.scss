@@ -1,0 +1,66 @@
+@use 'sass:math';
+.f-controls {
+	@include clearfix;
+	@include border-box;
+
+	.f-control {
+		display: block;
+		float: left;
+		text-align: center;
+		width: math.percentage(math.div(1,3));
+		margin: 0;
+		padding: 1rem 0;
+
+		&.f-active {
+			box-shadow: inset 0 4px 0 0 #008000;
+
+			use {
+				fill: color(menu-text);
+			}
+		}
+
+		svg {
+			vertical-align: middle;
+
+			use {
+				fill: if($theme == $theme-dark, color(normal), color(light) );
+			}
+		}
+	}
+}
+
+.f-control {
+	@include border-box;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 0.66rem;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	svg {
+		width: $icon-size;
+		height: $icon-size;
+
+		use {
+			fill: color(light);
+		}
+	}
+}
+
+.f-control-bar {
+	@include clearfix;
+	padding: 1rem 15px 3rem;
+}
+
+.f-menu-toggle {
+	cursor: pointer;
+	vertical-align: middle;
+
+	svg {
+		display: block;
+		float: left;
+		margin-bottom: -1px;
+	}
+}

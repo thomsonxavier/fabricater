@@ -1,0 +1,66 @@
+<div class="f-item-group" id="component-{{id}}">
+  <div class="f-item-heading-group" data-f-toggle="labels">
+    <!-- <ul class="f-item-multi-heading">
+        {{#if firstName }}
+        <li class="f-item-multi-heading__item">{{firstName}}</li>
+        {{/if}} 
+        {{#if secondName }}
+        <li class="f-item-multi-heading__item">{{secondName}}</li>
+        {{/if}} 
+        {{#if thirdName }}
+        <li class="f-item-multi-heading__item">{{thirdName}}</li>
+        {{/if}}
+    </ul> -->
+    <h2 class="f-item-heading">
+      <span class="f-item-folter">{{firstName}}</span>
+      {{name}}
+    </h2>
+    {{#if versionUpdates}}
+    <!-- <div class="f-item-group__notes-trig" title="Click To view version updates">
+      <i class="icon-add"></i>
+    </div> -->
+    {{/if}}
+  </div>
+  <div class="f-item-preview">{{{material id root }}}</div>
+  <div class="f-item-code f-item-hidden" style="display: block">
+    <ul class="f-item-code-blocks__tabs">
+      <li class="f-item-code-blocks__tab -active" data-toggle="html">HTML</li>
+      <li class="f-item-code-blocks__tab" data-toggle="scss">SCSS</li>
+      <li class="f-item-code-blocks__tab" data-toggle="jsript">JS</li>
+    </ul>
+    <div class="f-item-code-blocks__contents">
+      <div class="f-item-code-blocks__content -active html">
+        <pre><h1></h1><code class="language-markup">{{material id root}}</code></pre>
+      </div>
+      <div class="f-item-code-blocks__content scss">
+        <pre><code>{{{ printScss id directory }}}</code></pre>
+      </div>
+      <div class="f-item-code-blocks__content jsript">
+        <pre><code>{{{ printJs id directory }}}</code></pre>
+      </div>
+    </div>
+  </div>
+  {{#if versionUpdates }}
+  <div class="f-item-nodes-block">
+    <div class="f-item-nodes-block__head">Version Updates:</div>
+    <div class="f-item-nodes-block__content">
+      <div class="f-item-nodes-block__content-head">
+        <div class="f-item-nodes-block__content-head-item -one">Date</div>
+        <div class="f-item-nodes-block__content-head-item -one">Version</div>
+        <div class="f-item-nodes-block__content-head-item -two">Changes</div>
+      </div>
+      {{#each versionUpdates }}
+      <div class="f-item-nodes-block__content-data">
+        <div class="f-item-nodes-block__content-data-item -one">{{ date }}</div>
+        <div class="f-item-nodes-block__content-data-item -one">
+          {{ version }}
+        </div>
+        <div class="f-item-nodes-block__content-data-item -two">
+          {{ change }}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</div>

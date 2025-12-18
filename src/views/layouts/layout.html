@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{lang}}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{title}}</title>
+        <link rel="shortcut icon" href="{{#if baseurl}}{{ baseurl }}/{{/if}}favicon.ico" />
+        <link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/styles/toolkit.css">
+        <!-- <link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets//z_sampleApp_1/styles/z_sampleApp_1.css"> -->
+    </head>
+    <body>
+        <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+        <div class="app-wrapper{{#if sidebar}} -sidebar-present{{/if}}">  
+            {% body %}
+        </div>
+        <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/global.js"></script>
+        <!-- <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/z_sampleApp_1/scripts/z_sampleApp_1.js"></script> -->
+        <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/toolkit.js"></script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+.o-ias__vToggleGroup {
+    &-btn {
+        width: 100%;
+        display: inline-block;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        position: relative;
+        color: #000;
+        font-size: var(--pf-fs-14, 0.875rem);
+        background: none;
+        border: none;
+        &:hover,
+        &:focus {
+            color: #505050;
+            text-decoration: none;
+        }
+        &:focus-visible {
+            outline: 0.0625rem dashed #000;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.0625rem;
+            height: 100%;
+            background-color: #707070;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+        &.-active {
+            color: #a100ff;
+            &::before {
+                width: 0.125rem;
+                background-color: #a123ff;
+            }
+        }
+    }
+    &-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+    &-header {
+        font-size: var(--pf-fs-14, 0.875rem);
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 2rem;
+    }
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}

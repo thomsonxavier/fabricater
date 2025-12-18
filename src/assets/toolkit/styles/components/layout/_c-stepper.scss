@@ -1,0 +1,146 @@
+/* Theme */
+@mixin stepper-theme-light {
+    --color-stepper-active: var(--color-primary, #a100ff);
+    --color-stepper-dot: var(--color-grey-400, #ccc);
+    --color-stepper-connect: #e2e2e2;
+}
+
+@mixin stepper-theme-dark {
+    --color-stepper-active: var(--color-accent-2, #a055f5);
+    --color-stepper-dot: var(--color-grey-300, #ddd);
+}
+
+html[data-theme="dark"] {
+    .c-nstepper__wrap {
+        @include stepper-theme-dark();
+    }
+}
+
+.c-nstepper {
+    &__markerTxt {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(0.625rem);
+        width: max-content;
+        max-width: 6.25rem;
+        text-align: center;
+        display: flex;
+        font-size: var(--pf-fs-12, 0.75rem);
+    }
+    &__markercontent {
+        display: inline-block;
+        height: var(--inner-circle-size);
+        width: var(--inner-circle-size);
+        position: relative;
+        border-radius: 50%;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: var(--inner-circle-size);
+            width: var(--inner-circle-size);
+            background-color: var(--dot-color);
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 0.5rem;
+            width: 0.5rem;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17.231 13.084'%3E%3Cg id='noun_tick_1348361' transform='translate(-11.104 -18.854)'%3E%3Cg id='Group_98433' data-name='Group 98433' transform='translate(11.104 18.854)'%3E%3Cpath id='Path_194796' data-name='Path 194796' d='M13.337,25.916a1.268,1.268,0,1,0-1.928,1.649l3.365,3.926.964-.825-.966.828a1.272,1.272,0,0,0,1.793.138,1.317,1.317,0,0,0,.1-.1L27.931,21.052A1.269,1.269,0,1,0,26.2,19.194L15.84,28.837l-2.5-2.921Z' transform='translate(-11.104 -18.854)' fill='%23fff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+                no-repeat center;
+        }
+    }
+    &__marker {
+        --shadow-color: transparent;
+        --dot-color: var(--color-stepper-dot);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 1;
+        position: relative;
+        width: var(--active-circle-size);
+        height: var(--active-circle-size);
+        pointer-events: none;
+        // aspect-ratio: 1/1;
+        color: inherit;
+    }
+    &__litem {
+        --connector-color: var(--color-stepper-connect);
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: var(-color-stepper-text);
+        &:first-child {
+            flex: 0 0 auto;
+        }
+        &:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            display: inline-block;
+            transform: translateY(-50%);
+            border-top: 0.125rem solid var(--connector-color);
+        }
+
+        &.-active,
+        &.-completed {
+            --connector-color: var(--color-stepper-active);
+            .c-nstepper__marker {
+                --shadow-color: var(--color-stepper-active);
+                --dot-color: var(--color-base-background);
+                pointer-events: all;
+            }
+            .c-nstepper__markercontent {
+                width: var(--active-circle-size);
+                height: var(--active-circle-size);
+                box-shadow: inset 0 0 0 calc((var(--active-circle-size) - var(--inner-circle-size)) / 2) var(--shadow-color);
+            }
+        }
+        &.-active {
+            font-weight: 500;
+        }
+        &.-completed {
+            .c-nstepper__marker {
+                --dot-color: var(--color-stepper-active);
+            }
+            .c-nstepper__markercontent {
+                &::after {
+                    content: "";
+                }
+            }
+        }
+    }
+    &__prog {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    &__wrap {
+        --inner-circle-size: 0.5rem;
+        --active-circle-size: 3rem;
+        @include stepper-theme-light();
+        display: block;
+        width: 100%;
+    }
+
+    &__outer {
+        margin-right: 4.5rem;
+        width: 38.75rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

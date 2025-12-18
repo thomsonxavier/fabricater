@@ -1,0 +1,89 @@
+/* ==============================================================================
+Index
+----------------------------------------
+01 - settings imports
+02 - base imports
+02 - font-icons imports
+03 - common imports
+04 - components imports
+05 -
+06 -
+07 -
+08 -
+============================================================================== */
+
+/* 01 - settings import  */
+@import "settings/settings";
+
+/* 02.1 - bootstrap sass imports  */
+// @import "bootstrap-sass/bootstrap-sass";
+
+/*03 - Base imports*/
+@import "base/base";
+
+/* 03 - font-icons imports  */
+@import "font-icons";
+
+/* 04 - common elements imports  */
+@import "elements/buttons/o-primary-button";
+@import "elements/buttons/o-secondary-button";
+@import "elements/toggles/o-toggleswitch";
+@import "elements/toggles/o-toggle";
+@import "elements/alerts/o-alert";
+@import "elements/alerts/o-toaster-alert";
+@import "elements/pagination/o-pagination";
+@import "elements/pagination/o-pagination-2";
+@import "elements/inputs/o-input";
+@import "elements/inputs/o-checkbox";
+@import "elements/inputs/o-radio";
+@import "elements/inputs/o-text-area";
+@import "elements/inputs/o-rangeslider";
+@import "elements/inputs/o-rangeslider2";
+@import "elements/loader/o-loader";
+@import "elements/loader/o-text-loader";
+@import "elements/toggles/o-switch";
+@import "elements/misc/o-legend";
+@import "elements/misc/o-progress";
+
+/* 05 - common component imports */
+@import "components/layout/c-appheader"; //Header
+@import "components/layout/c-appfooter"; //Footer
+@import "components/layout/c-dropdown"; //Dropdown
+@import "components/layout/c-tabs"; //tabs
+@import "components/layout/c-carousel"; //carousel base
+@import "components/layout/c-accordion"; //Accordion, collapse
+@import "components/layout/c-tooltip"; //tooltip
+@import "components/layout/c-popover"; //popover
+@import "components/layout/c-comboBox"; //combobox
+@import "components/layout/c-flyout"; //flyout
+@import "components/layout/c-stickyfooter"; //stickyfooter
+@import "components/layout/c-adcarousel"; //carousel variant 2
+@import "components/layout/c-slideinpanel";
+@import "components/layout/c-misc"; //miscellaneous
+@import "components/layout/c-stepper"; //stepper
+@import "components/layout/c-appheader-dropdowns";
+@import "components/layout/c-combomenu";
+@import "components/layout/c-cyclic-carousel";
+@import "components/layout/c-table";
+@import "components/layout/c-global-dropdown";
+@import "components/modals/c-modal"; //modal
+
+/* 06 - app relevant imports*/
+// elements
+@import "elements/loader/o-kpis-loader";
+@import "elements/buttons/o-explore";
+
+//Components
+@import "components/miscellaneous/c-tree-chart";
+@import "components/miscellaneous/c-arc-carousel";
+@import "components/miscellaneous/c-arc-rmcarousel";
+@import "components/miscellaneous/c-arc-tlcarousel";
+
+// Search Results
+@import "components/search/c-results";
+@import "elements/search/c-headerSearch";
+
+// Privacy Statement
+@import "components/privacy/c-privacy";
+@import "components/privacy/c-privacy-ques";
+

@@ -1,0 +1,21 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 217">
+<path id="Ellipse 16" d="M30 1.25098C33.9053 1.25098 37.5467 4.34043 40.2363 9.57422C42.9146 14.7862 44.583 22.0156 44.583 30.0234C44.583 38.0314 42.9147 45.2607 40.2363 50.4727C37.5467 55.7064 33.9053 58.7959 30 58.7959C26.0947 58.7959 22.4533 55.7064 19.7637 50.4727C17.0853 45.2607 15.417 38.0314 15.417 30.0234C15.417 22.0156 17.0854 14.7862 19.7637 9.57422C22.4533 4.34043 26.0947 1.25098 30 1.25098Z" stroke="url(#paint0_linear_2012_28456)" stroke-width="0.833333"/>
+<path id="Ellipse 17" d="M1.25 29.1855C1.25 25.2803 4.33945 21.6388 9.57324 18.9492C14.7852 16.271 22.0146 14.6025 30.0225 14.6025C38.0304 14.6026 45.2597 16.2709 50.4717 18.9492C55.7055 21.6388 58.7949 25.2803 58.7949 29.1855C58.7949 33.0908 55.7055 36.7323 50.4717 39.4219C45.2597 42.1002 38.0304 43.7685 30.0225 43.7686C22.0146 43.7686 14.7852 42.1001 9.57324 39.4219C4.33945 36.7323 1.25 33.0908 1.25 29.1855Z" stroke="url(#paint1_linear_2012_28456)" stroke-width="0.833333"/>
+<circle id="Ellipse 15" cx="30" cy="30" r="29.5833" stroke="url(#paint2_linear_2012_28456)" stroke-width="0.833333"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2012_28456" x1="15.6767" y1="14.2245" x2="45.1512" y2="14.8007" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A630D3"/>
+<stop offset="1" stop-color="#77B2C0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2012_28456" x1="14.2235" y1="43.5089" x2="14.7997" y2="14.0344" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A630D3"/>
+<stop offset="1" stop-color="#77B2C0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_2012_28456" x1="1.35338" y1="13.7625" x2="60.2397" y2="16.0026" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A630D3"/>
+<stop offset="1" stop-color="#77B2C0"/>
+</linearGradient>
+</defs>
+</svg>

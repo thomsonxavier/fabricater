@@ -1,0 +1,104 @@
+// @use "sass:math";
+
+// /* Layout classes */
+// .app {
+//     &-container {
+//         padding-left: 4.75rem;
+//         padding-right: 4.75rem;
+//         width: 100%;
+//         max-width: 1280px;
+//         margin-left: auto;
+//         margin-right: auto;
+//         @media (max-width: 450px) {
+//             padding-left: 1rem;
+//             padding-right: 1rem;
+//         }
+//     }
+//     &-wrap {
+//         width: 100%;
+//         margin: 0 auto;
+//         display: flex;
+//         flex-direction: column;
+//         position: relative;
+//         // min-height: calc(100vh - 3.4375rem); //header heigh
+//         background: transparent no-repeat center;
+//         background-size: cover;
+//         background-attachment: fixed;
+//         flex: 1;
+//     }
+
+//     &-wrapper {
+//         display: flex;
+//         flex-direction: column;
+//         min-height: 100vh;
+//     }
+// }
+
+// /* Stretched Link */
+// .-stretched-link::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     display: inline-block;
+//     z-index: 1;
+//     &:focus-visible::after {
+//         outline: 0.0625rem solid #000;
+//     }
+// }
+
+// /* Screen Reader only */
+// .sr-only {
+//     position: absolute;
+//     width: 0.0625rem;
+//     height: 0.0625rem;
+//     padding: 0;
+//     overflow: hidden;
+//     clip: rect(0, 0, 0, 0);
+//     white-space: nowrap;
+//     -webkit-clip-path: inset(50%);
+//     clip-path: inset(50%);
+//     border: 0;
+//     &-focusable {
+//         //NOTE: Do not use this class outside of skip to main content link
+//         &:active,
+//         &:focus,
+//         &:focus-visible {
+//             position: fixed;
+//             display: block;
+//             top: 20px;
+//             left: 50%;
+//             transform: translate(-50%, 0);
+//             width: auto;
+//             height: auto;
+//             overflow: visible;
+//             clip: auto;
+//             clip-path: none;
+//             padding: 0.625rem;
+//             border: 1px solid #a100ff;
+//             background-color: #fff;
+//             z-index: 9999999;
+//         }
+//     }
+// }
+
+// // container to add toasters
+// .c-alxrt {
+//     &__wrapper {
+//         width: min(27.8125rem, 60vw);
+//         pointer-events: all;
+//     }
+//     &__container {
+//         display: flex;
+//         justify-content: flex-end;
+//     }
+//     &__outer {
+//         position: fixed;
+//         top: 4.75rem;
+//         right: 4.75rem;
+//         pointer-events: none;
+//         z-index: 99999999;
+//     }
+// }

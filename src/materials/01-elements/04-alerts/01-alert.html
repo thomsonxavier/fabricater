@@ -1,0 +1,18 @@
+<div class="o-alert {{alertClass}}{{#if dismiss}} -dismissible{{/if}}{{#if (isdefined action)}} -actionable{{/if}}" role="alert">
+    {{~#if (isdefined action)}}
+      <div class="o-alert__content">
+    {{/if~}}
+      {{~#if (isdefined svgIcon)}}
+        <div>{{> svg this}}<span>{{{swap 'A simple primary alert' alertHTML}}}</span></div>
+      {{~^~}}
+        <div>{{{swap 'A simple primary alert' alertHTML}}}</div>
+      {{~/if~}}
+
+      {{~#if (isdefined action)}}
+        <a href="javascript:void(0);" class="o-alert__action">{{action}}</a>
+      {{/if~}}
+    {{~#if (isdefined action)}}
+      </div>
+    {{/if~}}
+    {{~#if dismiss}}<button type="button" class="o-alert__close" title="Close"><span class="u-visually-hidden">Close</span></button>{{/if}}  
+  </div>

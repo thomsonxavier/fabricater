@@ -1,0 +1,8 @@
+<label class="o-toggle__wrap {{custClass}}" for="sample-toggle">
+    <p class="toggle-off">{{swapif 'No' first}}</p>
+    <div class="o-toggle__toggle">
+        <input type="checkbox" name="sample-toggle" id="sample-toggle" {{#if checked}}checked{{/if}}>
+        <span></span>
+    </div>
+    <p class="toggle-on">{{swapif 'Yes' second}}</p>
+</label>

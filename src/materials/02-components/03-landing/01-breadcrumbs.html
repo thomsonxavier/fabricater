@@ -1,0 +1,41 @@
+<div class="c-breadcrumbs__container{{#if brdclass}} brdclass{{/if}}">
+    <nav class="c-breadcrumbs__container-left">
+        <ol class="c-breadcrumbs__wrap" aria-label="primary navigation">
+            <!-- NOTE: Add aria-current="page" to the active step -->
+            {{~#if @partial-block}}
+                {{> @partial-block }}
+            {{~else~}}
+            <li class="c-breadcrumbs__item">
+                <a href="javascript:;" class="c-breadcrumbs__link" aria-label="my Workbench">my Workbench</a>
+            </li>
+            <li class="c-breadcrumbs__item" aria-current="page">
+                <span class="c-breadcrumbs__link" aria-label="Client Proposition">Client Proposition : </span>
+                <div class="c-dropdown c-breadcrumbs__dropdown -right -static" data-placement="bottom-end">
+                    <button type="button" class="c-breadcrumbs__dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="wb-breadcrums-dropdown">
+                        <span>Insights</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="8" height="5" viewBox="0 0 8 5" stroke="currentColor" fill="currentColor">
+                            <path d="M0.926952 0.469172L0.927005 0.46912L0.924991 0.467273C0.876739 0.423004 0.813462 0.398486 0.747854 0.398486C0.682246 0.398486 0.618969 0.423004 0.570717 0.467273L0.570028 0.466522L0.564065 0.474731C0.522944 0.531341 0.500781 0.599359 0.500781 0.669192C0.500781 0.739025 0.522944 0.807043 0.564065 0.863653L0.563631 0.863969L0.568766 0.869221L3.52077 3.88878L3.52113 3.8892L3.52525 3.89389C3.52877 3.89785 3.53381 3.9034 3.54009 3.91003C3.55259 3.92324 3.5703 3.941 3.59094 3.95898C3.61142 3.97681 3.6358 3.99576 3.66166 4.01063C3.68676 4.02507 3.7177 4.03829 3.75031 4.03911C3.78225 4.03992 3.81279 4.02935 3.83798 4.01695C3.86373 4.00427 3.88783 3.98771 3.90798 3.97202C3.92828 3.9562 3.94562 3.94046 3.95784 3.92872C3.96398 3.92282 3.96891 3.91786 3.97235 3.91431L3.9764 3.91009L3.97749 3.90893L3.97754 3.90887L6.93974 0.871654C6.96992 0.847897 6.99446 0.81777 7.01153 0.783403C7.02918 0.747888 7.03836 0.708815 7.03836 0.669192C7.03836 0.629569 7.02918 0.590496 7.01153 0.554981C6.99453 0.520758 6.97013 0.490738 6.94011 0.467028C6.8926 0.417734 6.8351 0.417845 6.77468 0.417962C6.77249 0.417966 6.7703 0.41797 6.7681 0.417972C6.70761 0.412725 6.64709 0.428563 6.59704 0.462875L6.59649 0.46207L6.58954 0.469174L3.93433 3.18684L3.93425 3.18677L3.93206 3.18933L3.76957 3.3797L3.57034 3.17445L3.57023 3.17433L0.926952 0.469172Z" stroke-width="0.1"/>
+                        </svg>
+                    </button>
+                    <!-- Note: add aria-selected="true" to the selected option -->
+                <div class="c-dropdown-menu" id="wb-breadcrums-dropdown">
+                    <div class="c-dropdown-body" role="listbox" aria-label="Select section to navigate within Client proposition">
+                        <div class="c-dropdown-item -title">Client Proposition</div>
+                        <a href="javascript:;" id="nav_menu_option1" role="option" class="c-dropdown-item -section" aria-selected="true">Insights</a>
+                        <a href="javascript:;" id="nav_menu_option2" role="option" class="c-dropdown-item -section" aria-selected="false">Client Objectives</a>
+                        <a href="javascript:;" id="nav_menu_option3" role="option" class="c-dropdown-item -section" aria-selected="false">Select Key KPIs</a>
+                        <div class="c-dropdown-item -title">Create As-Is Digital Twin</div>
+                        <div class="c-dropdown-item -title">Create Reimagine Digial Twin</div>
+                        <div class="c-dropdown-item -title">Compressed Transformation</div>
+                        <div class="c-dropdown-item -title">Client Proposition</div>
+                        <div class="c-dropdown-item -title">Build Digital Core</div>
+                        <div class="c-dropdown-item -title">Organization Change and Activation</div>
+                        <div class="c-dropdown-item -title">Transform Operations</div>
+                    </div>
+                </div>
+                </div>
+            </li>
+            {{~/if~}}
+        </ol>
+    </nav>
+</div>

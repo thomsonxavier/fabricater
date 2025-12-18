@@ -1,0 +1,109 @@
+/* ==============================================================================
+Index
+----------------------------------------
+01 - o-secondary-button
+02 -
+03 -
+04 -
+05 -
+06 -
+07 -
+08 -
+============================================================================== */
+
+/* 01 - o-secondary-button */
+@mixin secondaryButton-theme-dark {
+    --color-secondaryBtn-hover: #be82ff;
+    --color-secondaryBtn-text: #fff;
+}
+
+:root[data-theme="dark"] {
+    @include secondaryButton-theme-dark();
+}
+.o-secondary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--pf-fs-14, 0.875rem);
+    font-weight: 400;
+    color: var(--color-secondaryBtn-text,#000);
+    min-width: 5.625rem;
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+    padding: 0.4375rem 1.25rem;
+    line-height: 1.5;
+    position: relative;
+    background: transparent;
+    background-image: none;
+    border: 1px solid var(--color-secondaryBtn-text,#000);
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        text-decoration: none;
+        border-color: var(--color-secondaryBtn-text, #460073);
+        color: var(--color-secondaryBtn-text, #460073);
+    }
+    &:focus-visible {
+        outline: 0.0625rem dashed #000 !important;
+    }
+
+    &.-md-width {
+        min-width: 8.75rem;
+    }
+
+    &[aria-disabled=true],
+    &:disabled {
+        opacity: 1 !important;
+        color: #ccc;
+        cursor: auto;
+        border-color: #ccc;
+        pointer-events: none;
+        &:hover,
+        &:focus {
+            color: #ccc;
+            box-shadow: none;
+            text-decoration: none;
+            border-color: #ccc;
+        }
+
+        // pointer-events: none;
+    }
+    &__icon-right {
+        margin-left: 0.625rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    &__icon-left {
+        margin-right: 0.625rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    &.-marketplace {
+        border-color: transparent;
+        border-radius: 100px;
+        background: linear-gradient(90deg, #fbfafc, #fbfafc) padding-box, linear-gradient(90deg, #9b4dce 0%, #5ad6b8 100%) border-box;
+        &:hover,
+        &:focus {
+            background: linear-gradient(133deg, rgba(255, 255, 255, 0.9) 14.65%, rgba(255, 255, 255, 0.9) 108.26%) padding-box, linear-gradient(98deg, #9342ce 0%, #6284b6 62.24%, #35c29f 120.93%) border-box;
+            color: light-dark(#000, #fff);
+        }
+    }
+}
+
+/*===========================
+  00 - media queries
+  ===========================*/
+
+/* Small devices (tablets, 768px and up) */
+
+/*@media (min-width: $screen-sm-min) {} */
+
+/* Medium devices (desktops, 992px and up) */
+/*@media (min-width: $screen-md-min) {}*/
+
+/* Large devices (large desktops, 1232px and up) */
+/* @media (min-width: $screen-lg-min) {} */
+
+/* X-Large devices (large desktops, 1440px and up) */
+/*@media (min-width: $screen-xl-min) {}*/

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>{{ title }}</title>
+
+    <!-- favicon for classic desktop browsers -->
+    <link rel="shortcut icon" href="{{#if baseurl}}{{ baseurl }}/{{/if}}favicon.ico" type="image/x-icon" />
+    {{#if fabricator}}
+    <link
+      rel="stylesheet"
+      href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/styles/f.css"
+    />
+    {{/if}}
+
+    <!-- toolkit styles -->
+    {{#if rtl}}
+    <!-- <link
+      rel="stylesheet"
+      href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/styles/toolkit-ar.css"
+    /> -->
+    {{else}}
+    <!-- <link
+      rel="stylesheet"
+      href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/styles/global.css"
+    /> -->
+
+    <link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/styles/toolkit.css" />
+    <!-- <link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/z_sampleApp_1/styles/z_sampleApp_1.css" /> -->
+    {{/if}}
+    <!-- /toolkit styles -->
+  </head>
+  <body>
+    <div style="position: fixed; top: 2rem; right: 1rem; z-index: 99999999; background: var(--color-contrast, #fff); padding: 0.5rem 1rem; border-radius: 4px;">
+      <div class="o-toggle__wrap" for="app-theme-toggle">
+        <p class="toggle-off">Dark</p>
+        <div class="o-toggle__toggle">
+            <input type="checkbox" name="app-theme-toggle" id="app-theme-toggle" checked>
+            <span></span>
+        </div>
+        <p class="toggle-on">Light</p>
+      </div>
+    </div>
+    {{#if fabricator}} {{> f-icons}} {{> f-menu-tabs }}
+    <div class="f-container">
+      {{> f-control-bar}} {{/if}} {% body %} {{#if fabricator}}
+    </div>
+    <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/scripts/fabricator.js"></script>
+    {{/if}}
+
+    <!-- toolkit scripts -->
+    <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/global.js"></script>
+    <!-- <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/z_sampleApp_1/scripts/z_sampleApp_1.js"></script> -->
+    <script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/toolkit.js"></script>
+    <!-- /toolkit scripts -->
+  </body>
+</html>
