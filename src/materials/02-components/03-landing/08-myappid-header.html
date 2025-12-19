@@ -1,0 +1,65 @@
+---
+notes: |
+    myApplicationID Header Component
+    - Custom header for myApplicationID portal
+    - Includes logo, title, and navigation icons
+    - Icons: help, chat, campaign, notification, amethyst, avatar
+    - Tooltip appears on amethyst icon hover with hand click indicator
+---
+<header class="c-myappid-header">
+    <div class="c-myappid-header__inner">
+        <div class="c-myappid-header__left">
+            <a href="javascript:;" class="c-myappid-header__logo" aria-label="myApplicationID Home">
+                <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/logo/mlogo.svg" alt="" aria-hidden="true" />
+            </a>
+            <span class="c-myappid-header__title">myApplicationID</span>
+        </div>
+        
+        <div class="c-myappid-header__right">
+            <nav class="c-myappid-header__nav" aria-label="Header navigation">
+                <button type="button" class="c-myappid-header__nav-btn" aria-label="Help">
+                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/help.svg" alt="" aria-hidden="true" />
+                </button>
+                <button type="button" class="c-myappid-header__nav-btn" aria-label="Chat">
+                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/chat.svg" alt="" aria-hidden="true" />
+                </button>
+                <button type="button" class="c-myappid-header__nav-btn" aria-label="Campaign">
+                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/campaign.svg" alt="" aria-hidden="true" />
+                </button>
+                <button type="button" class="c-myappid-header__nav-btn -notification" aria-label="Notifications">
+                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/notification.svg" alt="" aria-hidden="true" />
+                    {{#if hasNotification}}
+                    <span class="c-myappid-header__notif-badge" aria-hidden="true"></span>
+                    {{/if}}
+                </button>
+                <div class="c-myappid-header__amethyst-wrap">
+                    <button type="button" class="c-myappid-header__nav-btn -amethyst" aria-label="Amethyst AI Assistant">
+                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/amethyst-logo.svg" alt="" aria-hidden="true" />
+                    </button>
+                    {{#if showHelperTip}}
+                    <div class="c-myappid-header__tooltip" role="tooltip">
+                        <div class="c-myappid-header__tooltip-arrow"></div>
+                        <div class="c-myappid-header__tooltip-content">
+                            <p class="c-myappid-header__tooltip-text">If you need help finding what you need you can ask amethyst</p>
+                            <div class="c-myappid-header__tooltip-actions">
+                                <button type="button" class="c-myappid-header__tooltip-close" aria-label="Dismiss">×</button>
+                                <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/hand-click.svg" alt="" class="c-myappid-header__tooltip-hand" aria-hidden="true" />
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </nav>
+            
+            <div class="c-myappid-header__profile">
+                <button type="button" class="c-myappid-header__avatar" aria-label="User profile menu" aria-expanded="false">
+                    {{#if avatarImg}}
+                    <img src="{{avatarImg}}" alt="User avatar" />
+                    {{else}}
+                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/common/profile.svg" alt="User avatar" />
+                    {{/if}}
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

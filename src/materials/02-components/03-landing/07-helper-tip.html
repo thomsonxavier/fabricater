@@ -1,0 +1,25 @@
+---
+notes: |
+    Helper Tip Component
+    - Small popup tooltip for contextual help
+    - Appears near help/assistant icons
+    - Dismissible with close button
+    - Use for AI assistant prompts or quick tips
+---
+<div class="c-helper-tip{{#if tipClass}} {{tipClass}}{{/if}}" role="tooltip" aria-live="polite">
+    <div class="c-helper-tip__content">
+        <p class="c-helper-tip__text">
+            {{{swapif 'If you need help finding what you need you can ask amethyst' tipText}}}
+        </p>
+        <button type="button" class="c-helper-tip__close" aria-label="Dismiss tip">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{#if tipAction}}
+    <div class="c-helper-tip__action">
+        <button type="button" class="c-helper-tip__btn">
+            <i class="icon-assistant" aria-hidden="true"></i>
+        </button>
+    </div>
+    {{/if}}
+</div>

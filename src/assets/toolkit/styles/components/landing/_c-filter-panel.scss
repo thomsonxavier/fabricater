@@ -1,0 +1,195 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Filter Panel Theme
+02 - Filter Panel Base
+03 - Panel Header
+04 - Panel Body
+05 - Panel Footer
+06 - Minimized State
+07 - Show/Hide Animation
+==============================================================================*/
+
+/* --------------------
+01 - Filter Panel Theme
+-------------------- */
+@mixin filter-panel-theme-light {
+    --color-filter-bg: #fff;
+    --color-filter-border: #eee;
+    --color-filter-title: #333;
+    --color-filter-text: #666;
+    --color-filter-clear: #A100FF;
+    --color-filter-apply-bg: #B3B2B5;
+    --color-filter-apply-text: #423D47;
+    --color-filter-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@mixin filter-panel-theme-dark {
+    --color-filter-bg: #1a1a1a;
+    --color-filter-border: #333;
+    --color-filter-title: #eaeaea;
+    --color-filter-text: #999;
+    --color-filter-clear: #be82ff;
+    --color-filter-apply-bg: #4a4a4a;
+    --color-filter-apply-text: #fff;
+    --color-filter-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.c-filter-panel {
+    @include filter-panel-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-filter-panel {
+        @include filter-panel-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Filter Panel Base
+-------------------- */
+.c-filter-panel {
+    width: 17.5rem; /* 280px */
+    background: var(--color-filter-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--color-filter-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* When inside the wrapper, use normal document flow */
+.c-requests-wrapper__filter-panel .c-filter-panel {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+/* --------------------
+03 - Panel Header
+-------------------- */
+.c-filter-panel__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-filter-border);
+}
+
+.c-filter-panel__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-filter-title);
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+
+    i {
+        font-size: 1rem;
+    }
+}
+
+.c-filter-panel__clear {
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-filter-clear);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.c-filter-panel__minimize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-filter-title);
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    i {
+        font-size: 1rem; /* 16px for better visibility */
+    }
+
+    &:hover {
+        color: var(--color-filter-clear);
+    }
+}
+
+/* --------------------
+04 - Panel Body
+-------------------- */
+.c-filter-panel__body {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 25rem; /* 400px */
+}
+
+.c-filter-panel__placeholder {
+    color: var(--color-filter-text);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* --------------------
+05 - Panel Footer
+-------------------- */
+.c-filter-panel__footer {
+    padding: 1rem;
+    border-top: 1px solid var(--color-filter-border);
+}
+
+.c-filter-panel__apply {
+    display: flex;
+    width: 100%;
+    height: 2.5rem; /* 40px */
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    border: none;
+    background: var(--color-filter-apply-bg);
+    color: var(--color-filter-apply-text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #9a999c;
+    }
+}
+
+/* --------------------
+06 - Minimized State
+-------------------- */
+.c-filter-panel.-minimized {
+    .c-filter-panel__body,
+    .c-filter-panel__footer {
+        display: none;
+    }
+
+    .c-filter-panel__minimize i::before {
+        content: "\E004"; /* icon-add - shows expand icon when minimized */
+    }
+}
+
+/* --------------------
+07 - Show/Hide Animation
+-------------------- */
+/* Animation handled by wrapper visibility */

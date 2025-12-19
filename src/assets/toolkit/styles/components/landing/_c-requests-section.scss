@@ -1,0 +1,204 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Requests Wrapper Theme
+02 - Requests Wrapper Base
+03 - Wrapper Header
+04 - Wrapper Content
+05 - Filter Column
+06 - Main Column
+07 - Search & Table
+==============================================================================*/
+
+/* --------------------
+01 - Requests Wrapper Theme
+-------------------- */
+@mixin requests-wrapper-theme-light {
+    --color-section-bg: #fff;
+    --color-section-title: #333;
+    --color-section-border: #eee;
+    --color-filter-btn-bg: #B3B2B5;
+    --color-filter-btn-text: #423D47;
+}
+
+@mixin requests-wrapper-theme-dark {
+    --color-section-bg: #1a1a1a;
+    --color-section-title: #eaeaea;
+    --color-section-border: #333;
+    --color-filter-btn-bg: #4a4a4a;
+    --color-filter-btn-text: #fff;
+}
+
+.c-requests-wrapper {
+    @include requests-wrapper-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-requests-wrapper {
+        @include requests-wrapper-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Requests Wrapper Base
+-------------------- */
+.c-requests-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* --------------------
+03 - Wrapper Header
+-------------------- */
+.c-requests-wrapper__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.c-requests-wrapper__title {
+    font-size: var(--pf-fs-20, 1.25rem);
+    font-weight: 600;
+    color: var(--color-section-title);
+    margin: 0;
+}
+
+.c-requests-wrapper__actions {
+    .o-primary-button.-create-request {
+        background: linear-gradient(90deg, #a72dd4 0.01%, #77b3c0 99.99%);
+        border: none;
+        border-radius: 1.25rem;
+        padding: 0.625rem 1.25rem;
+
+        &:hover,
+        &:focus {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), 
+                        linear-gradient(90deg, #a72dd4 0.01%, #77b3c0 99.99%);
+        }
+    }
+}
+
+/* --------------------
+04 - Wrapper Content
+-------------------- */
+.c-requests-wrapper__content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+/* --------------------
+05 - Filter Column (Sidebar layout)
+-------------------- */
+.c-requests-wrapper__filter-col {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.c-requests-wrapper__filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* 40px */
+    height: 2rem; /* 32px */
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: var(--color-filter-btn-bg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    i {
+        font-size: 1rem;
+        color: var(--color-filter-btn-text);
+    }
+
+    &:hover {
+        background: #9a999c;
+    }
+
+    /* Hide button when filter panel is open */
+    &[aria-expanded="true"] {
+        display: none;
+    }
+}
+
+.c-requests-wrapper__filter-panel {
+    display: none;
+
+    &.-show {
+        display: block;
+    }
+
+    .c-filter-panel {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+/* --------------------
+06 - Main Column
+-------------------- */
+.c-requests-wrapper__main {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.c-requests-wrapper__toolbar {
+    .c-action-toolbar {
+        padding: 0;
+    }
+}
+
+/* --------------------
+07 - Search & Table
+-------------------- */
+.c-requests-wrapper__search-table {
+    background: var(--color-section-bg);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.c-requests-wrapper__search {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-section-border);
+
+    .o-searchfield__wrap {
+        max-width: 100%;
+    }
+
+    .o-searchfield__input {
+        border-radius: 0.25rem;
+        border: 1px solid var(--color-section-border);
+        padding: 0.625rem 1rem 0.625rem 2.5rem;
+    }
+}
+
+.c-requests-wrapper__table {
+    overflow-x: auto;
+}
+
+/* --------------------
+Legacy Support (remove if not needed)
+-------------------- */
+.c-requests-section {
+    @include requests-wrapper-theme-light();
+    flex: 1;
+    background: transparent;
+}
+
+html[data-theme="dark"] {
+    .c-requests-section {
+        @include requests-wrapper-theme-dark();
+    }
+}

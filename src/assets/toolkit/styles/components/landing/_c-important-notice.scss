@@ -1,0 +1,170 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Important Notice Theme
+02 - Important Notice Base
+03 - Toggle Button
+04 - Panel
+05 - Panel Header
+06 - Panel Body
+07 - Expanded State
+==============================================================================*/
+
+/* --------------------
+01 - Important Notice Theme
+-------------------- */
+@mixin important-notice-theme-light {
+    --color-notice-bg: #fff;
+    --color-notice-title: #333;
+    --color-notice-text: #666;
+    --color-notice-border: #eee;
+    --color-notice-accent: #a100ff;
+    --color-notice-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+@mixin important-notice-theme-dark {
+    --color-notice-bg: #1a1a1a;
+    --color-notice-title: #eaeaea;
+    --color-notice-text: #999;
+    --color-notice-border: #333;
+    --color-notice-accent: #be82ff;
+    --color-notice-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.c-important-notice {
+    @include important-notice-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-important-notice {
+        @include important-notice-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Important Notice Base
+-------------------- */
+.c-important-notice {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: stretch;
+}
+
+/* --------------------
+03 - Toggle Button
+-------------------- */
+.c-important-notice__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 1rem 0.5rem;
+    background: var(--color-notice-accent);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem 0 0 0.25rem;
+    font-size: var(--pf-fs-12, 0.75rem);
+    font-weight: 600;
+    letter-spacing: 0.03125rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: light-dark(#8000cc, #a855f7);
+    }
+}
+
+.c-important-notice__toggle-text {
+    transform: rotate(180deg);
+}
+
+/* --------------------
+04 - Panel
+-------------------- */
+.c-important-notice__panel {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(1.25rem);
+    width: 20rem;
+    max-width: 90vw;
+    background: var(--color-notice-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--color-notice-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+/* --------------------
+05 - Panel Header
+-------------------- */
+.c-important-notice__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-notice-border);
+}
+
+.c-important-notice__title {
+    font-size: var(--pf-fs-16, 1rem);
+    font-weight: 600;
+    color: var(--color-notice-title);
+    margin: 0;
+}
+
+.c-important-notice__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: transparent;
+    color: light-dark(#666, #999);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: light-dark(#f5f5f5, #2a2a2a);
+        color: var(--color-notice-title);
+    }
+}
+
+/* --------------------
+06 - Panel Body
+-------------------- */
+.c-important-notice__body {
+    padding: 1rem;
+    font-size: var(--pf-fs-14, 0.9375rem);
+    color: var(--color-notice-text);
+    line-height: 1.6;
+    max-height: 18.75rem;
+    overflow-y: auto;
+
+    p {
+        margin: 0 0 0.75rem 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* --------------------
+07 - Expanded State
+-------------------- */
+.c-important-notice__toggle[aria-expanded="true"] + .c-important-notice__panel,
+.c-important-notice__panel.-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}

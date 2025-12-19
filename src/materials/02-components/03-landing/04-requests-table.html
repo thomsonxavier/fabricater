@@ -1,0 +1,93 @@
+---
+notes: |
+    Requests Table Component
+    - Data table for displaying application requests
+    - Sortable columns with checkbox selection
+    - Columns: Application ID, Account Type, Status, Credential, AIR ID, Application
+    - Add class `-sorted` to sorted column headers
+---
+<div class="c-requests-table">
+    <div class="c-table__responsive">
+        <table class="c-table__table">
+            <caption class="sr-only">
+                Application ID Requests Table
+            </caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="c-requests-table__checkbox-col">
+                        <label class="o-checkbox -table">
+                            <input type="checkbox" name="select-all" id="select-all-requests" aria-label="Select all requests">
+                        </label>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">Application ID</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Application ID"></a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">Account Type</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Account Type"></a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">Status</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Status"></a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">Credential</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Credential"></a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">AIR ID</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by AIR ID"></a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-flex">
+                            <div class="-left">
+                                <p class="-title">Application</p>
+                            </div>
+                            <div class="-right">
+                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Application"></a>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{~#if @partial-block}}
+                    {{> @partial-block }}
+                {{~else~}}
+                <!-- Empty state will be shown when no data -->
+                {{~/if~}}
+            </tbody>
+        </table>
+    </div>
+</div>

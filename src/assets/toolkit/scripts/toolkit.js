@@ -55,6 +55,8 @@ import { resizeFunc } from "./components/layout/resize";
 import { privacyScroll } from "./components/privacy/privacy-scroll";
 import { onLoadModal } from "./components/modals/onLoadModal";
 import { TableFun } from "./components/layout/table";
+import { myappidHeaderINIT } from "./components/landing/myappid-header";
+import { filterPanelINIT } from "./components/landing/filter-panel";
 
 //02- Function calls
 // call global/common elements
@@ -97,5 +99,7 @@ resizeFunc();
 privacyScroll();
 onLoadModal();
 TableFun();
+myappidHeaderINIT();
+filterPanelINIT();
 
 export default {};

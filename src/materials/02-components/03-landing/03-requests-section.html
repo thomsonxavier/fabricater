@@ -1,0 +1,53 @@
+---
+notes: |
+    My Requests Section Component
+    - Complete section with header, search, toolbar, and table
+    - Includes "Create New Request" primary action button
+    - Table with sortable columns
+    - Integrates search field and action toolbar
+    - Filter button is positioned at the left edge
+---
+<div class="c-requests-wrapper">
+    <!-- Header Row -->
+    <div class="c-requests-wrapper__header">
+        <h2 class="c-requests-wrapper__title">My Requests</h2>
+        <div class="c-requests-wrapper__actions">
+            {{> buttons.primary-button btn-text="Create New Request" icon-right="icon-arrow-right" btn-Class="-create-request"}}
+        </div>
+    </div>
+    
+    <!-- Content Row with Filter at edge -->
+    <div class="c-requests-wrapper__content">
+        <!-- Filter Column at left edge -->
+        <div class="c-requests-wrapper__filter-col">
+            <button type="button" class="c-requests-wrapper__filter-btn" aria-label="Toggle filters" aria-expanded="false">
+                <i class="icon-toolbar-filter" aria-hidden="true"></i>
+            </button>
+            
+            <div class="c-requests-wrapper__filter-panel">
+                {{> landing.filter-panel}}
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="c-requests-wrapper__main">
+            <div class="c-requests-wrapper__toolbar">
+                {{> landing.action-toolbar-buttons}}
+            </div>
+            
+            <div class="c-requests-wrapper__search-table">
+                <div class="c-requests-wrapper__search">
+                    {{> search.searchfield srchfplc="Search" srchfid="requests-search"}}
+                </div>
+                
+                <div class="c-requests-wrapper__table">
+                    {{~#if @partial-block}}
+                        {{> @partial-block }}
+                    {{~else~}}
+                    {{> landing.requests-table}}
+                    {{~/if~}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

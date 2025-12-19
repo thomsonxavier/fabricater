@@ -1,0 +1,28 @@
+---
+notes: |
+    Important Notice Sidebar Component
+    - Fixed/sticky sidebar for important announcements
+    - Appears on the right edge of the screen
+    - Expandable on click/hover
+    - Use for critical information or alerts
+---
+<aside class="c-important-notice{{#if noticeClass}} {{noticeClass}}{{/if}}" aria-label="Important Notice">
+    <button type="button" class="c-important-notice__toggle" aria-expanded="false" aria-controls="important-notice-panel">
+        <span class="c-important-notice__toggle-text">IMPORTANT NOTICE</span>
+    </button>
+    <div class="c-important-notice__panel" id="important-notice-panel" aria-hidden="true">
+        <div class="c-important-notice__header">
+            <h3 class="c-important-notice__title">Important Notice</h3>
+            <button type="button" class="c-important-notice__close" aria-label="Close notice panel">
+                <i class="icon-close" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="c-important-notice__body">
+            {{~#if @partial-block}}
+                {{> @partial-block }}
+            {{~else~}}
+            <p>Please be advised of upcoming maintenance scheduled for this weekend. Some services may be temporarily unavailable.</p>
+            {{~/if~}}
+        </div>
+    </div>
+</aside>

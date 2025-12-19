@@ -1,0 +1,24 @@
+---
+notes: |
+    Landing Hero/Welcome Banner Component
+    - Displays the main welcome section with background image
+    - Includes title and description text
+    - Title: "Welcome to myApplication ID" with accent color on "ID"
+    - Background height: 251px
+    - Use class `-compact` for smaller variant
+---
+<section class="c-landing-hero{{#if heroClass}} {{heroClass}}{{/if}}">
+    <div class="c-landing-hero__bg" aria-hidden="true"></div>
+    <div class="c-landing-hero__content">
+        <h1 class="c-landing-hero__title">
+            {{~#if @partial-block}}
+                {{> @partial-block }}
+            {{~else~}}
+            <span class="c-landing-hero__title-highlight">Welcome to myApplication</span><span class="c-landing-hero__title-accent">ID</span>
+            {{~/if~}}
+        </h1>
+        <p class="c-landing-hero__desc">
+            {{{swapif 'A self-service portal used by application teams to request and manage Account IDs. To get started you can view your requests below or create a new request' heroDesc}}}
+        </p>
+    </div>
+</section>

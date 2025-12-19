@@ -1,0 +1,313 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - myAppID Header Theme
+02 - Header Base
+03 - Header Inner
+04 - Logo & Title
+05 - Navigation
+06 - Profile
+07 - Helper Tip / Tooltip
+==============================================================================*/
+
+/* --------------------
+01 - myAppID Header Theme
+-------------------- */
+@mixin myappid-header-theme-light {
+    --color-header-bg: #fff;
+    --color-header-title: #000;
+    --color-header-border: rgba(0, 0, 0, 0.1);
+    --color-header-icon: #1c1b1f;
+    --color-header-icon-hover: #a100ff;
+    --color-header-notif: #ff3b30;
+    --color-tooltip-bg: #fff;
+    --color-tooltip-text: #333;
+}
+
+@mixin myappid-header-theme-dark {
+    --color-header-bg: #000;
+    --color-header-title: #fff;
+    --color-header-border: rgba(255, 255, 255, 0.1);
+    --color-header-icon: #eaeaea;
+    --color-header-icon-hover: #be82ff;
+    --color-header-notif: #ff453a;
+    --color-tooltip-bg: #1a1a1a;
+    --color-tooltip-text: #ccc;
+}
+
+.c-myappid-header {
+    @include myappid-header-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-myappid-header {
+        @include myappid-header-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Header Base
+-------------------- */
+.c-myappid-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-header-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* --------------------
+03 - Header Inner
+-------------------- */
+.c-myappid-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 3.5rem; /* 56px */
+    max-width: var(--Global-Layout-Breakpoint-Max, 112.5rem); /* 1800px */
+    padding: var(--Header-Padding-Vertical, 0) var(--Global-Layout-Margin-MD, 2.5rem); /* 0 40px */
+    margin: 0 auto;
+}
+
+/* --------------------
+04 - Logo & Title
+-------------------- */
+.c-myappid-header__left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.c-myappid-header__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 2.5rem; /* 40px */
+    height: 3.5rem; /* 56px */
+
+    img {
+        height: auto;
+        width: 2.5rem; /* 40px */
+        object-fit: contain;
+    }
+}
+
+.c-myappid-header__title {
+    color: var(--Header-Title-Color-Default, var(--color-header-title));
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: var(--Header-Title-Font-size, 1.125rem); /* 18px */
+    font-style: normal;
+    font-weight: var(--Header-Title-Font-weight, 500);
+    line-height: 1.125rem; /* 18px / 100% */
+    letter-spacing: var(--Header-Title-Letter-spacing, -0.015rem); /* -0.24px */
+}
+
+/* --------------------
+05 - Navigation
+-------------------- */
+.c-myappid-header__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 16px gap */
+}
+
+.c-myappid-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 16px gap between icons */
+}
+
+.c-myappid-header__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    padding: 0.5rem; /* 8px padding */
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    img {
+        width: 1.5rem; /* 24px */
+        height: 1.5rem; /* 24px */
+        object-fit: contain;
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    &:focus-visible {
+        outline: 0.125rem solid var(--color-header-icon-hover);
+        outline-offset: 0.125rem;
+    }
+
+    &.-amethyst {
+        img {
+            width: 1.875rem; /* 30px */
+            height: 1.875rem; /* 30px */
+        }
+    }
+}
+
+.c-myappid-header__notif-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-header-notif);
+    border-radius: 50%;
+    border: 2px solid var(--color-header-bg);
+}
+
+.-notification {
+    position: relative;
+}
+
+/* --------------------
+06 - Amethyst Wrapper & Tooltip
+-------------------- */
+.c-myappid-header__amethyst-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    /* Show tooltip on hover */
+    &:hover .c-myappid-header__tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.c-myappid-header__tooltip {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: -3rem;
+    z-index: 100;
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+
+    /* When closed via JS */
+    &.-closed {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
+
+.c-myappid-header__tooltip-arrow {
+    position: absolute;
+    top: -0.375rem;
+    right: 3.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--color-tooltip-bg);
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.c-myappid-header__tooltip-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--color-tooltip-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 11.5625rem; /* 185px */
+}
+
+.c-myappid-header__tooltip-text {
+    flex: 1;
+    color: #333;
+    font-family: Inter, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 18px / 150% */
+    margin: 0;
+}
+
+/* Actions column - close button and hand icon stacked vertically */
+.c-myappid-header__tooltip-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.c-myappid-header__tooltip-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+
+    &:hover {
+        color: #000;
+    }
+}
+
+.c-myappid-header__tooltip-hand {
+    width: 1.375rem;
+    height: auto;
+}
+
+/* --------------------
+07 - Profile
+-------------------- */
+.c-myappid-header__profile {
+    margin-left: 0;
+}
+
+.c-myappid-header__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 2px var(--color-header-icon-hover);
+    }
+
+    &:focus-visible {
+        outline: 0.125rem solid var(--color-header-icon-hover);
+        outline-offset: 0.125rem;
+    }
+}

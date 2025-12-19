@@ -1,0 +1,136 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Requests Table Theme
+02 - Requests Table Base
+03 - Table Header
+04 - Checkbox Column
+05 - Row States
+==============================================================================*/
+
+/* --------------------
+01 - Requests Table Theme
+-------------------- */
+@mixin requests-table-theme-light {
+    --color-table-head-bg: linear-gradient(90deg, rgba(114, 21, 190, 0.07) 0%, rgba(104, 206, 219, 0.07) 100%);
+    --color-table-row-bg: rgba(255, 255, 255, 0.8);
+    --color-table-row-hover: #f5f5f5;
+    --color-table-border: #eee;
+    --color-table-head-text: #181d1f;
+    --color-table-text: #333;
+    --color-table-selected: rgba(161, 0, 255, 0.05);
+}
+
+@mixin requests-table-theme-dark {
+    --color-table-head-bg: linear-gradient(90deg, rgba(114, 21, 190, 0.15) 0%, rgba(104, 206, 219, 0.15) 100%);
+    --color-table-row-bg: rgba(30, 30, 30, 0.8);
+    --color-table-row-hover: #2a2a2a;
+    --color-table-border: #333;
+    --color-table-head-text: #eaeaea;
+    --color-table-text: #ccc;
+    --color-table-selected: rgba(161, 0, 255, 0.1);
+}
+
+.c-requests-table {
+    @include requests-table-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-requests-table {
+        @include requests-table-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Requests Table Base
+-------------------- */
+.c-requests-table {
+    width: 100%;
+
+    .c-table__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background: var(--color-table-head-bg);
+
+        th {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 500;
+            font-size: var(--pf-fs-14, 0.875rem);
+            color: var(--color-table-head-text);
+            border-bottom: 1px solid var(--color-table-border);
+            border-right: 1px solid var(--color-table-border);
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: var(--color-table-row-bg);
+            border-bottom: 1px solid var(--color-table-border);
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: var(--color-table-row-hover);
+            }
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            font-size: var(--pf-fs-14, 0.875rem);
+            color: var(--color-table-text);
+            border-right: 1px solid var(--color-table-border);
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+/* --------------------
+03 - Table Header
+-------------------- */
+.c-requests-table .th-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .-title {
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+/* --------------------
+04 - Checkbox Column
+-------------------- */
+.c-requests-table__checkbox-col {
+    width: 3rem;
+
+    .o-checkbox {
+        margin: 0;
+    }
+}
+
+/* --------------------
+05 - Row States
+-------------------- */
+.c-requests-table tbody tr.-selected {
+    background: var(--color-table-selected);
+}
+
+.c-requests-table tbody tr.-disabled {
+    opacity: 0.6;
+
+    td {
+        color: light-dark(#999, #666);
+    }
+}

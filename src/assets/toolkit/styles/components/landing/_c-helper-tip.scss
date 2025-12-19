@@ -1,0 +1,164 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Helper Tip Theme
+02 - Helper Tip Base
+03 - Content
+04 - Close Button
+05 - Action Button
+06 - Positioning Variants
+==============================================================================*/
+
+/* --------------------
+01 - Helper Tip Theme
+-------------------- */
+@mixin helper-tip-theme-light {
+    --color-tip-bg: #fff;
+    --color-tip-text: #666;
+    --color-tip-close: #999;
+    --color-tip-accent: #a100ff;
+    --color-tip-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+@mixin helper-tip-theme-dark {
+    --color-tip-bg: #1a1a1a;
+    --color-tip-text: #999;
+    --color-tip-close: #666;
+    --color-tip-accent: #be82ff;
+    --color-tip-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.c-helper-tip {
+    @include helper-tip-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-helper-tip {
+        @include helper-tip-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Helper Tip Base
+-------------------- */
+.c-helper-tip {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    max-width: 17.5rem;
+}
+
+/* --------------------
+03 - Content
+-------------------- */
+.c-helper-tip__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-tip-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--color-tip-shadow);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.375rem;
+        right: 1.25rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: var(--color-tip-bg);
+        transform: rotate(45deg);
+        box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+    }
+}
+
+.c-helper-tip__text {
+    font-size: var(--pf-fs-14, 0.875rem);
+    color: var(--color-tip-text);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --------------------
+04 - Close Button
+-------------------- */
+.c-helper-tip__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--color-tip-close);
+    cursor: pointer;
+    font-size: var(--pf-fs-20, 1.25rem);
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: light-dark(#333, #eaeaea);
+    }
+}
+
+/* --------------------
+05 - Action Button
+-------------------- */
+.c-helper-tip__action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.c-helper-tip__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    background: var(--color-tip-accent);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0.125rem 0.5rem rgba(161, 0, 255, 0.3);
+
+    &:hover {
+        background: light-dark(#8000cc, #a855f7);
+        transform: scale(1.05);
+    }
+
+    i {
+        font-size: var(--pf-fs-18, 1.125rem);
+    }
+}
+
+/* --------------------
+06 - Positioning Variants
+-------------------- */
+.c-helper-tip.-left {
+    align-items: flex-start;
+
+    .c-helper-tip__content::after {
+        right: auto;
+        left: 1.25rem;
+    }
+
+    .c-helper-tip__action {
+        justify-content: flex-start;
+    }
+}
+
+.c-helper-tip.-top {
+    .c-helper-tip__content::after {
+        bottom: auto;
+        top: -0.375rem;
+        box-shadow: -0.125rem -0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+    }
+}

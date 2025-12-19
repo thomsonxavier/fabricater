@@ -1,0 +1,50 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Landing Main Theme
+02 - Landing Main Base
+03 - Landing Main Content
+==============================================================================*/
+
+/* --------------------
+01 - Landing Main Theme
+-------------------- */
+@mixin landing-main-theme-light {
+    --color-main-bg: #f5f5f5;
+}
+
+@mixin landing-main-theme-dark {
+    --color-main-bg: #0a0a0a;
+}
+
+.c-landing-main {
+    @include landing-main-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-landing-main {
+        @include landing-main-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Landing Main Base
+-------------------- */
+.c-landing-main {
+    position: relative;
+    min-height: calc(100vh - 3.5rem); /* Full height minus header */
+    background-color: var(--color-main-bg);
+    background-image: url('../images/landing/main-background.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* --------------------
+03 - Landing Main Content
+-------------------- */
+.c-landing-main__content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+}

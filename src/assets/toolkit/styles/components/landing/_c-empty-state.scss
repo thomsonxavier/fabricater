@@ -1,0 +1,135 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Empty State Theme
+02 - Empty State Base
+03 - Empty State Icon
+04 - Empty State Content
+05 - Empty State Variants
+==============================================================================*/
+
+/* --------------------
+01 - Empty State Theme
+-------------------- */
+@mixin empty-state-theme-light {
+    --color-empty-icon: #999;
+    --color-empty-title: #333;
+    --color-empty-desc: #666;
+    --color-empty-accent: #a100ff;
+    --color-empty-error: #dc3545;
+}
+
+@mixin empty-state-theme-dark {
+    --color-empty-icon: #666;
+    --color-empty-title: #eaeaea;
+    --color-empty-desc: #999;
+    --color-empty-accent: #be82ff;
+    --color-empty-error: #ff6b6b;
+}
+
+.c-empty-state {
+    @include empty-state-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-empty-state {
+        @include empty-state-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Empty State Base
+-------------------- */
+.c-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+/* --------------------
+03 - Empty State Icon
+-------------------- */
+.c-empty-state__icon {
+    margin-bottom: 1.5rem;
+    color: var(--color-empty-icon);
+
+    img,
+    svg {
+        width: 7.5rem;
+        height: 7.5rem;
+        max-width: 100%;
+    }
+
+    svg {
+        stroke: currentColor;
+    }
+}
+
+/* --------------------
+04 - Empty State Content
+-------------------- */
+.c-empty-state__title {
+    font-size: var(--pf-fs-18, 1.125rem);
+    font-weight: 600;
+    color: var(--color-empty-title);
+    margin: 0 0 0.5rem 0;
+}
+
+.c-empty-state__desc {
+    font-size: var(--pf-fs-14, 0.9375rem);
+    color: var(--color-empty-desc);
+    margin: 0 0 1.5rem 0;
+    max-width: 25rem;
+    line-height: 1.5;
+}
+
+.c-empty-state__action {
+    margin-top: 0.5rem;
+}
+
+/* --------------------
+05 - Empty State Variants
+-------------------- */
+/* Search variant */
+.c-empty-state.-search {
+    .c-empty-state__icon {
+        color: var(--color-empty-accent);
+    }
+}
+
+/* Error variant */
+.c-empty-state.-error {
+    .c-empty-state__icon {
+        color: var(--color-empty-error);
+    }
+
+    .c-empty-state__title {
+        color: var(--color-empty-error);
+    }
+}
+
+/* Compact variant */
+.c-empty-state.-compact {
+    padding: 2rem 1rem;
+
+    .c-empty-state__icon {
+        margin-bottom: 1rem;
+
+        img,
+        svg {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+    .c-empty-state__title {
+        font-size: var(--pf-fs-16, 1rem);
+    }
+
+    .c-empty-state__desc {
+        font-size: var(--pf-fs-14, 0.875rem);
+    }
+}

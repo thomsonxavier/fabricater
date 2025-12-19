@@ -1,0 +1,35 @@
+---
+notes: |
+    Filter Panel Component
+    - Collapsible filter panel that appears when clicking filter button
+    - Contains filter sections with accordion items
+    - Apply Filters button at bottom
+    - Can be minimized/maximized
+---
+<aside class="c-filter-panel{{#if filterClass}} {{filterClass}}{{/if}}" aria-label="Filters">
+    <div class="c-filter-panel__header">
+        <div class="c-filter-panel__title">
+            <i class="icon-toolbar-filter" aria-hidden="true"></i>
+            <span>FILTERS</span>
+        </div>
+        <button type="button" class="c-filter-panel__clear" aria-label="Clear all filters">
+            Clear All
+        </button>
+        <button type="button" class="c-filter-panel__minimize" aria-label="Minimize filters">
+            <i class="icon-minus" aria-hidden="true"></i>
+        </button>
+    </div>
+    
+    <div class="c-filter-panel__body">
+        <!-- Filter content will go here -->
+        <div class="c-filter-panel__placeholder">
+            Filter options content
+        </div>
+    </div>
+    
+    <div class="c-filter-panel__footer">
+        <button type="button" class="c-filter-panel__apply">
+            Apply Filters
+        </button>
+    </div>
+</aside>

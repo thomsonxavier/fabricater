@@ -1,0 +1,23 @@
+---
+title: myApplicationID Landing Page
+notes: |
+    Complete landing page example for myApplicationID portal
+    - Custom myApplicationID header with navigation icons
+    - Welcome hero banner with background image
+    - My Requests section with action toolbar
+    - Data table with empty state
+    - Important notice sidebar
+fabricator: false
+---
+
+{{> landing.myappid-header showHelperTip=true hasNotification=true}}
+
+<div class="c-landing-main">
+    {{> landing.landing-hero}}
+
+    <main class="c-landing-main__content app-container">
+        {{> landing.requests-section}}
+    </main>
+</div>
+
+{{> landing.important-notice}}

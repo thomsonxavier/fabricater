@@ -40,16 +40,6 @@
     <!-- /toolkit styles -->
   </head>
   <body>
-    <div style="position: fixed; top: 2rem; right: 1rem; z-index: 99999999; background: var(--color-contrast, #fff); padding: 0.5rem 1rem; border-radius: 4px;">
-      <div class="o-toggle__wrap" for="app-theme-toggle">
-        <p class="toggle-off">Dark</p>
-        <div class="o-toggle__toggle">
-            <input type="checkbox" name="app-theme-toggle" id="app-theme-toggle" checked>
-            <span></span>
-        </div>
-        <p class="toggle-on">Light</p>
-      </div>
-    </div>
     {{#if fabricator}} {{> f-icons}} {{> f-menu-tabs }}
     <div class="f-container">
       {{> f-control-bar}} {{/if}} {% body %} {{#if fabricator}}

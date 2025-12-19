@@ -96,224 +96,248 @@
     @if $filename == client {
       $char: "\E011";
   }
-    @if $filename == close {
+    @if $filename == close-fullscreen {
       $char: "\E012";
   }
-    @if $filename == comment-tick {
+    @if $filename == close {
       $char: "\E013";
   }
-    @if $filename == copy-2 {
+    @if $filename == comment-tick {
       $char: "\E014";
   }
-    @if $filename == copy-3 {
+    @if $filename == copy-2 {
       $char: "\E015";
   }
-    @if $filename == craft-my-career-menu {
+    @if $filename == copy-3 {
       $char: "\E016";
   }
-    @if $filename == creative {
+    @if $filename == craft-my-career-menu {
       $char: "\E017";
   }
-    @if $filename == cross {
+    @if $filename == creative {
       $char: "\E018";
   }
-    @if $filename == dashboard {
+    @if $filename == cross {
       $char: "\E019";
   }
-    @if $filename == delegate {
+    @if $filename == dashboard {
       $char: "\E01A";
   }
-    @if $filename == delete {
+    @if $filename == delegate {
       $char: "\E01B";
   }
-    @if $filename == diagnostic {
+    @if $filename == delete {
       $char: "\E01C";
   }
-    @if $filename == direct-link {
+    @if $filename == diagnostic {
       $char: "\E01D";
   }
-    @if $filename == discover-next-role {
+    @if $filename == direct-link {
       $char: "\E01E";
   }
-    @if $filename == download-light {
+    @if $filename == discover-next-role {
       $char: "\E01F";
   }
-    @if $filename == download {
+    @if $filename == download-light {
       $char: "\E020";
   }
-    @if $filename == drag {
+    @if $filename == download {
       $char: "\E021";
   }
-    @if $filename == edit {
+    @if $filename == drag {
       $char: "\E022";
   }
-    @if $filename == expertise {
+    @if $filename == edit {
       $char: "\E023";
   }
-    @if $filename == featured {
+    @if $filename == expertise {
       $char: "\E024";
   }
-    @if $filename == feedback {
+    @if $filename == featured {
       $char: "\E025";
   }
-    @if $filename == file-with-plus {
+    @if $filename == feedback {
       $char: "\E026";
   }
-    @if $filename == forecast {
+    @if $filename == file-with-plus {
       $char: "\E027";
   }
-    @if $filename == genai {
+    @if $filename == forecast {
       $char: "\E028";
   }
-    @if $filename == globe {
+    @if $filename == genai {
       $char: "\E029";
   }
-    @if $filename == help {
+    @if $filename == globe {
       $char: "\E02A";
   }
-    @if $filename == home {
+    @if $filename == help {
       $char: "\E02B";
   }
-    @if $filename == ias-User {
+    @if $filename == home {
       $char: "\E02C";
   }
-    @if $filename == industry {
+    @if $filename == ias-User {
       $char: "\E02D";
   }
-    @if $filename == info {
+    @if $filename == industry {
       $char: "\E02E";
   }
-    @if $filename == input-search {
+    @if $filename == info {
       $char: "\E02F";
   }
-    @if $filename == kebab-menu {
+    @if $filename == input-search {
       $char: "\E030";
   }
-    @if $filename == know-more {
+    @if $filename == kebab-menu {
       $char: "\E031";
   }
-    @if $filename == knowledge-steward {
+    @if $filename == know-more {
       $char: "\E032";
   }
-    @if $filename == knowledge {
+    @if $filename == knowledge-steward {
       $char: "\E033";
   }
-    @if $filename == lightning {
+    @if $filename == knowledge {
       $char: "\E034";
   }
-    @if $filename == link-copy {
+    @if $filename == lightning {
       $char: "\E035";
   }
-    @if $filename == link {
+    @if $filename == link-copy {
       $char: "\E036";
   }
-    @if $filename == manage-action {
+    @if $filename == link {
       $char: "\E037";
   }
-    @if $filename == mentorship {
+    @if $filename == manage-action {
       $char: "\E038";
   }
-    @if $filename == minus {
+    @if $filename == mentorship {
       $char: "\E039";
   }
-    @if $filename == more {
+    @if $filename == minus {
       $char: "\E03A";
   }
-    @if $filename == my-mentor {
+    @if $filename == more {
       $char: "\E03B";
   }
-    @if $filename == notification {
+    @if $filename == my-mentor {
       $char: "\E03C";
   }
-    @if $filename == other-interests {
+    @if $filename == notification {
       $char: "\E03D";
   }
-    @if $filename == pdf {
+    @if $filename == other-interests {
       $char: "\E03E";
   }
-    @if $filename == ppt {
+    @if $filename == pdf {
       $char: "\E03F";
   }
-    @if $filename == previous {
+    @if $filename == ppt {
       $char: "\E040";
   }
-    @if $filename == private {
+    @if $filename == previous {
       $char: "\E041";
   }
-    @if $filename == refresh {
+    @if $filename == private {
       $char: "\E042";
   }
-    @if $filename == reload {
+    @if $filename == refresh {
       $char: "\E043";
   }
-    @if $filename == reset {
+    @if $filename == reload {
       $char: "\E044";
   }
-    @if $filename == resource {
+    @if $filename == reset {
       $char: "\E045";
   }
-    @if $filename == role-model {
+    @if $filename == resource {
       $char: "\E046";
   }
-    @if $filename == saved-search {
+    @if $filename == role-model {
       $char: "\E047";
   }
-    @if $filename == search {
+    @if $filename == sSpy-featured {
       $char: "\E048";
   }
-    @if $filename == share {
+    @if $filename == sSpy-profile {
       $char: "\E049";
   }
-    @if $filename == solve-website-problems {
+    @if $filename == sSpy-projects {
       $char: "\E04A";
   }
-    @if $filename == sort-down {
+    @if $filename == sSpy-skills {
       $char: "\E04B";
   }
-    @if $filename == sort-up {
+    @if $filename == saved-search {
       $char: "\E04C";
   }
-    @if $filename == spotlight {
+    @if $filename == search {
       $char: "\E04D";
   }
-    @if $filename == sSpy-featured {
+    @if $filename == share {
       $char: "\E04E";
   }
-    @if $filename == sSpy-profile {
+    @if $filename == solve-website-problems {
       $char: "\E04F";
   }
-    @if $filename == sSpy-projects {
+    @if $filename == sort-down {
       $char: "\E050";
   }
-    @if $filename == sSpy-skills {
+    @if $filename == sort-up {
       $char: "\E051";
   }
-    @if $filename == star {
+    @if $filename == spotlight {
       $char: "\E052";
   }
-    @if $filename == tick {
+    @if $filename == star {
       $char: "\E053";
   }
-    @if $filename == timer {
+    @if $filename == tick {
       $char: "\E054";
   }
-    @if $filename == upgrade-skills {
+    @if $filename == timer {
       $char: "\E055";
   }
-    @if $filename == upload-e {
+    @if $filename == toolbar-delete {
       $char: "\E056";
   }
-    @if $filename == upload {
+    @if $filename == toolbar-disable {
       $char: "\E057";
   }
-    @if $filename == user {
+    @if $filename == toolbar-done {
       $char: "\E058";
   }
-    @if $filename == wishlist {
+    @if $filename == toolbar-filter {
       $char: "\E059";
   }
-    @if $filename == workbench {
+    @if $filename == toolbar-history {
       $char: "\E05A";
+  }
+    @if $filename == toolbar-launch {
+      $char: "\E05B";
+  }
+    @if $filename == toolbar-refresh {
+      $char: "\E05C";
+  }
+    @if $filename == upgrade-skills {
+      $char: "\E05D";
+  }
+    @if $filename == upload-e {
+      $char: "\E05E";
+  }
+    @if $filename == upload {
+      $char: "\E05F";
+  }
+    @if $filename == user {
+      $char: "\E060";
+  }
+    @if $filename == wishlist {
+      $char: "\E061";
+  }
+    @if $filename == workbench {
+      $char: "\E062";
   }
 
   @return $char;
@@ -381,6 +405,9 @@
 }
 .icon-client {
   @include icon(client);
+}
+.icon-close-fullscreen {
+  @include icon(close-fullscreen);
 }
 .icon-close {
   @include icon(close);
@@ -541,6 +568,18 @@
 .icon-role-model {
   @include icon(role-model);
 }
+.icon-sSpy-featured {
+  @include icon(sSpy-featured);
+}
+.icon-sSpy-profile {
+  @include icon(sSpy-profile);
+}
+.icon-sSpy-projects {
+  @include icon(sSpy-projects);
+}
+.icon-sSpy-skills {
+  @include icon(sSpy-skills);
+}
 .icon-saved-search {
   @include icon(saved-search);
 }
@@ -562,18 +601,6 @@
 .icon-spotlight {
   @include icon(spotlight);
 }
-.icon-sSpy-featured {
-  @include icon(sSpy-featured);
-}
-.icon-sSpy-profile {
-  @include icon(sSpy-profile);
-}
-.icon-sSpy-projects {
-  @include icon(sSpy-projects);
-}
-.icon-sSpy-skills {
-  @include icon(sSpy-skills);
-}
 .icon-star {
   @include icon(star);
 }
@@ -582,6 +609,27 @@
 }
 .icon-timer {
   @include icon(timer);
+}
+.icon-toolbar-delete {
+  @include icon(toolbar-delete);
+}
+.icon-toolbar-disable {
+  @include icon(toolbar-disable);
+}
+.icon-toolbar-done {
+  @include icon(toolbar-done);
+}
+.icon-toolbar-filter {
+  @include icon(toolbar-filter);
+}
+.icon-toolbar-history {
+  @include icon(toolbar-history);
+}
+.icon-toolbar-launch {
+  @include icon(toolbar-launch);
+}
+.icon-toolbar-refresh {
+  @include icon(toolbar-refresh);
 }
 .icon-upgrade-skills {
   @include icon(upgrade-skills);

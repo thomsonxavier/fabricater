@@ -1,0 +1,48 @@
+---
+notes: |
+    Action Toolbar Buttons Component
+    - Action buttons only (without filter button)
+    - Used inside the requests section card
+    - Buttons can be enabled/disabled based on selection state
+---
+<div class="c-action-toolbar -no-filter">
+    <!-- Action Buttons -->
+    <button type="button" class="c-action-toolbar__btn" data-action="view-update" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-launch" aria-hidden="true"></i>
+        <span>View/Update</span>
+    </button>
+    <button type="button" class="c-action-toolbar__btn" data-action="disable" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-disable" aria-hidden="true"></i>
+        <span>Disable</span>
+    </button>
+    <button type="button" class="c-action-toolbar__btn" data-action="re-enable" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-done" aria-hidden="true"></i>
+        <span>Re-Enable</span>
+    </button>
+    <button type="button" class="c-action-toolbar__btn" data-action="reset-password" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-history" aria-hidden="true"></i>
+        <span>Reset Password</span>
+    </button>
+    <button type="button" class="c-action-toolbar__btn" data-action="verify" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-refresh" aria-hidden="true"></i>
+        <span>Verify</span>
+    </button>
+    
+    <!-- Accent Action -->
+    <button type="button" class="c-action-toolbar__btn -accent" data-action="upload-bulk">
+        <i class="icon-toolbar-refresh" aria-hidden="true"></i>
+        <span>Upload Bulk Verify</span>
+    </button>
+    
+    <!-- Delete Action -->
+    <button type="button" class="c-action-toolbar__btn -dark" data-action="delete" {{#if disabled}}disabled{{/if}}>
+        <i class="icon-toolbar-delete" aria-hidden="true"></i>
+        <span>Delete</span>
+    </button>
+    
+    <!-- Export Action -->
+    <button type="button" class="c-action-toolbar__btn -outline" data-action="export">
+        <i class="icon-toolbar-launch" aria-hidden="true"></i>
+        <span>Export</span>
+    </button>
+</div>
