@@ -294,50 +294,53 @@
     @if $filename == star {
       $char: "\E053";
   }
-    @if $filename == tick {
+    @if $filename == swap-vert {
       $char: "\E054";
   }
-    @if $filename == timer {
+    @if $filename == tick {
       $char: "\E055";
   }
-    @if $filename == toolbar-delete {
+    @if $filename == timer {
       $char: "\E056";
   }
-    @if $filename == toolbar-disable {
+    @if $filename == toolbar-delete {
       $char: "\E057";
   }
-    @if $filename == toolbar-done {
+    @if $filename == toolbar-disable {
       $char: "\E058";
   }
-    @if $filename == toolbar-filter {
+    @if $filename == toolbar-done {
       $char: "\E059";
   }
-    @if $filename == toolbar-history {
+    @if $filename == toolbar-filter {
       $char: "\E05A";
   }
-    @if $filename == toolbar-launch {
+    @if $filename == toolbar-history {
       $char: "\E05B";
   }
-    @if $filename == toolbar-refresh {
+    @if $filename == toolbar-launch {
       $char: "\E05C";
   }
-    @if $filename == upgrade-skills {
+    @if $filename == toolbar-refresh {
       $char: "\E05D";
   }
-    @if $filename == upload-e {
+    @if $filename == upgrade-skills {
       $char: "\E05E";
   }
-    @if $filename == upload {
+    @if $filename == upload-e {
       $char: "\E05F";
   }
-    @if $filename == user {
+    @if $filename == upload {
       $char: "\E060";
   }
-    @if $filename == wishlist {
+    @if $filename == user {
       $char: "\E061";
   }
-    @if $filename == workbench {
+    @if $filename == wishlist {
       $char: "\E062";
+  }
+    @if $filename == workbench {
+      $char: "\E063";
   }
 
   @return $char;
@@ -603,6 +606,9 @@
 }
 .icon-star {
   @include icon(star);
+}
+.icon-swap-vert {
+  @include icon(swap-vert);
 }
 .icon-tick {
   @include icon(tick);

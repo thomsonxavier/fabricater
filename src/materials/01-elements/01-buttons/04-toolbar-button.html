@@ -1,0 +1,18 @@
+---
+title: Toolbar Button
+notes: |
+    Reusable toolbar button element for action toolbars
+    - Supports icon-left and text
+    - Supports variants: default, accent, dark, outline
+    - Can be disabled
+    - Use data-action attribute for JS handlers
+---
+
+<button type="button" class="o-toolbar-button{{#if variant}} -{{variant}}{{/if}}{{#if disabled}} -disabled{{/if}} {{btn-Class}}" {{#if dataAction}}data-action="{{dataAction}}"{{/if}} {{#if arialabel}}aria-label="{{arialabel}}"{{/if}} {{#if (isdefined custom)}}{{{custom}}}{{/if}} {{#if disabled}}disabled{{/if}}>
+    {{#if icon-left }}
+    <i class="o-toolbar-button__icon {{ swapif 'icon-toolbar-launch' icon-left }}" aria-hidden="true"></i>
+    {{/if}}
+    {{#if btn-text}}
+    <span class="o-toolbar-button__text">{{{swapif 'Button' btn-text}}}</span>
+    {{/if}}
+</button>

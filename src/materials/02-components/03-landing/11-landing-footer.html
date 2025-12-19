@@ -1,0 +1,26 @@
+---
+title: Landing Footer
+notes: |
+    Simple footer for landing page with copyright and terms/privacy links
+---
+
+<footer class="c-landing-footer">
+    <div class="c-landing-footer__inner app-container">
+        <div class="c-landing-footer__copyright">
+            Copyright 2001-<span class="c-landing-footer__year">{{year}}</span> Accenture. All rights reserved. Accenture Confidential. For internal use only.
+        </div>
+        <div class="c-landing-footer__links">
+            <a href="javascript:;" role="button" data-modalid="terms-of-use-modal" class="c-landing-footer__link">Terms of Use</a>
+            <span class="c-landing-footer__separator">|</span>
+            <a href="javascript:;" role="button" data-modalid="privacy-statement-modal" class="c-landing-footer__link">Privacy Statement</a>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const yearElement = document.querySelector('.c-landing-footer__year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        })();
+    </script>
+</footer>

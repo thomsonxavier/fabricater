@@ -13,42 +13,18 @@ notes: |
     </button>
     
     <!-- Action Buttons -->
-    <button type="button" class="c-action-toolbar__btn" data-action="view-update" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-launch" aria-hidden="true"></i>
-        <span>View/Update</span>
-    </button>
-    <button type="button" class="c-action-toolbar__btn" data-action="disable" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-disable" aria-hidden="true"></i>
-        <span>Disable</span>
-    </button>
-    <button type="button" class="c-action-toolbar__btn" data-action="re-enable" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-done" aria-hidden="true"></i>
-        <span>Re-Enable</span>
-    </button>
-    <button type="button" class="c-action-toolbar__btn" data-action="reset-password" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-history" aria-hidden="true"></i>
-        <span>Reset Password</span>
-    </button>
-    <button type="button" class="c-action-toolbar__btn" data-action="verify" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-refresh" aria-hidden="true"></i>
-        <span>Verify</span>
-    </button>
+    {{> buttons.toolbar-button icon-left="icon-toolbar-launch" btn-text="View/Update" dataAction="view-update" disabled=disabled}}
+    {{> buttons.toolbar-button icon-left="icon-toolbar-disable" btn-text="Disable" dataAction="disable" disabled=disabled}}
+    {{> buttons.toolbar-button icon-left="icon-toolbar-done" btn-text="Re-Enable" dataAction="re-enable" disabled=disabled}}
+    {{> buttons.toolbar-button icon-left="icon-toolbar-history" btn-text="Reset Password" dataAction="reset-password" disabled=disabled}}
+    {{> buttons.toolbar-button icon-left="icon-toolbar-refresh" btn-text="Verify" dataAction="verify" disabled=disabled}}
     
     <!-- Accent Action -->
-    <button type="button" class="c-action-toolbar__btn -accent" data-action="upload-bulk">
-        <i class="icon-toolbar-refresh" aria-hidden="true"></i>
-        <span>Upload Bulk Verify</span>
-    </button>
+    {{> buttons.toolbar-button icon-left="icon-toolbar-refresh" btn-text="Upload Bulk Verify" variant="accent" dataAction="upload-bulk"}}
     
     <!-- Delete Action -->
-    <button type="button" class="c-action-toolbar__btn -dark" data-action="delete" {{#if disabled}}disabled{{/if}}>
-        <i class="icon-toolbar-delete" aria-hidden="true"></i>
-        <span>Delete</span>
-    </button>
+    {{> buttons.toolbar-button icon-left="icon-toolbar-delete" btn-text="Delete" variant="dark" dataAction="delete" disabled=disabled}}
     
     <!-- Export Action -->
-    <button type="button" class="c-action-toolbar__btn -outline" data-action="export">
-        <i class="icon-toolbar-launch" aria-hidden="true"></i>
-        <span>Export</span>
-    </button>
+    {{> buttons.toolbar-button icon-left="icon-toolbar-launch" btn-text="Export" variant="outline" dataAction="export"}}
 </div>

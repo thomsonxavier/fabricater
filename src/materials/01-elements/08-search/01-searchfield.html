@@ -1,12 +1,12 @@
 {{#if toggle}}
 <!-- NOTE: Reference script is in scripts -> elements -> search -> searchfield.ts -->
-{{/if}}
 <div class="o-searchfield__wrap{{#if srcfcls}} srchfcls{{/if}}">
-    {{#if toggle}}
     <button type="button" class="o-searchfield__toggle" aria-expanded="false" aria-label="Toggle display state of search field" aria-controls="{{swapif 'searchf_1' srchfid}}"><span class="sr-only">Toggle display state of search field</span></button>
     <input type="text" class="o-searchfield__input"  aria-label="{{swapif 'Search' srchflbl}}" placeholder="{{swapif 'Search...' srchfplc}}" id="{{swapif 'searchf_1' srchfid}}" tabindex="-1" aria-hidden="true" />
-    {{else}}
-    <div class="o-searchfield__toggle"></div>
-    <input type="text" class="o-searchfield__input"  aria-label="{{swapif 'Search' srchflbl}}" placeholder="{{swapif 'Search...' srchfplc}}" id="{{swapif 'searchf_1' srchfid}}"/>
-    {{/if}}
 </div>
+{{else}}
+<div class="o-searchfield__wrap{{#if srcfcls}} srchfcls{{/if}}">
+    <i class="icon-input-search o-searchfield__icon" aria-hidden="true"></i>
+    <input type="text" class="o-searchfield__input"  aria-label="{{swapif 'Search' srchflbl}}" placeholder="{{swapif 'Search...' srchfplc}}" id="{{swapif 'searchf_1' srchfid}}"/>
+</div>
+{{/if}}

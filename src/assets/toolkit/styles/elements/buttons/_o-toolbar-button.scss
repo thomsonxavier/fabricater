@@ -1,0 +1,145 @@
+/* ==============================================================================
+Index
+----------------------------------------
+01 - o-toolbar-button
+02 - Button Variants
+03 - Disabled State
+============================================================================== */
+
+/* 01 - o-toolbar-button */
+@mixin toolbar-button-theme-light {
+    --color-toolbar-btn-bg: var(--Button-Secondary-Background-Brand-Inactive, #B3B2B5);
+    --color-toolbar-btn-border: var(--Button-Secondary-Border-Brand-Inactive, rgba(255, 255, 255, 0));
+    --color-toolbar-btn-text: var(--Button-Secondary-Text-Brand-Inactive, #423D47);
+    --color-toolbar-btn-hover-bg: #9a999c;
+    --color-toolbar-accent: #A100FF;
+    --color-toolbar-accent-border: var(--Button-Secondary-Border-Brand-Rested, #CCCBCE);
+    --color-toolbar-dark-bg: #423D47;
+    --color-toolbar-dark-text: #fff;
+}
+
+@mixin toolbar-button-theme-dark {
+    --color-toolbar-btn-bg: #4a4a4a;
+    --color-toolbar-btn-border: rgba(255, 255, 255, 0);
+    --color-toolbar-btn-text: #fff;
+    --color-toolbar-btn-hover-bg: #5a5a5a;
+    --color-toolbar-accent: #be82ff;
+    --color-toolbar-accent-border: #666;
+    --color-toolbar-dark-bg: #1a1a1a;
+    --color-toolbar-dark-text: #fff;
+}
+
+.o-toolbar-button {
+    @include toolbar-button-theme-light();
+}
+
+:root[data-theme="dark"] {
+    .o-toolbar-button {
+        @include toolbar-button-theme-dark();
+    }
+}
+
+.o-toolbar-button {
+    display: inline-flex;
+    height: var(--Button-General-Height-SM, 2rem); /* 32px */
+    min-width: var(--Button-General-Min-width-SM, 2.5rem); /* 40px */
+    width: auto;
+    min-height: var(--Button-General-Height-SM, 2rem); /* 32px */
+    max-height: var(--Button-General-Height-SM, 2rem); /* 32px */
+    padding: var(--Button-General-Padding-Vertical, 0.5rem) var(--Button-General-Padding-Horizontal-no-icon, 0.75rem); /* 8px 12px */
+    justify-content: center;
+    align-items: center;
+    gap: var(--Button-General-Icon-Spacing, 0.375rem); /* 6px */
+    border-radius: 999px;
+    border: var(--Button-General-Border-Width, 2px) solid var(--color-toolbar-btn-border);
+    background: var(--color-toolbar-btn-bg);
+    color: var(--color-toolbar-btn-text);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: var(--text-font-family, Graphik, sans-serif);
+    font-size: var(--button-text-sm-size, 0.875rem); /* 14px */
+    font-style: normal;
+    font-weight: var(--button-text-font-weight, 500);
+    line-height: var(--button-text-sm-line-height, 100%);
+    letter-spacing: var(--button-text-letter-spacing, normal);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &__icon {
+        font-size: 1rem;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__text {
+        color: inherit;
+    }
+
+    &:hover:not(:disabled) {
+        background: var(--color-toolbar-btn-hover-bg);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-toolbar-accent);
+        outline-offset: 2px;
+    }
+
+    /* 02 - Button Variants */
+    &.-accent {
+        border: 2px solid var(--color-toolbar-accent-border);
+        background: transparent;
+        color: var(--color-toolbar-accent);
+
+        .o-toolbar-button__icon {
+            color: var(--color-toolbar-accent);
+        }
+
+        &:hover:not(:disabled) {
+            background: rgba(161, 0, 255, 0.08);
+        }
+    }
+
+    &.-dark {
+        background: var(--color-toolbar-dark-bg);
+        border-color: var(--color-toolbar-dark-bg);
+        color: var(--color-toolbar-dark-text);
+
+        .o-toolbar-button__icon {
+            color: var(--color-toolbar-dark-text);
+        }
+
+        &:hover:not(:disabled) {
+            background: #2d2a30;
+            border-color: #2d2a30;
+        }
+    }
+
+    &.-outline {
+        border: 2px solid var(--color-toolbar-accent);
+        background: transparent;
+        color: var(--color-toolbar-accent);
+
+        .o-toolbar-button__icon {
+            color: var(--color-toolbar-accent);
+        }
+
+        &:hover:not(:disabled) {
+            background: var(--color-toolbar-accent);
+            color: #fff;
+
+            .o-toolbar-button__icon {
+                color: #fff;
+            }
+        }
+    }
+
+    /* 03 - Disabled State */
+    &:disabled,
+    &.-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

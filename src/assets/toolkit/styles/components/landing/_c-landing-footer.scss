@@ -1,0 +1,103 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Landing Footer Theme
+02 - Landing Footer Base
+03 - Footer Inner
+04 - Footer Copyright
+05 - Footer Links
+==============================================================================*/
+
+/* --------------------
+01 - Landing Footer Theme
+-------------------- */
+@mixin landing-footer-theme-light {
+    --color-footer-bg: var(--Navigation-footer-bg, #000);
+    --color-footer-text: var(--Text-text-primary, #FFF);
+    --color-footer-border: var(--Border-border-primary, #737373);
+}
+
+@mixin landing-footer-theme-dark {
+    --color-footer-bg: var(--Navigation-footer-bg, #000);
+    --color-footer-text: var(--Text-text-primary, #FFF);
+    --color-footer-border: var(--Border-border-primary, #737373);
+}
+
+.c-landing-footer {
+    @include landing-footer-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-landing-footer {
+        @include landing-footer-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Landing Footer Base
+-------------------- */
+.c-landing-footer {
+    border-top: 1px solid var(--color-footer-border);
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    font-family: Graphik, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 16px / 133.333% */
+}
+
+/* --------------------
+03 - Footer Inner
+-------------------- */
+.c-landing-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* --------------------
+04 - Footer Copyright
+-------------------- */
+.c-landing-footer__copyright {
+    color: var(--color-footer-text);
+    font-family: Graphik, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 16px / 133.333% */
+}
+
+/* --------------------
+05 - Footer Links
+-------------------- */
+.c-landing-footer__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.c-landing-footer__link {
+    color: var(--color-footer-text);
+    font-family: Graphik, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 16px / 133.333% */
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus {
+        opacity: 0.8;
+        text-decoration: underline;
+    }
+}
+
+.c-landing-footer__separator {
+    color: var(--color-footer-text);
+    opacity: 0.6;
+}

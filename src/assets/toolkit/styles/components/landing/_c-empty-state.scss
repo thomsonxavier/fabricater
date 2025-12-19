@@ -72,18 +72,29 @@ html[data-theme="dark"] {
 04 - Empty State Content
 -------------------- */
 .c-empty-state__title {
-    font-size: var(--pf-fs-18, 1.125rem);
-    font-weight: 600;
-    color: var(--color-empty-title);
+    overflow: hidden;
+    color: #333;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-family: Graphik, sans-serif;
+    font-size: 1.5rem; /* 24px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 32px / 133.333% */
     margin: 0 0 0.5rem 0;
 }
 
 .c-empty-state__desc {
-    font-size: var(--pf-fs-14, 0.9375rem);
-    color: var(--color-empty-desc);
-    margin: 0 0 1.5rem 0;
+    overflow: hidden;
+    color: #333;
+    text-overflow: ellipsis;
+    font-family: Graphik, sans-serif;
+    font-size: 1rem; /* 16px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 32px / 200% */
+    margin: 0;
     max-width: 25rem;
-    line-height: 1.5;
 }
 
 .c-empty-state__action {

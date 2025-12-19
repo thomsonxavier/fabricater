@@ -5,6 +5,7 @@ notes: |
     - Sortable columns with checkbox selection
     - Columns: Application ID, Account Type, Status, Credential, AIR ID, Application
     - Add class `-sorted` to sorted column headers
+    - Uses icon-swap-vert for sort indicator
 ---
 <div class="c-requests-table">
     <div class="c-table__responsive">
@@ -20,63 +21,51 @@ notes: |
                         </label>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">Application ID</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Application ID"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Application ID</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Application ID">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">Account Type</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Account Type"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Account Type</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Account Type">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">Status</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Status"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Status</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Status">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">Credential</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Credential"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Credential</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Credential">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">AIR ID</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by AIR ID"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">AIR ID</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by AIR ID">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                     <th scope="col">
-                        <div class="th-flex">
-                            <div class="-left">
-                                <p class="-title">Application</p>
-                            </div>
-                            <div class="-right">
-                                <a href="javascript:;" role="button" class="c-table__sort" aria-label="Sort by Application"></a>
-                            </div>
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Application</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Application">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </th>
                 </tr>
@@ -85,7 +74,11 @@ notes: |
                 {{~#if @partial-block}}
                     {{> @partial-block }}
                 {{~else~}}
-                <!-- Empty state will be shown when no data -->
+                <tr class="c-requests-table__empty-row">
+                    <td colspan="7">
+                        {{> landing.empty-state emptyDesc="Create a new request to get started"}}
+                    </td>
+                </tr>
                 {{~/if~}}
             </tbody>
         </table>

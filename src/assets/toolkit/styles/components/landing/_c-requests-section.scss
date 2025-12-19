@@ -60,23 +60,40 @@ html[data-theme="dark"] {
 }
 
 .c-requests-wrapper__title {
-    font-size: var(--pf-fs-20, 1.25rem);
-    font-weight: 600;
-    color: var(--color-section-title);
+    color: #333;
+    font-family: Graphik, sans-serif;
+    font-size: 1.25rem; /* 20px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.875rem; /* 30px / 150% */
     margin: 0;
 }
 
 .c-requests-wrapper__actions {
     .o-primary-button.-create-request {
-        background: linear-gradient(90deg, #a72dd4 0.01%, #77b3c0 99.99%);
+        display: inline-flex;
+        height: 2.5rem; /* 40px */
+        min-width: 6.75rem; /* 108px */
+        padding: var(--Spacer-spacing-04, 0.75rem) var(--Spacer-spacing-05, 1rem); /* 12px 16px */
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; /* 8px */
+        border-radius: 6.25rem; /* 100px */
+        background: linear-gradient(90deg, #7100EC 0%, #8901C5 100%), var(--Button-button-bg-primary, #000);
         border: none;
-        border-radius: 1.25rem;
-        padding: 0.625rem 1.25rem;
+        
+        /* Text styling */
+        color: var(--Button-button-text-primary, #FFF);
+        font-family: Graphik, sans-serif;
+        font-size: 0.875rem; /* 14px */
+        font-style: normal;
+        font-weight: 400;
+        line-height: 0.875rem; /* 14px / 100% */
 
         &:hover,
         &:focus {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), 
-                        linear-gradient(90deg, #a72dd4 0.01%, #77b3c0 99.99%);
+                        linear-gradient(90deg, #7100EC 0%, #8901C5 100%);
         }
     }
 }
@@ -164,28 +181,90 @@ html[data-theme="dark"] {
 07 - Search & Table
 -------------------- */
 .c-requests-wrapper__search-table {
-    background: var(--color-section-bg);
-    border-radius: 0.5rem;
+    background: #FFF;
+    border-radius: 1.5rem 0 0 0; /* 24px rounded top-left corner only */
+    border-top: 1px solid #DCDCDC;
+    border-right: 1px solid #DCDCDC;
+    border-left: 1px solid #DCDCDC;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .c-requests-wrapper__search {
-    padding: 1rem;
-    border-bottom: 1px solid var(--color-section-border);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    background: var(--color-section-bg);
+    display: flex;
+    justify-content: center; /* Center the search field */
+    align-items: center;
 
     .o-searchfield__wrap {
-        max-width: 100%;
+        display: flex;
+        width: 100%;
+        max-width: 69.1875rem; /* 1107px */
+        min-height: 1rem; /* 16px */
+        padding: 0.5005rem 0.03125rem 0.5005rem 0.1877rem; /* 8.008px 0.5px 8.008px 3.003px */
+        flex-direction: row; /* Icon and input side by side */
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.25rem; /* 4px */
+        flex-shrink: 0;
+        background: transparent;
+        border-bottom: 1px solid #A5A5A5; /* Centered border */
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            max-width: 100%;
+            padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+        }
+    }
+
+    .o-searchfield__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.8358rem; /* 13.372px */
+        height: 0.7969rem; /* 12.75px */
+        aspect-ratio: 13.37 / 12.75;
+        color: #5922F6;
+        font-size: 0.8rem;
+        flex-shrink: 0;
     }
 
     .o-searchfield__input {
-        border-radius: 0.25rem;
-        border: 1px solid var(--color-section-border);
-        padding: 0.625rem 1rem 0.625rem 2.5rem;
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+        color: #7C7C7C;
+        font-family: Graphik, sans-serif;
+        font-size: 0.875rem; /* 14px */
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1rem; /* Match icon height for vertical centering */
+        height: 1rem;
+        padding: 0;
+        margin: 0;
+
+        &::placeholder {
+            color: #7C7C7C;
+            font-family: Graphik, sans-serif;
+            font-size: 0.875rem; /* 14px */
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1rem;
+        }
     }
 }
 
 .c-requests-wrapper__table {
-    overflow-x: auto;
+    flex: 1;
+    width: 100%;
+    overflow: auto; /* Scrollable table area */
+    background: var(--color-section-bg);
 }
 
 /* --------------------

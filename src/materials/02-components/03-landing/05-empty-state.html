@@ -8,16 +8,7 @@ notes: |
 ---
 <div class="c-empty-state{{#if emptyClass}} {{emptyClass}}{{/if}}">
     <div class="c-empty-state__icon" aria-hidden="true">
-        {{#if emptyIcon}}
-        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/empty-states/{{emptyIcon}}.svg" alt="" />
-        {{else}}
-        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
-            <rect x="20" y="30" width="80" height="60" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
-            <path d="M30 50h60M30 65h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="85" cy="75" r="15" stroke="#A100FF" stroke-width="2" fill="none"/>
-            <path d="M95 85l8 8" stroke="#A100FF" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        {{/if}}
+        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/empty-states/{{{swapif 'emptystateboard' emptyIcon}}}.svg" alt="" />
     </div>
     <h3 class="c-empty-state__title">{{{swapif 'No App ID Requests' emptyTitle}}}</h3>
     {{#if emptyDesc}}
