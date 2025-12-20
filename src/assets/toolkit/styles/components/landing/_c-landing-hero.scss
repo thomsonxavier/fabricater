@@ -127,13 +127,21 @@ html[data-theme="dark"] {
     font-weight: 500;
     line-height: 26px (130%);
     */
-    font-size: var(--pf-fs-20, 1.25rem); /* 20px */
-    font-weight: 500;
-    color: var(--color-hero-desc);
-    line-height: 1.625rem; /* 26px / 130% */
-    max-width: 56.25rem; /* 900px */
+    max-width: 70.25rem; /* 900px */
     margin: 0 auto;
     font-feature-settings: 'liga' off, 'clig' off;
+    
+    p {
+        font-size: var(--pf-fs-20, 1.25rem); /* 20px */
+        font-weight: 500;
+        color: var(--color-hero-desc);
+        line-height: 1.625rem; /* 26px / 130% */
+        margin: 0;
+        
+        &:not(:last-child) {
+            margin-bottom: 0.5rem; /* Spacing between paragraphs */
+        }
+    }
 }
 
 /* --------------------

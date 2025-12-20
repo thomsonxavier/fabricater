@@ -17,8 +17,13 @@ notes: |
             <span class="c-landing-hero__title-highlight">Welcome to myApplication</span><span class="c-landing-hero__title-accent">ID</span>
             {{~/if~}}
         </h1>
-        <p class="c-landing-hero__desc">
-            {{{swapif 'A self-service portal used by application teams to request and manage Account IDs. To get started you can view your requests below or create a new request' heroDesc}}}
-        </p>
+        <div class="c-landing-hero__desc">
+            {{~#if heroDesc}}
+                {{{heroDesc}}}
+            {{~else~}}
+            <p>A self-service portal used by application teams to request and manage Account IDs. To get started you can view your </p>
+            <p>requests below or create a new request</p>
+            {{~/if~}}
+        </div>
     </div>
 </section>

@@ -47,18 +47,32 @@ html[data-theme="dark"] {
 .c-requests-table {
     width: 100%;
 
-    .c-table__table {
+    .c-table__responsive {
+        overflow-x: auto;
+        overflow-y: visible;
         width: 100%;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .c-table__table {
+        width: 93.75rem; /* Fixed width: 100px (checkbox) + 200px * 7 columns = 1500px */
+        min-width: 93.75rem; /* Minimum width to ensure scrolling */
         border-collapse: collapse;
         table-layout: fixed; /* Fixed layout to respect column widths and ensure colspan works correctly */
+        border: none; /* Remove any table borders */
+        box-shadow: none; /* Remove any shadow */
     }
 
     thead {
         background: var(--color-table-head-bg);
         border-radius: 0; /* No rounded corners on table header */
+        border-bottom: none !important; /* Remove any bottom border */
+        box-shadow: none !important; /* Remove any shadow */
 
         tr {
             height: var(--size-ag-header-height, 3rem); /* 48px */
+            border-bottom: none !important; /* Remove any bottom border */
+            box-shadow: none !important; /* Remove any shadow */
         }
 
         th {
@@ -78,13 +92,20 @@ html[data-theme="dark"] {
             background: #F2F2F2;
             border-left: none; /* No left border */
             border-right: none; /* No right border - only checkbox column has borders */
+            border-bottom: none !important; /* Remove any bottom border */
             border-radius: 0; /* No rounded corners on header cells */
+            box-shadow: none !important; /* Remove any shadow */
 
-            /* Fixed width for all columns including checkbox */
-            width: 12.5rem; /* 200px - All columns same width */
+            /* Fixed width for all columns except checkbox */
+            &:not(:first-child) {
+                width: 12.5rem; /* 200px */
+            }
 
             &:first-child {
+                width: 6.25rem; /* 100px - Checkbox column */
                 border-radius: 0; /* Ensure checkbox column has no rounded corners */
+                border-right: 1px solid #DCDCDC !important; /* Right border for checkbox column */
+                border-bottom: none !important; /* Remove any bottom border */
             }
 
             &:last-child {
@@ -142,7 +163,6 @@ html[data-theme="dark"] {
     background: transparent;
     color: var(--color-table-head-text);
     cursor: pointer;
-    opacity: 0.6;
     transition: opacity 0.2s ease;
 
     i {
@@ -157,16 +177,16 @@ html[data-theme="dark"] {
     }
 
     &:hover {
-        opacity: 1;
+        opacity: 0.8;
     }
 
     &.-asc,
     &.-desc {
         opacity: 1;
-        color: var(--color-empty-accent, #A100FF);
+        color: #1C1B1F;
 
         i {
-            color: var(--color-empty-accent, #A100FF);
+            color: #1C1B1F;
         }
     }
 }
@@ -201,15 +221,17 @@ html[data-theme="dark"] {
 04 - Checkbox Column
 -------------------- */
 .c-requests-table__checkbox-col {
-    width: 12.5rem; /* 200px - Same width as other columns */
+    width: 6.25rem; /* 100px - Checkbox column width */
     display: flex;
     justify-content: center; /* Center the checkbox */
     align-items: center; /* Center vertically */
     gap: var(--size-ag-icon-size, 5.023875rem); /* 80.382px */
     text-align: center;
-    background: #F2F2F2; /* Match other columns */
-    border-right: 1px solid #DCDCDC; /* Right border only */
+    background: #F2F2F2 !important; /* Match other columns - ensure no different color */
+    border-right: 1px solid #DCDCDC !important; /* Right border - ensure it's applied */
     border-left: none; /* No left border */
+    border-bottom: none; /* Remove any bottom border */
+    box-shadow: none; /* Remove any shadow */
 
     .o-checkbox {
         margin: 0;

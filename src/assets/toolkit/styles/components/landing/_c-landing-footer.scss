@@ -52,18 +52,22 @@ html[data-theme="dark"] {
 -------------------- */
 .c-landing-footer__inner {
     display: flex;
+    height: 2.5rem; /* 40px */
+    max-width: 110rem; /* 1920px */
+    min-height: 2.5rem; /* 40px */
+    padding: 0 5.75rem; /* 0 76px */
     align-items: center;
+    gap: 2.5rem; /* 40px */
     justify-content: space-between;
-    padding: 1rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    
 }
 
 /* --------------------
 04 - Footer Copyright
 -------------------- */
 .c-landing-footer__copyright {
-    color: var(--color-footer-text);
+    color: var(--Text-text-primary, #FFF);
     font-family: Graphik, sans-serif;
     font-size: 0.75rem; /* 12px */
     font-style: normal;
@@ -81,7 +85,7 @@ html[data-theme="dark"] {
 }
 
 .c-landing-footer__link {
-    color: var(--color-footer-text);
+    color: var(--Text-text-primary, #FFF);
     font-family: Graphik, sans-serif;
     font-size: 0.75rem; /* 12px */
     font-style: normal;
@@ -98,6 +102,6 @@ html[data-theme="dark"] {
 }
 
 .c-landing-footer__separator {
-    color: var(--color-footer-text);
+    color: var(--Text-text-primary, #FFF);
     opacity: 0.6;
 }

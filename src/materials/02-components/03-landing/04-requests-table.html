@@ -3,7 +3,7 @@ notes: |
     Requests Table Component
     - Data table for displaying application requests
     - Sortable columns with checkbox selection
-    - Columns: Application ID, Account Type, Status, Credential, AIR ID, Application
+    - Columns: Application ID, Account Type, Status, Credential, AIR ID, Application Actions
     - Add class `-sorted` to sorted column headers
     - Uses icon-swap-vert for sort indicator
 ---
@@ -68,6 +68,14 @@ notes: |
                             </button>
                         </div>
                     </th>
+                    <th scope="col">
+                        <div class="c-requests-table__header">
+                            <span class="c-requests-table__title">Application Actions</span>
+                            <button type="button" class="c-requests-table__sort" aria-label="Sort by Application Actions">
+                                <i class="icon-swap-vert" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -75,7 +83,7 @@ notes: |
                     {{> @partial-block }}
                 {{~else~}}
                 <tr class="c-requests-table__empty-row">
-                    <td colspan="7">
+                    <td colspan="8">
                         {{> landing.empty-state emptyDesc="Create a new request to get started"}}
                     </td>
                 </tr>
