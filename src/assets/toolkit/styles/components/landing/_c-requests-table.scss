@@ -73,6 +73,7 @@ html[data-theme="dark"] {
             height: var(--size-ag-header-height, 3rem); /* 48px */
             border-bottom: none !important; /* Remove any bottom border */
             box-shadow: none !important; /* Remove any shadow */
+            background: #F2F2F2;
         }
 
         th {
