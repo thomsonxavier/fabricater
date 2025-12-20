@@ -103,7 +103,6 @@ html[data-theme="dark"] {
 -------------------- */
 .c-requests-wrapper__content {
     display: flex;
-    gap: 1rem;
     align-items: flex-start;
 }
 
@@ -115,27 +114,40 @@ html[data-theme="dark"] {
     flex-direction: column;
     flex-shrink: 0;
     align-self: flex-start;
+    /* Filter button is now position: fixed, so no relative positioning needed */
 }
 
 .c-requests-wrapper__filter-btn {
     display: flex;
-    align-items: center;
+    width: 2rem; /* 32px */
+    padding: 0.3125rem 0.25rem 0.1875rem 0.25rem; /* 5px 4px 3px 4px */
     justify-content: center;
-    width: 2.5rem; /* 40px */
-    height: 2rem; /* 32px */
-    border: 2px solid transparent;
-    border-radius: 999px;
-    background: var(--color-filter-btn-bg);
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 0.25rem; /* 4px */
+    background: #F7F7F8;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+    border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+    /* Position will be set dynamically via JS to align with toolbar */
 
     i {
-        font-size: 1rem;
-        color: var(--color-filter-btn-text);
+        width: 1.5rem; /* 24px */
+        height: 1.5rem; /* 24px */
+        flex-shrink: 0;
+        color: #8301CF;
+        font-size: 1.5rem; /* 24px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &:hover {
-        background: #9a999c;
+        background: #e8e8e8;
     }
 
     /* Hide button when filter panel is open */

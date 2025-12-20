@@ -50,7 +50,7 @@ html[data-theme="dark"] {
     .c-table__table {
         width: 100%;
         border-collapse: collapse;
-        table-layout: auto;
+        table-layout: fixed; /* Fixed layout to respect column widths and ensure colspan works correctly */
     }
 
     thead {
@@ -62,11 +62,12 @@ html[data-theme="dark"] {
         }
 
         th {
+            height: var(--size-ag-header-height, 3rem); /* 48px */
             padding: 0.75rem 1rem; /* Vertical and horizontal padding */
             text-align: left;
             vertical-align: middle;
             overflow: hidden;
-            color: var(--color-table-head-text);
+            color: var(--comp-ag-data-color, #181D1F);
             text-overflow: ellipsis;
             white-space: nowrap;
             font-family: Graphik, sans-serif;
@@ -74,15 +75,20 @@ html[data-theme="dark"] {
             font-style: normal;
             font-weight: 500;
             line-height: normal;
-            border-right: 1px solid var(--color-table-border);
+            background: #F2F2F2;
+            border-left: none; /* No left border */
+            border-right: none; /* No right border - only checkbox column has borders */
             border-radius: 0; /* No rounded corners on header cells */
+
+            /* Fixed width for all columns including checkbox */
+            width: 12.5rem; /* 200px - All columns same width */
 
             &:first-child {
                 border-radius: 0; /* Ensure checkbox column has no rounded corners */
             }
 
             &:last-child {
-                border-right: none;
+                border-right: none; /* No border after last column */
                 border-radius: 0; /* Ensure last column has no rounded corners */
             }
         }
@@ -140,7 +146,14 @@ html[data-theme="dark"] {
     transition: opacity 0.2s ease;
 
     i {
-        font-size: 1.125rem; /* 18px */
+        width: 1.5rem; /* 24px */
+        height: 1.5rem; /* 24px */
+        aspect-ratio: 1/1;
+        font-size: 1.5rem; /* 24px */
+        color: #1C1B1F;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &:hover {
@@ -151,6 +164,10 @@ html[data-theme="dark"] {
     &.-desc {
         opacity: 1;
         color: var(--color-empty-accent, #A100FF);
+
+        i {
+            color: var(--color-empty-accent, #A100FF);
+        }
     }
 }
 
@@ -163,6 +180,7 @@ html[data-theme="dark"] {
     td {
         padding: 0;
         border: none;
+        width: 100%; /* Ensure colspan cell spans full width */
     }
 }
 
@@ -183,14 +201,34 @@ html[data-theme="dark"] {
 04 - Checkbox Column
 -------------------- */
 .c-requests-table__checkbox-col {
-    width: 3.5rem; /* 56px */
+    width: 12.5rem; /* 200px - Same width as other columns */
+    display: flex;
+    justify-content: center; /* Center the checkbox */
+    align-items: center; /* Center vertically */
+    gap: var(--size-ag-icon-size, 5.023875rem); /* 80.382px */
     text-align: center;
-    padding: 0.75rem 0 0.75rem 1rem !important; /* Vertical padding, left padding to match other columns */
-    border-right: 1px solid var(--color-table-border);
-    /* No left border - it's at the edge */
+    background: #F2F2F2; /* Match other columns */
+    border-right: 1px solid #DCDCDC; /* Right border only */
+    border-left: none; /* No left border */
 
     .o-checkbox {
         margin: 0;
+
+        input {
+            --osquare-size: 1.125rem; /* 18px */
+            --isquare-size: calc(var(--osquare-size) / 2);
+
+            &::before {
+                border-color: #47246A;
+            }
+
+            &:checked {
+                &::before {
+                    background: #47246A;
+                    border-color: #47246A;
+                }
+            }
+        }
     }
 }
 

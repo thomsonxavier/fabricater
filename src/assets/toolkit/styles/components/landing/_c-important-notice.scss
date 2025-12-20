@@ -47,7 +47,7 @@ html[data-theme="dark"] {
 .c-important-notice {
     position: fixed;
     right: 0;
-    top: 50%;
+    top: 75%; /* Positioned a little below center */
     transform: translateY(-50%);
     z-index: 100;
     display: flex;

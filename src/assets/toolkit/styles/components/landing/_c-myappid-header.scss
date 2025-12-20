@@ -63,13 +63,19 @@ html[data-theme="dark"] {
 -------------------- */
 .c-myappid-header__inner {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
+    max-width: 79.9375rem; /* 1279px */
     height: 3.5rem; /* 56px */
     max-width: var(--Global-Layout-Breakpoint-Max, 112.5rem); /* 1800px */
     padding: var(--Header-Padding-Vertical, 0) var(--Global-Layout-Margin-MD, 2.5rem); /* 0 40px */
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
+    
+    /* Ensure max-width respects global breakpoint */
+    @media (min-width: 112.5rem) {
+        max-width: var(--Global-Layout-Breakpoint-Max, 112.5rem); /* 1800px */
+    }
 }
 
 /* --------------------
@@ -91,14 +97,35 @@ html[data-theme="dark"] {
 
     img {
         height: auto;
-        width: 2.5rem; /* 40px */
+        width: 2rem; /* 32px */
         object-fit: contain;
     }
 }
 
+.c-myappid-header__divider {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 56px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 0; /* No margin - flush with logo */
+    margin-right: 0.5rem; /* Gap before title */
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
 .c-myappid-header__title {
-    color: var(--Header-Title-Color-Default, var(--color-header-title));
+    color: var(--Header-Title-Color-Default, #000);
     font-feature-settings: 'liga' off, 'clig' off;
+    /* Component/Header/Title */
+    font-family: var(--text-font-family, Graphik, sans-serif);
     font-size: var(--Header-Title-Font-size, 1.125rem); /* 18px */
     font-style: normal;
     font-weight: var(--Header-Title-Font-weight, 500);
@@ -226,7 +253,8 @@ html[data-theme="dark"] {
     background: var(--color-tooltip-bg);
     border-radius: 0.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    width: 11.5625rem; /* 185px */
+    width: 14.0625rem; /* 225px */
+    height: 3.4216875rem; /* 54.747px */
 }
 
 .c-myappid-header__tooltip-text {
