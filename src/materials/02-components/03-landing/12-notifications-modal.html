@@ -1,0 +1,50 @@
+---
+notes: |
+    Notifications Modal Component
+    - Appears on hover over notification icon
+    - Contains notification list and profile picture
+    - Includes "Load More" button
+---
+<div class="c-notifications-modal" role="dialog" aria-label="Notifications" aria-hidden="true">
+    <div class="c-notifications-modal__header">
+        <h2 class="c-notifications-modal__title">Notifications</h2>
+    </div>
+    
+    <div class="c-notifications-modal__body">
+        <div class="c-notifications-modal__list">
+            {{#if notifications}}
+                {{#each notifications}}
+                <div class="c-notifications-modal__item">
+                    <div class="c-notifications-modal__item-content">
+                        <h3 class="c-notifications-modal__item-title">{{title}}</h3>
+                        <p class="c-notifications-modal__item-desc">{{description}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            {{else}}
+                <div class="c-notifications-modal__item">
+                    <div class="c-notifications-modal__item-content">
+                        <h3 class="c-notifications-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-notifications-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+                <div class="c-notifications-modal__item">
+                    <div class="c-notifications-modal__item-content">
+                        <h3 class="c-notifications-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-notifications-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+                <div class="c-notifications-modal__item">
+                    <div class="c-notifications-modal__item-content">
+                        <h3 class="c-notifications-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-notifications-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    
+    <div class="c-notifications-modal__footer">
+        <button type="button" class="c-notifications-modal__load-more">Load More</button>
+    </div>
+</div>

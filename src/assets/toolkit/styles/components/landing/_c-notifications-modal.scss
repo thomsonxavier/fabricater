@@ -1,0 +1,216 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Notifications Modal Theme
+02 - Notifications Modal Base
+03 - Modal Header
+04 - Modal Body
+05 - Notification Items
+06 - Modal Footer
+07 - Profile Picture
+==============================================================================*/
+
+/* --------------------
+01 - Notifications Modal Theme
+-------------------- */
+@mixin notifications-modal-theme-light {
+    --color-modal-bg: #fff;
+    --color-modal-border: rgba(0, 0, 0, 0.1);
+    --color-modal-title: #000;
+    --color-modal-text: #333;
+    --color-modal-item-border: rgba(0, 0, 0, 0.1);
+    --color-load-more-bg: #9401EB;
+    --color-load-more-text: #fff;
+}
+
+@mixin notifications-modal-theme-dark {
+    --color-modal-bg: #1a1a1a;
+    --color-modal-border: rgba(255, 255, 255, 0.1);
+    --color-modal-title: #fff;
+    --color-modal-text: #ccc;
+    --color-modal-item-border: rgba(255, 255, 255, 0.1);
+    --color-load-more-bg: #9401EB;
+    --color-load-more-text: #fff;
+}
+
+.c-notifications-modal {
+    @include notifications-modal-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-notifications-modal {
+        @include notifications-modal-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Notifications Modal Base
+-------------------- */
+.c-notifications-modal {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    z-index: 1000;
+    width: 25rem; /* 400px */
+    max-height: 31.25rem; /* 500px */
+    background: var(--color-modal-bg);
+    border-radius: 0.75rem 0.75rem 1.25rem 1.25rem; /* 12px top, 20px bottom */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: none; /* No border by default when hidden */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure profile picture stays inside */
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, border 0.2s ease;
+    
+    /* Show on hover - add border when visible */
+    &.-show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        border: 1px solid var(--color-modal-border);
+    }
+}
+
+/* --------------------
+03 - Modal Header
+-------------------- */
+.c-notifications-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-modal-item-border);
+    position: relative;
+}
+
+.c-notifications-modal__title {
+    color: #000;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Graphik, sans-serif;
+    font-size: 1.25rem; /* 20px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.01rem; /* -0.16px */
+    margin: 0;
+}
+
+/* --------------------
+04 - Modal Body
+-------------------- */
+.c-notifications-modal__body {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(31.25rem - 8rem); /* Account for header and footer */
+}
+
+.c-notifications-modal__list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------
+05 - Notification Items
+-------------------- */
+.c-notifications-modal__item {
+    display: flex;
+    min-height: 5.125rem; /* 82px - minimum, can grow if content needs more space */
+    padding: 0.8125rem 1rem 1rem 1rem; /* 13px 16px 16px 16px - reduced bottom padding */
+    align-items: center; /* Center vertically */
+    flex-shrink: 0;
+    align-self: stretch;
+    border-bottom: 1px solid var(--color-modal-item-border);
+    position: relative;
+    transition: all 0.2s ease;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+    
+    &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2rem; /* 32px */
+            border-left: 2px solid #E6DCFF; /* purple-100 equivalent */
+        }
+    }
+}
+
+.c-notifications-modal__item-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.375rem; /* 6px - spacing between title and description to prevent overlap */
+    justify-content: center; /* Center content vertically within the row */
+}
+
+.c-notifications-modal__item-title {
+    color: #333;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Graphik, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.01rem; /* -0.16px */
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.c-notifications-modal__item-desc {
+    color: rgba(51, 51, 51, 0.80);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Graphik, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.875rem; /* 14px / 116.667% */
+    margin: 0;
+    flex-shrink: 0;
+    /* Allow text to wrap if needed */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* --------------------
+06 - Modal Footer
+-------------------- */
+.c-notifications-modal__footer {
+    padding: 0;
+    border-top: 1px solid var(--color-modal-item-border);
+    border-radius: 0 0 1.25rem 1.25rem; /* 0 0 20px 20px */
+    overflow: hidden;
+}
+
+.c-notifications-modal__load-more {
+    width: 100%;
+    height: 2.125rem; /* 34px */
+    padding: 0;
+    border: none;
+    border-radius: 0 0 1.25rem 1.25rem; /* 0 0 20px 20px */
+    background: #9401EB;
+    color: #FFF;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Graphik, sans-serif;
+    font-size: 1rem; /* 16px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.01rem; /* -0.16px */
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+}
+

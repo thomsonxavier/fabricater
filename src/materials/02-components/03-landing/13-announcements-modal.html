@@ -1,0 +1,50 @@
+---
+notes: |
+    Announcements Modal Component
+    - Appears on hover over campaign/announcements icon
+    - Contains announcements list
+    - Includes "View All" button
+---
+<div class="c-announcements-modal" role="dialog" aria-label="Announcements" aria-hidden="true">
+    <div class="c-announcements-modal__header">
+        <h2 class="c-announcements-modal__title">Announcements</h2>
+    </div>
+    
+    <div class="c-announcements-modal__body">
+        <div class="c-announcements-modal__list">
+            {{#if announcements}}
+                {{#each announcements}}
+                <div class="c-announcements-modal__item">
+                    <div class="c-announcements-modal__item-content">
+                        <h3 class="c-announcements-modal__item-title">{{title}}</h3>
+                        <p class="c-announcements-modal__item-desc">{{description}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            {{else}}
+                <div class="c-announcements-modal__item">
+                    <div class="c-announcements-modal__item-content">
+                        <h3 class="c-announcements-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-announcements-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+                <div class="c-announcements-modal__item">
+                    <div class="c-announcements-modal__item-content">
+                        <h3 class="c-announcements-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-announcements-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+                <div class="c-announcements-modal__item">
+                    <div class="c-announcements-modal__item-content">
+                        <h3 class="c-announcements-modal__item-title">Lorem Ipsum</h3>
+                        <p class="c-announcements-modal__item-desc">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.</p>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    
+    <div class="c-announcements-modal__footer">
+        <button type="button" class="c-announcements-modal__view-all">View All</button>
+    </div>
+</div>

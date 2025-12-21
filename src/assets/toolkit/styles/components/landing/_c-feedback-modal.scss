@@ -1,0 +1,404 @@
+/*==============================================================================
+Index
+----------------------------------------
+01 - Feedback Modal Theme
+02 - Feedback Modal Base
+03 - Modal Container & Content
+04 - Modal Header
+05 - Modal Body
+06 - Form Fields
+07 - Star Rating
+08 - Modal Footer
+==============================================================================*/
+
+/* --------------------
+01 - Feedback Modal Theme
+-------------------- */
+@mixin feedback-modal-theme-light {
+    --color-modal-bg: #FFF;
+    --color-modal-border: rgba(0, 0, 0, 0.1);
+    --color-modal-border-purple: #A100FF;
+    --color-modal-text: #333;
+    --color-input-bg: #FCFCFC;
+    --color-input-border: rgba(51, 51, 51, 0.10);
+    --color-button-primary-bg: #A100FF;
+    --color-button-primary-text: #FFF;
+    --color-button-secondary-border: #A100FF;
+    --color-button-secondary-text: #A100FF;
+}
+
+@mixin feedback-modal-theme-dark {
+    --color-modal-bg: #1a1a1a;
+    --color-modal-border: rgba(255, 255, 255, 0.1);
+    --color-modal-border-purple: #A100FF;
+    --color-modal-text: #ccc;
+    --color-input-bg: #2a2a2a;
+    --color-input-border: rgba(255, 255, 255, 0.1);
+    --color-button-primary-bg: #A100FF;
+    --color-button-primary-text: #FFF;
+    --color-button-secondary-border: #A100FF;
+    --color-button-secondary-text: #A100FF;
+}
+
+.c-feedback-modal {
+    @include feedback-modal-theme-light();
+}
+
+html[data-theme="dark"] {
+    .c-feedback-modal {
+        @include feedback-modal-theme-dark();
+    }
+}
+
+/* --------------------
+02 - Feedback Modal Base
+-------------------- */
+.c-feedback-modal {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    z-index: 1000;
+    width: 52.375rem; /* 838px */
+    height: 44.5rem; /* 712px */
+    max-height: calc(100vh - 6rem); /* Prevent overflow */
+    border-radius: 0.75rem; /* 12px */
+    border-top: 0.25rem solid var(--color-modal-border-purple, #A100FF); /* 4px */
+    background: var(--color-modal-bg, #FFF);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: none; /* No border by default when hidden */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, border 0.2s ease;
+    
+    /* Show on hover - add border when visible */
+    &.-show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        border: 1px solid var(--color-modal-border, rgba(0, 0, 0, 0.1));
+    }
+}
+
+/* --------------------
+03 - Modal Container & Content
+-------------------- */
+.c-feedback-modal__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.c-feedback-modal__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+/* --------------------
+04 - Modal Header
+-------------------- */
+.c-feedback-modal__header {
+    position: relative;
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.c-feedback-modal__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    padding: 0;
+    border: none;
+    background: transparent;
+    background-image: var(--icon-modal-close, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M15.875,15.444a.313.313,0,0,1,0,.5c-.056.055-.111.055-.223.055a.335.335,0,0,1-.222-.055L7.979,8.487.528,15.945C.473,16,.417,16,.306,16a.336.336,0,0,1-.223-.055.418.418,0,0,1,0-.5L7.506,8.014.083.585a.419.419,0,0,1,0-.5.338.338,0,0,1,.445,0L7.979,7.541,15.43.083a.338.338,0,0,1,.445,0,.314.314,0,0,1,0,.5L8.452,8.014l7.423,7.429'/%3E%3C/svg%3E"));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+        opacity: 1;
+    }
+    
+    &:focus-visible {
+        outline: 0.0625rem dashed currentColor;
+        outline-offset: 0.25rem;
+    }
+}
+
+.c-feedback-modal__title {
+    color: var(--color-modal-text, #333);
+    font-family: Graphik, sans-serif;
+    font-size: 1.5rem; /* 24px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+}
+
+/* --------------------
+05 - Modal Body
+-------------------- */
+.c-feedback-modal__body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 1.5rem;
+    padding-bottom: 1rem;
+    min-height: 0; /* Allow flex child to shrink */
+}
+
+.c-feedback-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* --------------------
+06 - Form Fields
+-------------------- */
+.c-feedback-modal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.c-feedback-modal__label {
+    color: #333;
+    font-family: Graphik, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; /* 20px / 142.857% */
+    margin: 0;
+}
+
+.c-feedback-modal__input-wrap {
+    display: flex;
+    width: 21.5625rem; /* 345px */
+    padding: 0.875rem 0.75rem; /* 14px 12px */
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.75rem; /* 12px */
+    border: 1px solid var(--color-input-border, rgba(51, 51, 51, 0.10));
+    background: var(--color-input-bg, #FCFCFC);
+}
+
+.c-feedback-modal__input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--color-modal-text, #333);
+    font-family: Graphik, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    
+    &::placeholder {
+        color: rgba(51, 51, 51, 0.5);
+    }
+}
+
+.c-feedback-modal__question {
+    color: var(--color-modal-text, #333);
+    font-family: Graphik, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 24px */
+    margin: 0;
+}
+
+/* --------------------
+07 - Star Rating
+-------------------- */
+.c-feedback-modal__star-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    position: relative;
+}
+
+.c-feedback-modal__star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+    
+    i {
+        position: absolute;
+        font-size: 1.5rem; /* 24px */
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+    }
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Star icon styling - JavaScript will toggle between icon-defaultstar and icon-goldstar */
+.c-feedback-modal__star i {
+    font-size: 1.5rem; /* 24px */
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hide gold star by default, show when rating is set */
+.c-feedback-modal__star i.icon-goldstar {
+    display: none;
+}
+
+/* JavaScript will handle hover and click states via inline styles */
+
+/* Show gold star for selected and previous stars when rating is set */
+.c-feedback-modal__star-rating[data-rating="1"] .c-feedback-modal__star[data-value="1"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="2"] .c-feedback-modal__star[data-value="1"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="2"] .c-feedback-modal__star[data-value="2"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="1"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="2"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="3"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="1"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="2"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="3"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="4"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="1"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="2"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="3"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="4"] i.icon-goldstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="5"] i.icon-goldstar {
+    display: block;
+}
+
+/* Hide default star when gold star is shown */
+.c-feedback-modal__star-rating[data-rating="1"] .c-feedback-modal__star[data-value="1"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="2"] .c-feedback-modal__star[data-value="1"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="2"] .c-feedback-modal__star[data-value="2"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="1"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="2"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="3"] .c-feedback-modal__star[data-value="3"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="1"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="2"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="3"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="4"] .c-feedback-modal__star[data-value="4"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="1"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="2"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="3"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="4"] i.icon-defaultstar,
+.c-feedback-modal__star-rating[data-rating="5"] .c-feedback-modal__star[data-value="5"] i.icon-defaultstar {
+    display: none;
+}
+
+.c-feedback-modal__star-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.c-feedback-modal__star-label {
+    color: rgba(51, 51, 51, 0.7);
+    font-family: Graphik, sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    flex: 1;
+}
+
+/* --------------------
+08 - Modal Footer
+-------------------- */
+.c-feedback-modal__footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);
+    flex-shrink: 0;
+}
+
+.c-feedback-modal__footer-btnGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.c-feedback-modal__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-family: Graphik, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    
+    &.-close {
+        background: transparent;
+        border: 2px solid var(--color-button-secondary-border, #A100FF);
+        color: var(--color-button-secondary-text, #A100FF);
+        
+        &:hover {
+            background: rgba(161, 0, 255, 0.1);
+        }
+    }
+    
+    &.-submit {
+        background: var(--color-button-primary-bg, #A100FF);
+        color: var(--color-button-primary-text, #FFF);
+        border: 2px solid var(--color-button-primary-bg, #A100FF);
+        
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    
+    &:focus-visible {
+        outline: 0.125rem solid currentColor;
+        outline-offset: 0.125rem;
+    }
+}

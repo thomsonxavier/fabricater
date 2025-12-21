@@ -21,18 +21,27 @@ notes: |
                 <button type="button" class="c-myappid-header__nav-btn" aria-label="Help">
                     <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/help.svg" alt="" aria-hidden="true" />
                 </button>
-                <button type="button" class="c-myappid-header__nav-btn" aria-label="Chat">
-                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/chat.svg" alt="" aria-hidden="true" />
-                </button>
-                <button type="button" class="c-myappid-header__nav-btn" aria-label="Campaign">
-                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/campaign.svg" alt="" aria-hidden="true" />
-                </button>
-                <button type="button" class="c-myappid-header__nav-btn -notification" aria-label="Notifications">
-                    <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/notification.svg" alt="" aria-hidden="true" />
-                    {{#if hasNotification}}
-                    <span class="c-myappid-header__notif-badge" aria-hidden="true"></span>
-                    {{/if}}
-                </button>
+                <div class="c-myappid-header__chat-wrap">
+                    <button type="button" class="c-myappid-header__nav-btn -chat" aria-label="Chat">
+                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/chat.svg" alt="" aria-hidden="true" />
+                    </button>
+                    {{> landing.feedback-modal}}
+                </div>
+                <div class="c-myappid-header__announcements-wrap">
+                    <button type="button" class="c-myappid-header__nav-btn -announcements" aria-label="Announcements">
+                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/campaign.svg" alt="" aria-hidden="true" />
+                    </button>
+                    {{> landing.announcements-modal}}
+                </div>
+                <div class="c-myappid-header__notification-wrap">
+                    <button type="button" class="c-myappid-header__nav-btn -notification" aria-label="Notifications">
+                        <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/notification.svg" alt="" aria-hidden="true" />
+                        {{#if hasNotification}}
+                        <span class="c-myappid-header__notif-badge" aria-hidden="true"></span>
+                        {{/if}}
+                    </button>
+                    {{> landing.notifications-modal avatarImg=avatarImg}}
+                </div>
                 <div class="c-myappid-header__amethyst-wrap">
                     <button type="button" class="c-myappid-header__nav-btn -amethyst" aria-label="Amethyst AI Assistant">
                         <img src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/images/icons/myappid/amethyst-logo.svg" alt="" aria-hidden="true" />

@@ -1,0 +1,116 @@
+---
+notes: |
+    Feedback Modal Component
+    - Modal for collecting user feedback on myApplicationID Portal
+    - Includes AIR ID input, star ratings, and recommendation question
+    - Close and Submit Feedback buttons
+---
+<div id="feedbackModal" class="c-feedback-modal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="feedbackModalTitle">
+    <div class="c-feedback-modal__container">
+        <div class="c-feedback-modal__content">
+            <div class="c-feedback-modal__header">
+                <button type="button" class="c-feedback-modal__close -dismiss-modal" aria-label="Close" title="Close"></button>
+                <h2 class="c-feedback-modal__title" id="feedbackModalTitle">Feedback</h2>
+            </div>
+            
+            <div class="c-feedback-modal__body">
+                <form class="c-feedback-modal__form">
+                    <!-- AIR ID Input -->
+                    <div class="c-feedback-modal__field">
+                        <label for="air-id" class="c-feedback-modal__label">AIR ID (Required)</label>
+                        <div class="c-feedback-modal__input-wrap">
+                            <input 
+                                type="text" 
+                                id="air-id" 
+                                class="c-feedback-modal__input" 
+                                placeholder="Enter AIR ID" 
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <!-- Question 1: Ease of Use -->
+                    <div class="c-feedback-modal__field">
+                        <p class="c-feedback-modal__question">1. How easy or difficult was it for you to use the myApplication ID Portal?</p>
+                        <div class="c-feedback-modal__star-rating" data-rating="0" data-question="ease-of-use">
+                            <button type="button" class="c-feedback-modal__star" data-value="1" aria-label="Very Dissatisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="2" aria-label="Somewhat Dissatisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="3" aria-label="Neutral">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="4" aria-label="Somewhat Satisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="5" aria-label="Very Satisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <div class="c-feedback-modal__star-labels">
+                            <span class="c-feedback-modal__star-label">Very Dissatisfied</span>
+                            <span class="c-feedback-modal__star-label">Somewhat Dissatisfied</span>
+                            <span class="c-feedback-modal__star-label">Neutral</span>
+                            <span class="c-feedback-modal__star-label">Somewhat Satisfied</span>
+                            <span class="c-feedback-modal__star-label">Very Satisfied</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2: Satisfaction -->
+                    <div class="c-feedback-modal__field">
+                        <p class="c-feedback-modal__question">2. How satisfied or dissatisfied are you with the myApplicationID Portal?</p>
+                        <div class="c-feedback-modal__star-rating" data-rating="0" data-question="satisfaction">
+                            <button type="button" class="c-feedback-modal__star" data-value="1" aria-label="Very Dissatisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="2" aria-label="Somewhat Dissatisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="3" aria-label="Neutral">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="4" aria-label="Somewhat Satisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                            <button type="button" class="c-feedback-modal__star" data-value="5" aria-label="Very Satisfied">
+                                <i class="icon-defaultstar"></i>
+                                <i class="icon-goldstar" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <div class="c-feedback-modal__star-labels">
+                            <span class="c-feedback-modal__star-label">Very Dissatisfied</span>
+                            <span class="c-feedback-modal__star-label">Somewhat Dissatisfied</span>
+                            <span class="c-feedback-modal__star-label">Neutral</span>
+                            <span class="c-feedback-modal__star-label">Somewhat Satisfied</span>
+                            <span class="c-feedback-modal__star-label">Very Satisfied</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3: Recommendation -->
+                    <div class="c-feedback-modal__field">
+                        <p class="c-feedback-modal__question">3. Would you recommend the myApplicationID Portal to other colleagues?</p>
+                        <!-- Add recommendation input here (radio buttons or text input) -->
+                    </div>
+                </form>
+            </div>
+            
+            <div class="c-feedback-modal__footer">
+                <div class="c-feedback-modal__footer-btnGroup">
+                    <button type="button" class="c-feedback-modal__btn -close -dismiss-modal">Close</button>
+                    <button type="button" class="c-feedback-modal__btn -submit">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

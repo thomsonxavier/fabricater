@@ -57,6 +57,7 @@ import { onLoadModal } from "./components/modals/onLoadModal";
 import { TableFun } from "./components/layout/table";
 import { myappidHeaderINIT } from "./components/landing/myappid-header";
 import { filterPanelINIT } from "./components/landing/filter-panel";
+import { feedbackModalINIT } from "./components/landing/feedback-modal";
 
 //02- Function calls
 // call global/common elements
@@ -101,5 +102,6 @@ onLoadModal();
 TableFun();
 myappidHeaderINIT();
 filterPanelINIT();
+feedbackModalINIT();
 
 export default {};
