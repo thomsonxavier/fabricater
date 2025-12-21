@@ -46,6 +46,8 @@ html[data-theme="dark"] {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 /* --------------------
@@ -57,6 +59,8 @@ html[data-theme="dark"] {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 .c-requests-wrapper__title {
@@ -70,6 +74,8 @@ html[data-theme="dark"] {
 }
 
 .c-requests-wrapper__actions {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    
     .o-primary-button.-create-request {
         display: inline-flex;
         height: 2.5rem; /* 40px */
@@ -81,6 +87,7 @@ html[data-theme="dark"] {
         border-radius: 6.25rem; /* 100px */
         background: linear-gradient(90deg, #7100EC 0%, #8901C5 100%), var(--Button-button-bg-primary, #000);
         border: none;
+        white-space: nowrap; /* Prevent text wrapping */
         
         /* Text styling */
         color: var(--Button-button-text-primary, #FFF);
@@ -105,6 +112,8 @@ html[data-theme="dark"] {
     display: flex;
     align-items: flex-start;
     gap: 0; /* No gap by default */
+    width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
     
     /* Add gap only when filter panel is open */
     &:has(.c-requests-wrapper__filter-panel.-show) {
@@ -183,13 +192,17 @@ html[data-theme="dark"] {
 .c-requests-wrapper__main {
     flex: 1;
     width: 100%;
-    min-width: 0;
+    min-width: 0; /* Allow flex item to shrink */
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .c-requests-wrapper__toolbar {
+    width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
+    
     .c-action-toolbar {
         padding: 0;
     }
@@ -218,6 +231,7 @@ html[data-theme="dark"] {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 .c-requests-wrapper__search {

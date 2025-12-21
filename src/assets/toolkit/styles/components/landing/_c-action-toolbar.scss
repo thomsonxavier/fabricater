@@ -55,6 +55,8 @@ html[data-theme="dark"] {
     gap: 1.5rem; /* 24px */
     padding: 1rem 0;
     flex-wrap: wrap;
+    width: 100%;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 /* --------------------

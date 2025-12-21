@@ -145,28 +145,28 @@ Index
     }
 
     &.-outline {
-        border: 2px solid var(--color-toolbar-accent);
+        border: 2px solid var(--color-toolbar-accent-border); /* Normal border #CCCBCE */
         background: transparent;
-        color: var(--color-toolbar-accent);
+        color: var(--color-toolbar-btn-text); /* Normal text color */
 
         .o-toolbar-button__icon {
-            color: var(--color-toolbar-accent);
+            color: var(--color-toolbar-btn-text); /* Normal icon color */
         }
 
         .o-toolbar-button__text {
-            color: var(--color-toolbar-accent);
+            color: var(--color-toolbar-btn-text); /* Normal text color */
         }
 
         &:hover:not(:disabled) {
-            background: var(--color-toolbar-accent);
-            color: #fff;
-
+            background: transparent; /* Keep transparent on hover */
+            border-color: #A100FF; /* Border color changes to #A100FF on hover */
+            
             .o-toolbar-button__icon {
-                color: #fff;
+                color: #A100FF; /* Icon color changes to purple on hover */
             }
-
+            
             .o-toolbar-button__text {
-                color: #fff;
+                color: #A100FF; /* Text color changes to purple on hover */
             }
         }
     }
