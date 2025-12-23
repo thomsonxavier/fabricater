@@ -160,6 +160,8 @@ html[data-theme="dark"] {
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.2s ease;
+    position: relative;
+    overflow: visible; /* Allow pseudo-elements to show */
 
     img {
         width: 1.5rem; /* 24px */
@@ -168,7 +170,8 @@ html[data-theme="dark"] {
     }
 
     &:hover {
-        background: rgba(0, 0, 0, 0.05);
+        background: transparent;
+        outline: none;
     }
 
     &:focus-visible {
@@ -195,8 +198,106 @@ html[data-theme="dark"] {
     border: 2px solid var(--color-header-bg);
 }
 
+.c-myappid-header__notification-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: visible; /* Allow underline to show */
+    
+    /* Show modal on hover */
+    &:hover .c-notifications-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Show border when modal is visible */
+    }
+}
+
 .-notification {
     position: relative;
+    
+    &:hover {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5rem; /* 24px */
+            height: 0.1875rem; /* 3px */
+            background: var(--color-header-icon-hover, #A100FF);
+            border-radius: 0.09375rem 0.09375rem 0 0; /* Rounded top corners */
+            z-index: 10; /* Ensure it's above other elements */
+        }
+    }
+}
+
+.c-myappid-header__announcements-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: visible; /* Allow underline to show */
+    
+    /* Show modal on hover */
+    &:hover .c-announcements-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Show border when modal is visible */
+    }
+}
+
+.-announcements {
+    position: relative;
+    
+    &:hover {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5rem; /* 24px */
+            height: 0.1875rem; /* 3px */
+            background: var(--color-header-icon-hover, #A100FF);
+            border-radius: 0.09375rem 0.09375rem 0 0; /* Rounded top corners */
+            z-index: 10; /* Ensure it's above other elements */
+        }
+    }
+}
+
+.c-myappid-header__chat-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: visible; /* Allow underline to show */
+    
+    /* Show modal on hover */
+    &:hover .c-feedback-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Show border when modal is visible */
+    }
+}
+
+.-chat {
+    position: relative;
+    
+    &:hover {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5rem; /* 24px */
+            height: 0.1875rem; /* 3px */
+            background: var(--color-header-icon-hover, #A100FF);
+            border-radius: 0.09375rem 0.09375rem 0 0; /* Rounded top corners */
+            z-index: 10; /* Ensure it's above other elements */
+        }
+    }
 }
 
 /* --------------------
