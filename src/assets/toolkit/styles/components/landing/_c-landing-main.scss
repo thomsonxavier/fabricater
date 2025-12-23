@@ -46,27 +46,5 @@ html[data-theme="dark"] {
 .c-landing-main__content {
     position: relative;
     z-index: 1;
-    width: 100%;
-    max-width: 80.125rem; /* 1282px - Figma max-width specification */
-    margin: 0 auto;
     padding: 1.5rem;
-    box-sizing: border-box;
-    
-    /* Override app-container styles */
-    &.app-container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        max-width: 80.125rem; /* Override app-container max-width */
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 82rem) { /* ~1312px */
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    @media (max-width: 48rem) { /* 768px */
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
 }
